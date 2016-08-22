@@ -1,0 +1,11 @@
+default:
+    extensions:
+        Laracasts\Behat\ServiceContainer\BehatExtension: ~
+        Behat\MinkExtension\ServiceContainer\MinkExtension:
+            default_session: laravel
+            laravel: ~
+    suites:
+        post:
+            paths: [ %paths.base%/features ]
+            contexts:
+                - PostFeatureContext

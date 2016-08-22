@@ -8,11 +8,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Laravel</title>
+    <title>Nehal | @yield('title')</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    @yield('css')
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -81,5 +83,7 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    @yield('script')
 </body>
 </html>
