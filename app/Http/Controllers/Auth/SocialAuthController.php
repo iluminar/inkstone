@@ -43,7 +43,7 @@ class SocialAuthController extends Controller
 
         Auth::login($authUser, true);
 
-        return Redirect::to('home');
+        return Redirect::to('/');
     }
 
     /**
@@ -55,7 +55,7 @@ class SocialAuthController extends Controller
     private function findOrCreateUser($provider, $providerUser)
     {
         if ($authUser = Social::where(['provider_id' => $providerUser->id, 'provider' => $provider])->first()) {
-            return $authUser;
+            return $authUser->user;
         }
         $user = User::create([
             'name' => $providerUser->name,
