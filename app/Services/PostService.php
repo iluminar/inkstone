@@ -25,4 +25,11 @@ class PostService
 
         return $post;
     }
+
+    public function getAllPost()
+    {
+        $posts = $this->postRepository->findAll();
+
+        return $posts;
+    }
 }
