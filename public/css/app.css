@@ -5766,4 +5766,9 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+.navbar .dropdown .dropdown-toggle {
+  padding-bottom: 0; }
+  .navbar .dropdown .dropdown-toggle img {
+    padding-right: 5px; }
+
 /*# sourceMappingURL=app.css.map */
