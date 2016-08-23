@@ -16,7 +16,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading text-center">Create a Post</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('post.store') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">

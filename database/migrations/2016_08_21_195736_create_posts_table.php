@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('content');
-            $table->bool('draft')->default('false');
+            $table->boolean('draft')->default(false);
             $table->timestamp('publish_time')->nullable();
             $table->timestamps();
 
