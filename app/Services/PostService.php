@@ -28,8 +28,11 @@ class PostService
 
     public function getAllPost()
     {
-        $posts = $this->postRepository->findAll();
+        return $this->postRepository->findAll();
+    }
 
-        return $posts;
+    public function getAllPostByUserId()
+    {
+        return $this->postRepository->getAllPostByUserId(Auth::user()->id);
     }
 }

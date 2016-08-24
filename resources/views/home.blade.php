@@ -7,17 +7,8 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">All posts</div>
-
-                <div class="panel-body">
-                </div>
-                    <ul class="list-group">
-                        @foreach ($posts as $post)
-                            <li class="list-group-item">
-                                {!! Markdown::convertToHtml($post->content) !!}
-                            </li>
-                        @endforeach
-                    </ul>
+                <div class="text-center"><h4>All posts</h4></div>
+                @include('partials.post_list')
             </div>
         </div>
     </div>

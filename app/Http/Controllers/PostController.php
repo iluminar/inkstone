@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function index(PostService $service)
+    {
+        $posts = $service->getAllPostByUserId();
+
+        return view('posts.index', compact('posts'));
+    }
+
     public function create()
     {
         return view('posts.create');
