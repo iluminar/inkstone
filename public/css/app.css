@@ -5769,6 +5769,11 @@ button.close {
 .navbar .dropdown .dropdown-toggle {
   padding-bottom: 0; }
   .navbar .dropdown .dropdown-toggle img {
-    padding-right: 5px; }
+    padding-right: 5px;
+    border-radius: 3px; }
+
+.pagination > .current > a {
+  background-color: #68C5DB !important;
+  color: #fcf8e3 !important; }
 
 /*# sourceMappingURL=app.css.map */

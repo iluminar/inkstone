@@ -3,5 +3,11 @@
 
     img {
         padding-right: 5px;
+        border-radius: 3px;
     }
+}
+
+.pagination > .current > a {
+    background-color: $brand-danger !important;
+    color: $navbar-default-link-color !important;
 }

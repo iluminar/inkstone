@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index(PostService $service)
     {
-        $posts = $service->getAllPost();
+        $posts = $service->getAllPost()->toArray();
 
         return view('home', compact('posts'));
     }
