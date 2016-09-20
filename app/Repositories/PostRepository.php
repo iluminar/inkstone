@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 use App\Models\Post;
-use Illuminate\Contracts\Container\Container;
 use Rinvex\Repository\Repositories\EloquentRepository;
 
 class PostRepository extends EloquentRepository
@@ -14,5 +13,10 @@ class PostRepository extends EloquentRepository
     public function getAllPostByUserId($id)
     {
         return $this->paginate();
+    }
+
+    public function getSinglePostBySlug($slug)
+    {
+        return Post::where('slug', $slug)->with('author.socials')->first();
     }
 }

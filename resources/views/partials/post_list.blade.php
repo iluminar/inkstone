@@ -1,6 +1,7 @@
 <ul class="list-group">
     @foreach ($posts['data'] as $post)
         <li class="list-group-item">
+            <a href="{{ route('post.single', ['slug' => $post['slug']]) }}">{{ $post['title'] }}</a>
             {!! Markdown::convertToHtml($post['content']) !!}
         </li>
     @endforeach

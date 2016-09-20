@@ -13,7 +13,7 @@ class PostService
     {
         $this->postRepository = $postRepository;
     }
-    
+
     function savePost($data)
     {
         $data['user_id'] = Auth::user()->id;
@@ -34,5 +34,10 @@ class PostService
     public function getAllPostByUserId()
     {
         return $this->postRepository->getAllPostByUserId(Auth::user()->id);
+    }
+
+    public function getSinglePostBySlug($slug)
+    {
+        return $this->postRepository->getSinglePostBySlug($slug);
     }
 }

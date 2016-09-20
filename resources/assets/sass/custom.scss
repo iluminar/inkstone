@@ -11,3 +11,12 @@
     background-color: $brand-danger !important;
     color: $navbar-default-link-color !important;
 }
+
+.post-header {
+    min-height: 240px;
+}
+
+.post-author {
+    width: 60px;
+    border-radius: 5px;
+}

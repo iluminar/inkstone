@@ -5776,4 +5776,11 @@ button.close {
   background-color: #68C5DB !important;
   color: #fcf8e3 !important; }
 
+.post-header {
+  min-height: 240px; }
+
+.post-author {
+  width: 60px;
+  border-radius: 5px; }
+
 /*# sourceMappingURL=app.css.map */
