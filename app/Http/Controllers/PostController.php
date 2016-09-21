@@ -39,7 +39,6 @@ class PostController extends Controller
     {
         try {
             $result = $this->service->savePost($request->all());
-            dd($result);
 
             return redirect('dashboard');
         } catch (Exception $e) {
