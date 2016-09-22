@@ -23,7 +23,7 @@
     </script>
 </head>
 <body>
-@include('partials.navbar')
+    @include('partials.navbar')
     @yield('content')
 
     <!-- Scripts -->

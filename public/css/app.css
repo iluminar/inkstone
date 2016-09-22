@@ -5767,9 +5767,8 @@ button.close {
     display: none !important; } }
 
 .card {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
-
-.card {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  background-color: white;
   margin-top: 10px;
   box-sizing: border-box;
   border-radius: 2px;
@@ -5779,6 +5778,13 @@ button.close {
   color: #fff;
   font-size: 24px;
   font-weight: 300;
+  text-transform: uppercase; }
+
+.card-header {
+  padding: 6px 16px;
+  color: #FF5964;
+  font-size: 32px;
+  font-weight: 600;
   text-transform: uppercase; }
 
 .card .card-image {
@@ -5803,7 +5809,7 @@ button.close {
   background-clip: padding-box;
   box-sizing: border-box; }
 
-.card .card-content p {
+.card .card-content {
   margin: 0;
   color: inherit; }
 
@@ -5825,14 +5831,21 @@ button.close {
   color: #ffd8a6;
   text-decoration: none; }
 
-nav {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+body {
+  padding-top: 70px;
+  background-color: #f4f4f8; }
 
-.navbar .dropdown .dropdown-toggle {
-  padding-bottom: 0; }
-  .navbar .dropdown .dropdown-toggle img {
-    padding-right: 5px;
-    border-radius: 3px; }
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-top: 12px;
+  margin-bottom: 6px; }
+
+.navbar {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+  .navbar .dropdown .dropdown-toggle {
+    padding-bottom: 0; }
+    .navbar .dropdown .dropdown-toggle img {
+      padding-right: 5px;
+      border-radius: 3px; }
 
 .pagination > .current > a {
   background-color: #68C5DB !important;

@@ -1,13 +1,12 @@
 <ul class="list-group">
     @foreach ($posts['data'] as $post)
         <div class="card">
-            <div class="card-image">
-                <img class="img-responsive" src="">
-                <span class="card-title">Material Cards</span>
+            <div class="card-header">
+                <a href="{{ route('post.single', ['slug' => $post['slug']]) }}">{{ $post['title'] }}</a>
             </div>
 
             <div class="card-content">
-                <p>{!! Markdown::convertToHtml($post['content']) !!}</p>
+                {!! Markdown::convertToHtml($post['content']) !!}
             </div>
 
             <div class="card-action">
@@ -18,7 +17,6 @@
         </div>
 
         <!-- <li class="list-group-item">
-            <a href="{{ route('post.single', ['slug' => $post['slug']]) }}">{{ $post['title'] }}</a>
             {!! Markdown::convertToHtml($post['content']) !!}
         </li> -->
     @endforeach
