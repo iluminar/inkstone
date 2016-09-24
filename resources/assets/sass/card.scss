@@ -17,9 +17,9 @@
 .card-header {
     padding: 6px 16px;
     color: $text-color;
-    font-size: 32px;
+    // font-size: 32px;
     font-weight: 600;
-    text-transform: uppercase;
+    border-bottom: 1px solid rgba(160, 160, 160, 0.2);
 }
 
 .card .card-image {
@@ -42,7 +42,7 @@
 }
 
 .card .card-content {
-    padding: 16px;
+    padding: 0 16px;
     border-radius: 0 0 2px 2px;
     background-clip: padding-box;
     box-sizing: border-box;

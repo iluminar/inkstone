@@ -5783,9 +5783,8 @@ button.close {
 .card-header {
   padding: 6px 16px;
   color: #FF5964;
-  font-size: 32px;
   font-weight: 600;
-  text-transform: uppercase; }
+  border-bottom: 1px solid rgba(160, 160, 160, 0.2); }
 
 .card .card-image {
   position: relative;
@@ -5804,7 +5803,7 @@ button.close {
   padding: 16px; }
 
 .card .card-content {
-  padding: 16px;
+  padding: 0 16px;
   border-radius: 0 0 2px 2px;
   background-clip: padding-box;
   box-sizing: border-box; }
@@ -5854,8 +5853,11 @@ h1, .h1, h2, .h2, h3, .h3 {
 .post-header {
   min-height: 240px; }
 
-.post-author {
-  width: 60px;
-  border-radius: 5px; }
+.avatar {
+  width: 30px;
+  border-radius: 15px; }
+
+.post-title {
+  font-size: 30px; }
 
 /*# sourceMappingURL=app.css.map */

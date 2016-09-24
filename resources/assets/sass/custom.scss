@@ -30,7 +30,11 @@ h1, .h1, h2, .h2, h3, .h3 {
     min-height: 240px;
 }
 
-.post-author {
-    width: 60px;
-    border-radius: 5px;
+.avatar {
+    width: 30px;
+    border-radius: 15px;
+}
+
+.post-title {
+    font-size: 30px;
 }

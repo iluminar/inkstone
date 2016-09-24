@@ -1,7 +1,7 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-12">
 
                     <div class="navbar-header">
 
@@ -15,7 +15,7 @@
 
                         <!-- Branding Image -->
                         <a class="navbar-brand" href="{{ url('/') }}">
-                            nehal.space
+                            iluminar.space
                             <i class="fa fa-space-shuttle"></i>
                         </a>
                     </div>

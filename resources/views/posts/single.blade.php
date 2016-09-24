@@ -7,7 +7,7 @@
 <div class="row post-header">
     <div class="col-md-8 col-md-offset-2">
         <h1 class="">{{ $post->title }}</h1>
-        <img class="post-author" src="{{ $post->author->socials[0]->avatar }}" alt="" />
+        <img class="avatar" src="{{ $post->author->socials[0]->avatar }}" alt="" />
     </div>
 </div>
 <div class="container">

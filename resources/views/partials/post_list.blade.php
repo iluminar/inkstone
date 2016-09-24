@@ -2,11 +2,17 @@
     @foreach ($posts['data'] as $post)
         <div class="card">
             <div class="card-header">
-                <a href="{{ route('post.single', ['slug' => $post['slug']]) }}">{{ $post['title'] }}</a>
+                <a class="post-title" href="{{ route('post.single', ['slug' => $post['slug']]) }}">{{ $post['title'] }}</a><br/>
+                <img class="avatar" src="{{ $post['author']['socials'][0]['avatar'] }}" alt="" />
+                <span>{{ $post['author']['name'] }}</span>
+            </div>
+
+            <div class="card-author">
+
             </div>
 
             <div class="card-content">
-                {!! Markdown::convertToHtml($post['content']) !!}
+                {!! Markdown::convertToHtml(str_limit($post['content'], 350, '...')) !!}
             </div>
 
             <div class="card-action">

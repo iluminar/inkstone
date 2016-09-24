@@ -28,7 +28,7 @@ class PostService
 
     public function getAllPost()
     {
-        return $this->postRepository->paginate();
+        return $this->postRepository->getAllPost();
     }
 
     public function getAllPostByUserId()

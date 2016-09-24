@@ -15,6 +15,11 @@ class PostRepository extends EloquentRepository
         return $this->paginate();
     }
 
+    public function getAllPost()
+    {
+        return Post::with('author.socials')->paginate();
+    }
+
     public function getSinglePostBySlug($slug)
     {
         return Post::where('slug', $slug)->with('author.socials')->first();
