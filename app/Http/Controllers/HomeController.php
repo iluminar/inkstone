@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Services\PostService;
-// use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -25,7 +24,6 @@ class HomeController extends Controller
     public function index(PostService $service)
     {
         $posts = $service->getAllPost()->toArray();
-        // dd($posts);
 
         return view('home', compact('posts'));
     }

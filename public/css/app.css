@@ -5772,7 +5772,8 @@ button.close {
   margin-top: 10px;
   box-sizing: border-box;
   border-radius: 2px;
-  background-clip: padding-box; }
+  background-clip: padding-box;
+  color: black; }
 
 .card span.card-title {
   color: #fff;
@@ -5830,9 +5831,21 @@ button.close {
   color: #ffd8a6;
   text-decoration: none; }
 
+.user-card {
+  text-align: center; }
+  .user-card .propic {
+    padding: 5px 0;
+    width: 50%;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto; }
+  .user-card .username {
+    font-size: 1.8rem; }
+
 body {
-  padding-top: 70px;
-  background-color: #f4f4f8; }
+  padding-top: 60px;
+  background-color: #f4f4f8;
+  padding-bottom: 20px; }
 
 h1, .h1, h2, .h2, h3, .h3 {
   margin-top: 12px;
