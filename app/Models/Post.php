@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Comment;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,5 +15,10 @@ class Post extends Model
     public function Author()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

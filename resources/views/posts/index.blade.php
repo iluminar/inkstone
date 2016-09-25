@@ -10,7 +10,7 @@
         </div>
 
         <div class="col-md-9">
-            @include('partials.post_list')
+            @include('posts.list')
         </div>
     </div>
 </div>

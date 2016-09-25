@@ -16,10 +16,6 @@
                     <a class="post-title" href="{{ route('post.single', ['slug' => $post['slug']]) }}">{{ $post['title'] }}</a><br/>
                 </div>
 
-                <div class="card-author">
-
-                </div>
-
                 <div class="card-content">
                     {!! Markdown::convertToHtml($post['content']) !!}
                 </div>
@@ -30,6 +26,8 @@
                     <a href="#" target="new_blank">Link</a>
                 </div>
             </div>
+
+            @include('comment.list')
         </div>
     </div>
 </div>

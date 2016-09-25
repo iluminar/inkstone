@@ -21,10 +21,6 @@
                 <a href="#" target="new_blank">Link</a>
             </div>
         </div>
-
-        <!-- <li class="list-group-item">
-            {!! Markdown::convertToHtml($post['content']) !!}
-        </li> -->
     @endforeach
 </ul>
 
