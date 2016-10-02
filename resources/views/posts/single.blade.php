@@ -27,6 +27,10 @@
                 </div>
             </div>
 
+            @include('comment.create')
+        </div>
+
+        <div class="col-md-3">
             @include('comment.list')
         </div>
     </div>
