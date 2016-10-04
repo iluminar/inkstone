@@ -7,10 +7,10 @@
                 </div>
                 <div class="col-md-8">
                     <div class="row">
-                        <a href="{{ route('dashboard') }}">{{ $comment->author->name }}</a>
+                        <a href="{{ route('dashboard') }}" class="comment-author-name">{{ $comment->author->name }}</a>
                     </div>
-                    <div class="row">
-                        {{ $comment->created_at }}
+                    <div class="row comment-date">
+                        {{ $comment->created_at }} ago
                     </div>
                 </div>
             </div>

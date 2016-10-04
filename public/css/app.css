@@ -11638,4 +11638,10 @@ h1, .h1, h2, .h2, h3, .h3 {
 .post-title {
   font-size: 30px; }
 
+.comment-author-name {
+  font-size: 1.8rem; }
+
+.comment-date {
+  font-size: 1.2rem; }
+
 /*# sourceMappingURL=app.css.map */
