@@ -1,5 +1,5 @@
-<div class="card comment-form">
-    <form class="form-horizontal" role="form" method="POST" action="{{ route('comment.store') }}">
+<div class="card" id="comment-form">
+    <form class="form-horizontal" role="form" method="POST" action="{{ route('comment.store', ['slug' => $post['slug']]) }}">
         <div class="card-header">
             {{ csrf_field() }}
 

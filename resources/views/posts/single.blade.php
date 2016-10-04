@@ -27,7 +27,9 @@
                 </div>
             </div>
 
-            @include('comment.create')
+            @if (Auth::check())
+                @include('comment.create')
+            @endif
         </div>
 
         <div class="col-md-3">
@@ -35,5 +37,17 @@
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('script')
+
+<script type="text/javascript">
+$("#write").click(function () {
+    $("#comment-form input").focus().animate({
+        scrollTop: $("#comment-form").offset().top
+    }, 1000);
+});
+</script>
 
 @endsection

@@ -7,7 +7,7 @@ use Rinvex\Repository\Repositories\EloquentRepository;
 
 class PostRepository extends EloquentRepository
 {
-    protected $repositoryId = 'rinvex.repository.uniqueid';
+    protected $repositoryId = 'rinvex.repository.post';
     protected $model = 'App\Models\Post';
 
     public function getAllPostByUserId($id)
@@ -22,6 +22,6 @@ class PostRepository extends EloquentRepository
 
     public function getSinglePostBySlug($slug)
     {
-        return Post::where('slug', $slug)->with(['author.socials', 'comments'])->first();
+        return Post::where('slug', $slug)->with(['author.socials', 'comments.author.socials'])->first();
     }
 }

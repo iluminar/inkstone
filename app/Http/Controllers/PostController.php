@@ -26,6 +26,7 @@ class PostController extends Controller
     public function single($slug)
     {
         $post = $this->service->getSinglePostBySlug($slug);
+        // dd($post);
 
         return view('posts.single', compact('post'));
     }
