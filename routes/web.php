@@ -11,7 +11,7 @@ Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProvider
 
 Route::get('roadmap', ['as' => 'roadmap', 'uses' => 'HomeController@roadmap']);
 
-Route::get('dashboard', 'UserController@dashboard')->middleware('auth');
+Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'UserController@dashboard'])->middleware('auth');
 
 Route::group(['prefix' => 'posts'], function() {
 
@@ -22,6 +22,8 @@ Route::group(['prefix' => 'posts'], function() {
         Route::get('create', ['as' => 'post.create', 'uses' => 'PostController@create']);
 
         Route::post('/', ['as' => 'post.store', 'uses' => 'PostController@store']);
+
+        Route::post('{slug}/comments', ['as' => 'comment.store', 'uses' => 'CommentController@store']);
     });
 
     Route::get('{slug}', ['as' => 'post.single', 'uses' => 'PostController@single']);

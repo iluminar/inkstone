@@ -18,7 +18,7 @@ class CreateCommentsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('post_id')->unsigned();
             $table->text('content');
-            $table->integer('parent_id')->unsigned();
+            $table->integer('parent_id')->unsigned()->nullable();
             $table->integer('status')->default(1)->comment('1-approved, 2-disapproved');
             $table->timestamps();
 

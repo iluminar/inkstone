@@ -14,6 +14,7 @@
             <div class="card">
                 <div class="card-header">
                     <a class="post-title" href="{{ route('post.single', ['slug' => $post['slug']]) }}">{{ $post['title'] }}</a><br/>
+                    {{ $post['publish_time']}}
                 </div>
 
                 <div class="card-content">
@@ -27,9 +28,27 @@
                 </div>
             </div>
 
+            @if (Auth::check())
+                @include('comment.create')
+            @endif
+        </div>
+
+        <div class="col-md-3">
             @include('comment.list')
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('script')
+
+<script type="text/javascript">
+$("#write").click(function () {
+    $("#comment-form input").focus().animate({
+        scrollTop: $("#comment-form").offset().top
+    }, 1000);
+});
+</script>
 
 @endsection

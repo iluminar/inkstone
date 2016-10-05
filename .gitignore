@@ -6,4 +6,4 @@ Homestead.yaml
 Homestead.json
 .env
 composer.lock
-public/css/*.map
+public/css/app.css.map

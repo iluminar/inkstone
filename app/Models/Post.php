@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Comment;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -12,7 +13,7 @@ class Post extends Model
         'user_id', 'title', 'slug', 'content', 'draft', 'publish_time'
     ];
 
-    public function Author()
+    public function author()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
@@ -20,5 +21,10 @@ class Post extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function getPublishTimeAttribute($value)
+    {
+        return Carbon::parse($value)->toFormattedDateString();
     }
 }

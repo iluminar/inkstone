@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class SavePostRequest extends FormRequest
+class SaveCommentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,10 +25,7 @@ class SavePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string',
-            'content' => 'required|string',
-            'draft' => 'boolean',
-            'publish_time' => 'date_format:"Y/m/d H:i:s"'
+            'content' => 'required|string'
         ];
     }
 }
