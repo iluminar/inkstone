@@ -23,6 +23,10 @@ Route::group(['prefix' => 'posts'], function() {
 
         Route::post('/', ['as' => 'post.store', 'uses' => 'PostController@store']);
 
+        Route::get('{slug}/edit', ['as' => 'post.edit', 'uses' => 'PostController@edit']);
+
+        Route::patch('{slug}', ['as' => 'post.update', 'uses' => 'PostController@update']);
+
         Route::post('{slug}/comments', ['as' => 'comment.store', 'uses' => 'CommentController@store']);
     });
 

@@ -22,6 +22,6 @@ class PostRepository extends EloquentRepository
 
     public function getSinglePostBySlug($slug)
     {
-        return Post::where('slug', $slug)->with(['author.socials', 'comments.author.socials'])->first();
+        return Post::where('slug', $slug)->with(['author.socials', 'comments.author.socials', 'tags'])->first();
     }
 }

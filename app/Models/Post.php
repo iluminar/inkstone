@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Comment;
 use App\Models\User;
+use App\Models\Tag;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
@@ -26,5 +27,10 @@ class Post extends Model
     public function getPublishTimeAttribute($value)
     {
         return Carbon::parse($value)->toFormattedDateString();
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
     }
 }

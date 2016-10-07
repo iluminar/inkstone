@@ -14,7 +14,7 @@
             <div class="card">
                 <div class="card-header">
                     <a class="post-title" href="{{ route('post.single', ['slug' => $post['slug']]) }}">{{ $post['title'] }}</a><br/>
-                    {{ $post['publish_time']}}
+                    Published on {{ $post['publish_time'] }}
                 </div>
 
                 <div class="card-content">

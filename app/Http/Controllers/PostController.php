@@ -26,10 +26,10 @@ class PostController extends Controller
     public function single($slug)
     {
         $post = $this->service->getSinglePostBySlug($slug);
-        // dd($post);
 
         return view('posts.single', compact('post'));
     }
+
     public function create()
     {
         return view('posts.create');
@@ -41,6 +41,28 @@ class PostController extends Controller
             $result = $this->service->savePost($request->all());
 
             return redirect('dashboard');
+        } catch (Exception $e) {
+            Log::info($e->getMessage() . " in " . $e->getFile() . " in " . $e->getLine());
+        }
+    }
+
+    public function edit($slug)
+    {
+        try {
+            $post = $this->service->getSinglePostBySlug($slug);
+
+            return view('posts.edit', compact('post'));
+        } catch (Exception $e) {
+            Log::info($e->getMessage() . " in " . $e->getFile() . " in " . $e->getLine());
+        }
+    }
+
+    public function update(SavePostRequest $request)
+    {
+        try {
+            $result = $this->service->updatePost($request->all());
+
+            return redirect()->route('post.single', ['slug' => $post->slug]);
         } catch (Exception $e) {
             Log::info($e->getMessage() . " in " . $e->getFile() . " in " . $e->getLine());
         }
