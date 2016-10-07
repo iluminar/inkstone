@@ -38,9 +38,9 @@ class PostController extends Controller
     public function store(SavePostRequest $request)
     {
         try {
-            $result = $this->service->savePost($request->all());
+            $post = $this->service->savePost($request->all());
 
-            return redirect('dashboard');
+            return redirect()->route('post.single', ['slug' => $post->slug]);
         } catch (Exception $e) {
             Log::info($e->getMessage() . " in " . $e->getFile() . " in " . $e->getLine());
         }

@@ -2,16 +2,19 @@
 
 namespace App\Services;
 
+use App\Repositories\TagRepository;
 use App\Repositories\PostRepository;
 use Illuminate\Support\Facades\Auth;
 
 class PostService
 {
     protected $postRepository;
+    protected $tagRepository;
 
-    public function __construct(PostRepository $postRepository)
+    public function __construct(PostRepository $postRepository, TagRepository $tagRepository)
     {
         $this->postRepository = $postRepository;
+        $this->tagRepository = $tagRepository;
     }
 
     function savePost($data)
@@ -21,7 +24,9 @@ class PostService
         if ($data['publish_time']== "") {
             $data['publish_time'] = date("Y-m-d H:i:s");
         }
-        $post = $this->postRepository->create($data);
+        $tags = $this->tagRepository->createTagsAndReturnIds(collect(explode(',', str_replace(' ', '', $data['tags']))));
+        list($result, $post) = $this->postRepository->create($data);
+        $post->tags()->attach($tags);
 
         return $post;
     }
