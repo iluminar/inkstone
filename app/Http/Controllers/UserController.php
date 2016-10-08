@@ -2,14 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\UserService;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 
 class UserController extends Controller
 {
-    public function dashboard()
+    protected $service;
+
+    public function __construct(UserService $service)
     {
-        return view('users.dashboard');
+        $this->service = $service;
+    }
+
+    public function dashboard($user)
+    {
+        $info = (object) ['post' => $this->service->getUserDashboardInformation()];
+
+        return view('users.dashboard', compact('info'));
     }
 }

@@ -47,3 +47,18 @@ h1, .h1, h2, .h2, h3, .h3 {
 .comment-date {
     font-size: 1.2rem;
 }
+
+.sub-menu {
+    background-color: rgba(240, 240, 240, 0.5);
+}
+
+.right-border {
+    border-right: 1px solid #aaaaaa;
+}
+
+.dashboard-card-action {
+    @extend .card-action;
+    a {
+        padding-right: 1.5rem;
+    }
+}

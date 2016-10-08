@@ -15,7 +15,7 @@
 
                         <!-- Branding Image -->
                         <a class="navbar-brand" href="{{ url('/') }}">
-                            iluminar.space
+                            iluminar.tech
                             <i class="fa fa-space-shuttle"></i>
                         </a>
                     </div>
@@ -41,7 +41,7 @@
 
                                     <ul class="dropdown-menu" role="menu">
                                         <li>
-                                            <a href="{{ url('/dashboard') }}">
+                                            <a href="{{ route('dashboard', ['user' => Auth::user()->username]) }}">
                                                 Dashboard
                                             </a>
                                         </li>

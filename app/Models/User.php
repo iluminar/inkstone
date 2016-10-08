@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Post;
 use App\Models\Social;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
@@ -31,5 +32,10 @@ class User extends Authenticatable
     public function socials()
     {
         return $this->hasMany(Social::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'user_id');
     }
 }

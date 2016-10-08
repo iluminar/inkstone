@@ -4,7 +4,14 @@
     </div>
 
     <div class="card-action">
-        <a href="{{ route('post.index') }}">Post</a>
+        <a href="#">Post</a>
+    </div>
+    <div class="card-action sub-menu hidden">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                <a href="{{ route('post.index') }}">Create a Post</a>
+            </div>
+        </div>
     </div>
     <div class="card-action">
         <a href="{{ route('post.index') }}">Page</a>
@@ -22,13 +29,3 @@
         <a href="{{ route('post.index') }}">Settings</a>
     </div>
 </div>
-
-<!--
-    <ul class="list-group">
-      <li class="list-group-item"><a href="{{ route('post.index') }}">Post</a></li>
-      <li class="list-group-item"><a href="{{ route('post.index') }}">Page</a></li>
-      <li class="list-group-item"><a href="{{ route('post.index') }}">Comment</a></li>
-      <li class="list-group-item"><a href="{{ route('post.index') }}">Question</a></li>
-      <li class="list-group-item"><a href="{{ route('post.index') }}">Bookmark</a></li>
-      <li class="list-group-item"><a href="{{ route('post.index') }}">Settings</a></li>
-    </ul> -->

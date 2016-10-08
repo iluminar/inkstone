@@ -11582,17 +11582,17 @@ button.close {
 .card .card-content span.card-title {
   line-height: 48px; }
 
-.card .card-action {
+.card .card-action, .card .dashboard-card-action {
   border-top: 1px solid rgba(160, 160, 160, 0.2);
   padding: 16px; }
 
-.card .card-action a {
+.card .card-action a, .card .dashboard-card-action a {
   color: #13CE66;
   margin-right: 16px;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease; }
 
-.card .card-action a:hover {
+.card .card-action a:hover, .card .dashboard-card-action a:hover {
   color: #ffd8a6;
   text-decoration: none; }
 
@@ -11643,5 +11643,14 @@ h1, .h1, h2, .h2, h3, .h3 {
 
 .comment-date {
   font-size: 1.2rem; }
+
+.sub-menu {
+  background-color: rgba(240, 240, 240, 0.5); }
+
+.right-border {
+  border-right: 1px solid #aaaaaa; }
+
+.dashboard-card-action a {
+  padding-right: 1.5rem; }
 
 /*# sourceMappingURL=app.css.map */

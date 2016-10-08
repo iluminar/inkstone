@@ -11,10 +11,18 @@
             @include('partials.sidebar')
         </div>
 
-        <div class="col-md-6 col-lg-6">
-
+        <div class="col-md-3 col-lg-3">
+            @include('users.partials.post')
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('script')
+
+<script type="text/javascript">
+    
+</script>
 
 @endsection

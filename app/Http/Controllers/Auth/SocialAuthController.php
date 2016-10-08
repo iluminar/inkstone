@@ -3,11 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests;
 use App\Models\Social;
 use App\Models\User;
 use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -59,6 +57,7 @@ class SocialAuthController extends Controller
         }
         $user = User::create([
             'name' => $providerUser->name,
+            'username' => str_slug($providerUser->name, '-'),
             'email' => $providerUser->email
         ]);
 
