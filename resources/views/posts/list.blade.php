@@ -21,8 +21,8 @@
                     <a href="javascript:;" class="draft" data-post-slug="{{ $post['slug'] }}">
                         <i class="fa fa-2x @if ($post['draft']) fa-toggle-on @else fa-toggle-off @endif"></i>
                     </a>
-                    <a href="javascript:;" ><i class="fa fa-2x fa-edit"></i></a>
-                    <a href="javascript:;" ><i class="fa fa-2x fa-close"></i></a>
+                    <a href="{{ route('post.edit', ['slug' => $post['slug']]) }}" ><i class="fa fa-2x fa-edit"></i></a>
+                    <a href="{{ route('post.delete', ['slug' => $post['slug']]) }}" ><i class="fa fa-2x fa-close"></i></a>
                 @else
                     <a href="javascript:;" >Link</a>
                     <a href="javascript:;" >Link</a>

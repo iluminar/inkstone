@@ -86,4 +86,16 @@ class PostController extends Controller
             Log::info($e->getMessage() . " in " . $e->getFile() . " in " . $e->getLine());
         }
     }
+
+    public function delete($slug)
+    {
+        try {
+            $this->service->deletePost($slug);
+
+            return back();
+        } catch (Exception $e) {
+            Log::info($e->getMessage() . " in " . $e->getFile() . " in " . $e->getLine());
+        }
+
+    }
 }

@@ -34,6 +34,8 @@ Route::group(['prefix' => 'posts'], function() {
 
         Route::patch('{slug}/publish', ['as' => 'post.publish', 'uses' => 'PostController@publish']);
 
+        Route::get('{slug}/delete', ['as' => 'post.delete', 'uses' => 'PostController@delete']);
+
         Route::post('{slug}/comments', ['as' => 'comment.store', 'uses' => 'CommentController@store']);
     });
 

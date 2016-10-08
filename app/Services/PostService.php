@@ -50,4 +50,9 @@ class PostService
     {
         return $this->postRepository->publishPost($slug);
     }
+
+    public function deletePost($slug)
+    {
+        return $this->postRepository->deletePost($slug);
+    }
 }
