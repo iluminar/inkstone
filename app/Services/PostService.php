@@ -45,4 +45,9 @@ class PostService
     {
         return $this->postRepository->getSinglePostBySlug($slug);
     }
+
+    public function publishPost($slug)
+    {
+        return $this->postRepository->publishPost($slug);
+    }
 }

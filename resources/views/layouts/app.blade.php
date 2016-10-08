@@ -29,6 +29,12 @@
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.js"></script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: { 'X-CSRF-Token' : window.Laravel.csrfToken }
+        });
+    </script>
+    @yield('sidebar-script')
     @yield('script')
 </body>
 </html>

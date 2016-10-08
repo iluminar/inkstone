@@ -29,4 +29,11 @@ class PostRepository extends EloquentRepository
     {
         return Post::where('slug', $slug)->with(['author.socials', 'comments.author.socials', 'tags'])->first();
     }
+
+    public function publishPost($slug)
+    {
+        $draft = Post::where('slug', $slug)->first()->draft;
+
+        return Post::where('slug', $slug)->update(['draft' => !$draft]);
+    }
 }

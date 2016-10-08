@@ -18,15 +18,15 @@
 
             <div class="flex-card-action">
                 @if (isset($owner))
-                    <a href="#" target="new_blank">
+                    <a href="javascript:;" class="draft" data-post-slug="{{ $post['slug'] }}">
                         <i class="fa fa-2x @if ($post['draft']) fa-toggle-on @else fa-toggle-off @endif"></i>
                     </a>
-                    <a href="#" target="new_blank"><i class="fa fa-2x fa-edit"></i></a>
-                    <a href="#" target="new_blank"><i class="fa fa-2x fa-close"></i></a>
+                    <a href="javascript:;" ><i class="fa fa-2x fa-edit"></i></a>
+                    <a href="javascript:;" ><i class="fa fa-2x fa-close"></i></a>
                 @else
-                    <a href="#" target="new_blank">Link</a>
-                    <a href="#" target="new_blank">Link</a>
-                    <a href="#" target="new_blank">Link</a>
+                    <a href="javascript:;" >Link</a>
+                    <a href="javascript:;" >Link</a>
+                    <a href="javascript:;" >Link</a>
                 @endif
             </div>
         </div>

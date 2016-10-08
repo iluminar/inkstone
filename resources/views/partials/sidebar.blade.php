@@ -35,7 +35,7 @@
     </div>
 </div>
 
-@section('script')
+@section('sidebar-script')
 
 <script type="text/javascript">
 $(".card-action a").click(function() {

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Exception;
 use App\Http\Requests\SavePostRequest;
 use App\Services\PostService;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
@@ -63,6 +65,23 @@ class PostController extends Controller
             $result = $this->service->updatePost($request->all());
 
             return redirect()->route('post.single', ['slug' => $post->slug]);
+        } catch (Exception $e) {
+            Log::info($e->getMessage() . " in " . $e->getFile() . " in " . $e->getLine());
+        }
+    }
+
+    public function publish()
+    {
+        try {
+            if (Request::ajax()) {
+                if (Session::token() === Request::header('X-CSRF-Token')) {
+                    $this->service->publishPost(Request::get('slug'));
+
+                    return response()->json(['status' => 'success']);
+                }
+                return response()->json(['status' => 'error']);
+            }
+            return response()->json(['status' => 'error']);
         } catch (Exception $e) {
             Log::info($e->getMessage() . " in " . $e->getFile() . " in " . $e->getLine());
         }
