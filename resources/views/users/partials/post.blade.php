@@ -8,6 +8,6 @@
     </div>
     <div class="dashboard-card-action">
         <a href="{{ route('post.create') }}" ><i class="fa fa-2x fa-sticky-note"></i></a>
-        <a href="{{ route('post.index') }}" ><i class="fa fa-2x fa-list"></i></a>
+        <a href="{{ route('user.posts', ['user' => Auth::user()->username]) }}" ><i class="fa fa-2x fa-list"></i></a>
     </div>
 </div>

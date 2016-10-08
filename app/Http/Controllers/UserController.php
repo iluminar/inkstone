@@ -21,4 +21,11 @@ class UserController extends Controller
 
         return view('users.dashboard', compact('info'));
     }
+
+    public function getUserAllPost($user)
+    {
+        $posts = $this->service->getAllPostByUserId()->toArray();
+
+        return view('users.post', compact('posts'));
+    }
 }

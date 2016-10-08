@@ -12,7 +12,7 @@ class PostRepository extends EloquentRepository
 
     public function getAllPostByUserIdWithPagination($id)
     {
-        return $this->paginate();
+        return Post::where('user_id', $id)->with('author.socials')->paginate();
     }
 
     public function getAllPostByUserId($id)

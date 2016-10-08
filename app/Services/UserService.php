@@ -19,8 +19,13 @@ class UserService
 
     public function getUserDashboardInformation()
     {
-        $post = $this->postRepository->getAllPostByUserId(Auth::user()->id);
+        $post = $this->getAllPostByUserId();
 
         return $post;
+    }
+
+    public function getAllPostByUserId()
+    {
+        return $this->postRepository->getAllPostByUserIdWithPagination(Auth::user()->id);
     }
 }
