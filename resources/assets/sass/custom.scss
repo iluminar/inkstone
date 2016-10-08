@@ -58,7 +58,6 @@ h1, .h1, h2, .h2, h3, .h3 {
 
 .dashboard-card-action {
     @extend .card-action;
-    a {
-        padding-right: 1.5rem;
-    }
+    display: flex;
+    justify-content: space-around;
 }

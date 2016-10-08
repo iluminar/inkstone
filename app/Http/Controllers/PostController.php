@@ -18,7 +18,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = $this->service->getAllPostByUserId()->toArray();
+        $posts = $this->service->getAllPostByUserIdWithPagination()->toArray();
 
         return view('posts.index', compact('posts'));
     }

@@ -5,6 +5,7 @@
                 <a class="post-title" href="{{ route('post.single', ['slug' => $post['slug']]) }}">{{ $post['title'] }}</a><br/>
                 <img class="avatar" src="{{ $post['author']['socials'][0]['avatar'] }}" alt="" />
                 <span>{{ $post['author']['name'] }}</span>
+                <span class="pull-right">Published on {{ $post['publish_time'] }}</span>
             </div>
 
             <div class="card-author">
@@ -34,7 +35,7 @@
         </li>
         @endif
 
-        @for ($i = 1; $i <= $posts['total']; $i++)
+        @for ($i = 1; $i <= $posts['last_page']; $i++)
         <li @if ( $i == $posts['current_page']) {{ "class=current" }} @endif><a href="#">{{ $i }}</a></li>
         @endfor
 

@@ -10,9 +10,14 @@ class PostRepository extends EloquentRepository
     protected $repositoryId = 'rinvex.repository.post';
     protected $model = 'App\Models\Post';
 
-    public function getAllPostByUserId($id)
+    public function getAllPostByUserIdWithPagination($id)
     {
         return $this->paginate();
+    }
+
+    public function getAllPostByUserId($id)
+    {
+        return Post::where('user_id', $id)->get();
     }
 
     public function getAllPost()

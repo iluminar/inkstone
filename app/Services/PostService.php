@@ -36,9 +36,9 @@ class PostService
         return $this->postRepository->getAllPost();
     }
 
-    public function getAllPostByUserId()
+    public function getAllPostByUserIdWithPagination()
     {
-        return $this->postRepository->getAllPostByUserId(Auth::user()->id);
+        return $this->postRepository->getAllPostByUserIdWithPagination(Auth::user()->id);
     }
 
     public function getSinglePostBySlug($slug)
