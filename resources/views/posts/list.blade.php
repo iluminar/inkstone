@@ -16,10 +16,18 @@
                 {!! Markdown::convertToHtml(str_limit($post['content'], 350, '...')) !!}
             </div>
 
-            <div class="card-action">
-                <a href="#" target="new_blank">Link</a>
-                <a href="#" target="new_blank">Link</a>
-                <a href="#" target="new_blank">Link</a>
+            <div class="flex-card-action">
+                @if (isset($owner))
+                    <a href="#" target="new_blank">
+                        <i class="fa fa-2x @if ($post['draft']) fa-toggle-on @else fa-toggle-off @endif"></i>
+                    </a>
+                    <a href="#" target="new_blank"><i class="fa fa-2x fa-edit"></i></a>
+                    <a href="#" target="new_blank"><i class="fa fa-2x fa-close"></i></a>
+                @else
+                    <a href="#" target="new_blank">Link</a>
+                    <a href="#" target="new_blank">Link</a>
+                    <a href="#" target="new_blank">Link</a>
+                @endif
             </div>
         </div>
     @endforeach

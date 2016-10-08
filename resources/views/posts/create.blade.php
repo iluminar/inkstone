@@ -83,7 +83,7 @@
                             <div class="col-md-8 col-md-offset-2">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember"> save as draft
+                                        <input type="checkbox" name="draft"> save as draft
                                     </label>
                                 </div>
                             </div>

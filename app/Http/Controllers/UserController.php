@@ -25,7 +25,8 @@ class UserController extends Controller
     public function getUserAllPost($user)
     {
         $posts = $this->service->getAllPostByUserId()->toArray();
+        $owner = true;
 
-        return view('users.post', compact('posts'));
+        return view('users.post', compact('posts', 'owner'));
     }
 }

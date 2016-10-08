@@ -11582,17 +11582,26 @@ button.close {
 .card .card-content span.card-title {
   line-height: 48px; }
 
-.card .card-action, .card .dashboard-card-action {
+.card .card-action, .card .flex-card-action {
   border-top: 1px solid rgba(160, 160, 160, 0.2);
   padding: 16px; }
 
-.card .card-action a, .card .dashboard-card-action a {
+.card .flex-card-action {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around; }
+
+.sub-menu .card-action, .sub-menu .card .flex-card-action, .card .sub-menu .flex-card-action {
+  margin-left: 0;
+  margin-right: 0; }
+
+.card .card-action a, .card .flex-card-action a {
   color: #13CE66;
   margin-right: 16px;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease; }
 
-.card .card-action a:hover, .card .dashboard-card-action a:hover {
+.card .card-action a:hover, .card .flex-card-action a:hover {
   color: #ffd8a6;
   text-decoration: none; }
 
@@ -11650,9 +11659,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 .right-border {
   border-right: 1px solid #aaaaaa; }
 
-.dashboard-card-action {
-  display: -webkit-box;
-  display: flex;
-  justify-content: space-around; }
+a i {
+  padding-right: 1rem; }
 
 /*# sourceMappingURL=app.css.map */

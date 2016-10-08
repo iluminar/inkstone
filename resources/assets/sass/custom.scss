@@ -56,8 +56,6 @@ h1, .h1, h2, .h2, h3, .h3 {
     border-right: 1px solid #aaaaaa;
 }
 
-.dashboard-card-action {
-    @extend .card-action;
-    display: flex;
-    justify-content: space-around;
+a i {
+    padding-right: 1rem;
 }

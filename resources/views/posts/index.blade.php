@@ -9,7 +9,7 @@
             @include('partials.sidebar')
         </div>
 
-        <div class="col-md-9">
+        <div class="col-md-6">
             @include('posts.list')
         </div>
     </div>

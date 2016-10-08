@@ -18,13 +18,3 @@
 </div>
 
 @endsection
-
-@section('script')
-
-<script type="text/javascript">
-$(".card-action a").click(function() {
-    $(this).parent().next().toggleClass('hidden');
-});
-</script>
-
-@endsection
