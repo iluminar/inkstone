@@ -11618,7 +11618,7 @@ button.close {
 
 body {
   padding-top: 60px;
-  background-color: #f4f4f8;
+  background-color: #dadae9;
   padding-bottom: 20px; }
 
 h1, .h1, h2, .h2, h3, .h3 {
@@ -11661,5 +11661,3 @@ h1, .h1, h2, .h2, h3, .h3 {
 
 a i {
   padding-right: 1rem; }
-
-/*# sourceMappingURL=app.css.map */

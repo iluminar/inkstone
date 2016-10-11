@@ -8,7 +8,12 @@
 
     </div>
 
-    <div class="card-action">
-        <a href="#" target="new_blank">Link</a>
+    <div class="flex-card-action">
+        @if (Auth::user()->username == $post['author']['username'])
+            <a href="#" data-toggle="tooltip" title="following" class="btn btn-default"><i class="fa fa-sign-out"> Following</i></a>
+            <a href="#" data-toggle="tooltip" title="follower" class="btn btn-default"><i class="fa fa-sign-in"> Follower</i></a>
+        @else
+            <a href="#" data-toggle="tooltip" title="follow" class="btn btn-default"><i class="fa fa-2x fa-user-plus"> Follow</i></a>
+        @endif
     </div>
 </div>
