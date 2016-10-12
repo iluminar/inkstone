@@ -34,7 +34,7 @@
         </div>
 
         <div class="col-md-3">
-            @include('comment.list')
+            @include('blog.comment.list')
         </div>
     </div>
 </div>
