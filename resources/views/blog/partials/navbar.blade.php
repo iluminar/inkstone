@@ -41,7 +41,7 @@
 
                                     <ul class="dropdown-menu" role="menu">
                                         <li>
-                                            <a href="{{ route('dashboard', ['user' => Auth::user()->username]) }}">
+                                            <a href="{{ route('blog.dashboard', ['user' => Auth::user()->username]) }}">
                                                 Dashboard
                                             </a>
                                         </li>

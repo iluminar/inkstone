@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Blog;
 
 use App\Repositories\Blog\PostRepository;
-use App\Repositories\UserRepository;
+use App\Repositories\Blog\UserRepository;
 use Illuminate\Support\Facades\Auth;
 
 class UserService

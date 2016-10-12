@@ -1,13 +1,7 @@
 @extends('layouts.app')
 
-@section('title') Home Page @endsection
+@section('title') Home @endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            @include('blog.posts.list')
-        </div>
-    </div>
-</div>
+
 @endsection

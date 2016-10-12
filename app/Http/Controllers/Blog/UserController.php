@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Blog;
 
-use App\Services\UserService;
-use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Http\Request;
+use App\Services\Blog\UserService;
+use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
