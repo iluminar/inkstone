@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Blog;
 
-use App\Repositories\PostRepository;
-use App\Repositories\CommentRepository;
+use App\Repositories\Blog\PostRepository;
+use App\Repositories\Blog\CommentRepository;
 use Illuminate\Support\Facades\Auth;
 
 class CommentService

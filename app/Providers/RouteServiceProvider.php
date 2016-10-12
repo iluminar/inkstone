@@ -59,7 +59,6 @@ class RouteServiceProvider extends ServiceProvider
         });
         Route::group([
             'middleware' => 'web',
-            'namespace' => $this->namespace,
             'domain' => 'blog.iluminar.com',
         ], function ($router) {
             require base_path('routes/blog.php');

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Blog;
 
-use App\Models\Comment;
+use App\Models\Blog\Comment;
 use App\Models\User;
-use App\Models\Tag;
+use App\Models\Blog\Tag;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 

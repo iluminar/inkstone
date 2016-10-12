@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Blog;
 
-use App\Models\Post;
+use App\Models\Blog\Post;
 use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model

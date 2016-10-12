@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Blog;
 
-use App\Repositories\TagRepository;
-use App\Repositories\PostRepository;
+use App\Repositories\Blog\TagRepository;
+use App\Repositories\Blog\PostRepository;
 use Illuminate\Support\Facades\Auth;
 
 class PostService

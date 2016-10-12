@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\Blog;
 
-use App\Models\Tag;
+use App\Models\Blog\Tag;
 use Carbon\Carbon;
 use Rinvex\Repository\Repositories\EloquentRepository;
 
 class TagRepository extends EloquentRepository
 {
     protected $repositoryId = 'rinvex.repository.tag';
-    protected $model = 'App\Models\Tag';
+    protected $model = 'App\Models\Blog\Tag';
 
     public function createTagsAndReturnIds($tags)
     {

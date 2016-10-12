@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Blog;
 
 use Exception;
-use App\Services\CommentService;
+use App\Http\Controllers\Controller;
+use App\Services\Blog\CommentService;
 use App\Http\Requests\SaveCommentRequest;
 use Illuminate\Support\Facades\Log;
 

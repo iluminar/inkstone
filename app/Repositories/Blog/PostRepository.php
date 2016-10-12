@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\Blog;
 
-use App\Models\Post;
+use App\Models\Blog\Post;
 use Rinvex\Repository\Repositories\EloquentRepository;
 
 class PostRepository extends EloquentRepository
 {
     protected $repositoryId = 'rinvex.repository.post';
-    protected $model = 'App\Models\Post';
+    protected $model = 'App\Models\Blog\Post';
 
     public function getAllPostByUserIdWithPagination($id)
     {

@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            @include('partials.author')
+            @include('blog.partials.author')
         </div>
 
         <div class="col-md-6">
@@ -29,7 +29,7 @@
             </div>
 
             @if (Auth::check())
-                @include('comment.create')
+                @include('blog.comment.create')
             @endif
         </div>
 

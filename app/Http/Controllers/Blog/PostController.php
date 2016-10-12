@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Blog;
 
 use Exception;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\SavePostRequest;
-use App\Services\PostService;
+use App\Services\Blog\PostService;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
@@ -22,19 +23,19 @@ class PostController extends Controller
     {
         $posts = $this->service->getAllPostByUserIdWithPagination()->toArray();
 
-        return view('posts.index', compact('posts'));
+        return view('blog.posts.index', compact('posts'));
     }
 
     public function single($slug)
     {
         $post = $this->service->getSinglePostBySlug($slug);
 
-        return view('posts.single', compact('post'));
+        return view('blog.posts.single', compact('post'));
     }
 
     public function create()
     {
-        return view('posts.create');
+        return view('blog.posts.create');
     }
 
     public function store(SavePostRequest $request)
@@ -53,7 +54,7 @@ class PostController extends Controller
         try {
             $post = $this->service->getSinglePostBySlug($slug);
 
-            return view('posts.edit', compact('post'));
+            return view('blog.posts.edit', compact('post'));
         } catch (Exception $e) {
             Log::info($e->getMessage() . " in " . $e->getFile() . " in " . $e->getLine());
         }

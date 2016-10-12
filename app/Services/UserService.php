@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Repositories\PostRepository;
+use App\Repositories\Blog\PostRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Support\Facades\Auth;
 

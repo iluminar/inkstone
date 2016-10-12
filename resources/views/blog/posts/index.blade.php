@@ -6,11 +6,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            @include('partials.sidebar')
+            @include('blog.partials.sidebar')
         </div>
 
         <div class="col-md-6">
-            @include('posts.list')
+            @include('blog.posts.list')
         </div>
     </div>
 </div>
