@@ -24,9 +24,9 @@
                     <a href="{{ route('post.edit', ['slug' => $post['slug']]) }}" ><i class="fa fa-2x fa-edit"></i></a>
                     <a href="{{ route('post.delete', ['slug' => $post['slug']]) }}" ><i class="fa fa-2x fa-close"></i></a>
                 @else
-                    <a href="javascript:;" >Link</a>
-                    <a href="javascript:;" >Link</a>
-                    <a href="javascript:;" >Link</a>
+                    <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="likes" ><i class="fa fa-2x fa-heart"> 20</i></a>
+                    <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="comments" ><i class="fa fa-2x fa-comment"> 0</i></a>
+                    <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="favorites" ><i class="fa fa-2x fa-bookmark"> 5</i></a>
                 @endif
             </div>
         </div>

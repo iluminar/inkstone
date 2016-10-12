@@ -7,6 +7,7 @@ use App\Models\Social;
 use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
@@ -41,7 +42,7 @@ class SocialAuthController extends Controller
 
         Auth::login($authUser, true);
 
-        return Redirect::to('/');
+        return Redirect::to(Request::server('HTTP_REFERER'));
     }
 
     /**

@@ -7,6 +7,6 @@ use Rinvex\Repository\Repositories\EloquentRepository;
 
 class UserRepository extends EloquentRepository
 {
-    protected $repositoryId = 'rinvex.repository.post';
-    protected $model = 'App\Models\Post';
+    protected $repositoryId = 'rinvex.repository.user';
+    protected $model = 'App\Models\User';
 }

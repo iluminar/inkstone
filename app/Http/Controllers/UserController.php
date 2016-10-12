@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         $info = (object) ['post' => $this->service->getUserDashboardInformation()];
 
-        return view('users.dashboard', compact('info'));
+        return view('blog.users.dashboard', compact('info'));
     }
 
     public function getUserAllPost($user)
@@ -27,6 +27,6 @@ class UserController extends Controller
         $posts = $this->service->getAllPostByUserId()->toArray();
         $owner = true;
 
-        return view('users.post', compact('posts', 'owner'));
+        return view('blog.users.post', compact('posts', 'owner'));
     }
 }
