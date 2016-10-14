@@ -15,7 +15,7 @@
 
                         <!-- Branding Image -->
                         <a class="navbar-brand" href="{{ url('/') }}">
-                            iluminar.tech
+                            webops
                             <i class="fa fa-space-shuttle"></i>
                         </a>
                     </div>

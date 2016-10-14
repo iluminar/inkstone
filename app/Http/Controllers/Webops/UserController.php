@@ -18,5 +18,6 @@ class UserController extends Controller
 
     public function dashboard($user)
     {
+        return view('webops.users.dashboard');
     }
 }
