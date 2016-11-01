@@ -4,7 +4,11 @@
     </div>
     <div class="card-content">
         <h1 class="text-center">{{ $info->post->count() }}</h1><br/>
-        <h4>Latest : <a href="{{ route('post.single', ['slug' => $info->post->last()->slug]) }}">{{ $info->post->last()->title }}</a></h4>
+        @if ($info->post->count() > 1)
+            <h4>Latest : <a href="{{ route('post.single', ['slug' => $info->post->last()->slug]) }}">{{ $info->post->last()->title }}</a></h4>
+        @else
+
+        @endif
     </div>
     <div class="flex-card-action">
         <a href="{{ route('post.create') }}" ><i class="fa fa-2x fa-sticky-note"></i></a>
