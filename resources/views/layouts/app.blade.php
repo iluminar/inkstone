@@ -23,7 +23,9 @@
     </script>
 </head>
 <body>
-    @yield('navbar')
+
+    @include('partials.navbar')
+
     @yield('content')
 
     <!-- Scripts -->
