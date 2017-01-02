@@ -56,12 +56,30 @@ class SocialAuthController extends Controller
         if ($authUser = Social::where(['provider_id' => $providerUser->id, 'provider' => $provider])->first()) {
             return $authUser->user;
         }
+        if ($user = User::where(['email' => $providerUser->email])->first()) {
+            $this->createNewSocialAccount($provider, $providerUser, $user);
+
+            return $user;
+        }
         $user = User::create([
             'name' => $providerUser->name,
             'username' => ($providerUser->nickname == "") ? str_slug($providerUser->name, '-') : $providerUser->nickname,
             'email' => $providerUser->email
         ]);
+        $this->createNewSocialAccount($provider, $providerUser, $user);
 
+        return $user;
+    }
+
+    /**
+     * create new social account
+     * @param $provider
+     * @param $providerUser 
+     * @param $user
+     * @return void
+     */
+    private function createNewSocialAccount($provider, $providerUser, $user)
+    {
         Social::create([
             'provider' => $provider,
             'name' => $providerUser->name,
@@ -70,7 +88,5 @@ class SocialAuthController extends Controller
             'provider_id' => $providerUser->id,
             'avatar' => $providerUser->avatar
         ]);
-
-        return $user;
     }
 }
