@@ -64,8 +64,11 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <a class="btn btn-primary" href="{{ url('/auth/github') }}">
+                                <a class="btn btn-default" href="{{ url('/auth/github') }}">
                                     Login with <i class="fa fa-2x fa-github"></i>
+                                </a>
+                                <a class="btn btn-default" href="{{ url('/auth/twitter') }}">
+                                    Login with <i class="fa fa-2x fa-twitter"></i>
                                 </a>
                             </div>
                         </div>

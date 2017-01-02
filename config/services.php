@@ -41,4 +41,9 @@ return [
         'redirect' => env('GITHUB_CALLBACK_URL'),
     ],
 
+    'twitter' => [
+        'client_id' => env('TWITTER_APP_ID'),
+        'client_secret' => env('TWITTER_APP_SECRET'),
+        'redirect' => env('TWITTER_CALLBACK_URL'),
+    ]
 ];

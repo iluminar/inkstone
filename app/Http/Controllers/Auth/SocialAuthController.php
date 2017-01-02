@@ -58,7 +58,7 @@ class SocialAuthController extends Controller
         }
         $user = User::create([
             'name' => $providerUser->name,
-            'username' => $providerUser->nickname == "" ? str_slug($providerUser->name, '-') : $providerUser->nickname,
+            'username' => ($providerUser->nickname == "") ? str_slug($providerUser->name, '-') : $providerUser->nickname,
             'email' => $providerUser->email
         ]);
 

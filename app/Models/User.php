@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Blog\Post;
+use App\Models\Post;
 use App\Models\Social;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
