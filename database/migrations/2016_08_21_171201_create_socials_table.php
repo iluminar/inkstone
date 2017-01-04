@@ -19,6 +19,7 @@ class CreateSocialsTable extends Migration
             $table->string('provider_id');
             $table->integer('user_id')->unsigned();
             $table->string('name')->nullable();
+            $table->string('nickname')->nullable();
             $table->string('email')->nullable();
             $table->string('avatar')->nullable();
             $table->timestamps();

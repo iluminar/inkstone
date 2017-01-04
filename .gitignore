@@ -7,3 +7,4 @@ Homestead.json
 .env
 composer.lock
 /public/css/app.css.map
+.phpintel

@@ -13,7 +13,7 @@ class Social extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'provider', 'provider_id', 'user_id', 'avatar'
+        'name', 'nickname', 'email', 'provider', 'provider_id', 'user_id', 'avatar'
     ];
 
     public function user()
