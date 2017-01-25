@@ -6,6 +6,8 @@
     <div class="card-action">
         <a href="#">Post</a>
     </div>
+
+{{-- Sub menu - Post --}}
     <div class="sub-menu hidden">
             <div class="row card-action">
                 <div class="col-md-10 col-md-offset-1">
@@ -18,6 +20,7 @@
                 </div>
             </div>
     </div>
+
     <div class="card-action">
         <a href="{{ route('post.index') }}">Page</a>
     </div>
@@ -30,6 +33,19 @@
     <div class="card-action">
         <a href="{{ route('post.index') }}">Bookmark</a>
     </div>
+    <div class="card-action">
+        <a href="#">Integration</a>
+    </div>
+
+{{-- Sub menu - Integration --}}
+    <div class="sub-menu hidden">
+            <div class="row card-action">
+                <div class="col-md-10 col-md-offset-1">
+                    <a href="{{ route('user.github', ['user' => Auth::user()->username]) }}"><i class="fa fa-github"></i>Github</a>
+                </div>
+            </div>
+    </div>
+
     <div class="card-action">
         <a href="{{ route('post.index') }}">Settings</a>
     </div>
