@@ -22,8 +22,6 @@ class CreatePostsTable extends Migration
             $table->boolean('draft')->default(false);
             $table->timestamp('publish_time')->nullable();
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -8,3 +8,5 @@ Homestead.json
 composer.lock
 /public/css/app.css.map
 .phpintel
+*.sqlite
+*.sqlite-journal

@@ -4,7 +4,7 @@
     </div>
     <div class="card-content">
         <h1 class="text-center">{{ $info->post->count() }}</h1><br/>
-        @if ($info->post->count() > 1)
+        @if ($info->post->count() > 0)
             <h4>Latest : <a href="{{ route('post.single', ['slug' => $info->post->last()->slug]) }}">{{ $info->post->last()->title }}</a></h4>
         @else
 

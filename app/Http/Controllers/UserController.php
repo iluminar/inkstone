@@ -3,45 +3,96 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests;
+use App\Services\PostService;
+use App\Services\RepoPageService;
+use App\Services\RepoService;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    protected $service;
+    /**
+     * @var mixed
+     */
+    protected $postService;
 
-    public function __construct(UserService $service)
-    {
-        $this->service = $service;
+    /**
+     * @var mixed
+     */
+    protected $userService;
+    protected $repoPageService;
+
+    /**
+     * @param UserService $userService
+     * @param PostService $postService
+     */
+    public function __construct(UserService $userService, PostService
+         $postService, RepoPageService $repoPageService) {
+        $this->userService = $userService;
+        $this->postService = $postService;
+        $this->repoPageService = $repoPageService;
     }
 
+    /**
+     * @param $user
+     */
     public function dashboard($user)
     {
-        $info = (object) ['post' => $this->service->getUserDashboardInformation()];
+        $info = (object) ['post' => $this->userService
+                ->getUserDashboardInformation()];
 
         return view('users.dashboard', compact('info'));
     }
 
+    /**
+     * @param $user
+     */
     public function getUserAllPost($user)
     {
-        $posts = $this->service->getAllPostByUserId()->toArray();
+        $posts = $this->userService->getAllPostByUserId()->toArray();
         $owner = true;
 
         return view('users.post', compact('posts', 'owner'));
     }
 
-    public function getUserGithubData($user)
+    /**
+     * @param RepoService $repoService
+     * @param $user
+     */
+    public function getUserGithubData(RepoService $repoService, $user)
     {
-        $client = new \GuzzleHttp\Client(['base_uri' => 'https://api.github.com/users/']);
-        $repos = json_decode($client->request('Get', Auth::user()->socials->where('provider', 'github')->first()->nickname . '/repos')->getBody()->getContents());
+        // check db for user github data if not give button to refresh
+
+        $repos = $repoService->getUserRepos($user);
 
         return view('users.github', compact('repos'));
     }
 
-    public function createGithubPage($user, $repo)
+    /**
+     * @param $user
+     * @param $repo
+     */
+    public function getUserGithubRepoPage($user, $repo)
     {
-        return view('github.page');
+        $page = $this->repoPageService->getGithubRepoPage($repo);
+
+        return view('github.page', compact('page'));
+    }
+
+    /**
+     * @param  RepoService $repoService
+     * @param  $user
+     * @return mixed
+     */
+    public function refreshUserLatestGithubData(RepoService $repoService,
+        $user) {
+        try {
+            $repos = $repoService->refreshUserLatestGithubData($user);
+
+            return redirect()->route('user.github', [$user]);
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
     }
 }

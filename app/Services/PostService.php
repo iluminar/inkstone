@@ -17,7 +17,7 @@ class PostService
         $this->tagRepository = $tagRepository;
     }
 
-    function savePost($data)
+    public function savePost($data)
     {
         $data['user_id'] = Auth::user()->id;
         $data['slug'] = strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-', $data['title']));

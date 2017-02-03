@@ -12,17 +12,6 @@ Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProvider
 
 Route::get('roadmap', ['as' => 'roadmap', 'uses' => 'HomeController@roadmap']);
 
-Route::group(['prefix' => '{user}'], function () {
-
-    Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'UserController@dashboard'])->middleware('auth');
-
-    Route::get('posts', ['as' => 'user.posts', 'uses' => 'UserController@getUserAllPost']);
-    
-    Route::get('github', ['as' => 'user.github', 'uses' => 'UserController@getUserGithubData']);
-
-    Route::get('{repo}', ['as' => 'create.github.page', 'uses' => 'UserController@createGithubPage']);
-});
-
 Route::group(['prefix' => 'posts'], function () {
 
     Route::group(['middleware' => 'auth'], function () {
@@ -45,4 +34,19 @@ Route::group(['prefix' => 'posts'], function () {
     });
 
     Route::get('{slug}', ['as' => 'post.single', 'uses' => 'PostController@single']);
+});
+
+Route::group(['prefix' => '{user}'], function () {
+
+    Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'UserController@dashboard'])->middleware('auth');
+
+    Route::get('posts', ['as' => 'user.posts', 'uses' => 'UserController@getUserAllPost']);
+    
+    Route::get('github', ['as' => 'user.github', 'uses' => 'UserController@getUserGithubData']);
+
+    Route::get('github/refresh', ['as' => 'user.github.refresh', 'uses' => 'UserController@refreshUserLatestGithubData']);
+
+    Route::get('{repo}', ['as' => 'show.github.page', 'uses' => 'UserController@getUserGithubRepoPage']);
+
+    Route::get('{repo}/{page}', ['as' => 'user.github.page', 'uses' => 'UserController@getUserGithubRepoPage']);
 });

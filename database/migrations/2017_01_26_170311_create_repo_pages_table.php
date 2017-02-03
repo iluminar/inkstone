@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSocialsTable extends Migration
+class CreateRepoPagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateSocialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('socials', function (Blueprint $table) {
+        Schema::create('repo_pages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('provider');
-            $table->string('provider_id');
             $table->integer('user_id')->unsigned();
-            $table->string('name')->nullable();
-            $table->string('nickname')->nullable();
-            $table->string('email')->nullable();
-            $table->string('avatar')->nullable();
+            $table->integer('repo_id')->unsigned();
+            $table->string('name');
+            $table->string('slug');
+            $table->text('content');
+            $table->integer('parent')->nullable();
+            $table->timestamp('publish_time');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreateSocialsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('socials');
+        Schema::dropIfExists('repo_pages');
     }
 }
