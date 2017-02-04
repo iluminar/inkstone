@@ -25,9 +25,11 @@
 </head>
 <body>
 
-    @include('partials.navbar')
+    <div class="container">
+        @include('partials.navbar')
 
-    @yield('content')
+        @yield('content')
+    </div>
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>

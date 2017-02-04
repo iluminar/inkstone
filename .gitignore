@@ -5,8 +5,9 @@
 Homestead.yaml
 Homestead.json
 .env
-composer.lock
+*.lock
 /public/css/app.css.map
 .phpintel
 *.sqlite
 *.sqlite-journal
+*.log
