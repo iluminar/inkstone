@@ -22,7 +22,7 @@ class PostRepository extends EloquentRepository
 
     public function getAllPost()
     {
-        return Post::with('author.socials')->where('draft', true)->paginate();
+        return Post::with('author.socials')->where('draft', false)->paginate();
     }
 
     public function getSinglePostBySlug($slug)

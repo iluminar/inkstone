@@ -3,11 +3,16 @@
 @section('title') Home Page @endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            @include('posts.list')
-        </div>
-    </div>
-</div>
+<home></home>
+@endsection
+
+@section('script')
+<script type="text/javascript">
+    window.data = @php echo json_encode([
+            'posts' => $posts,
+        ]);
+        @endphp;
+    window.converter = new showdown.Converter();
+</script>
+<script src="/js/home.js"></script>
 @endsection

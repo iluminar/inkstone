@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\PostService;
 use App\Http\Controllers\Controller;
+use App\Services\PostService;
+use GrahamCampbell\Markdown\Facades\Markdown;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,7 @@ class HomeController extends Controller
      */
     public function index(PostService $service)
     {
-        $posts = $service->getAllPost()->toArray();
+        $posts = $service->getAllPost();
 
         return view('home', compact('posts'));
     }

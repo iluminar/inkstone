@@ -20,19 +20,20 @@
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
+            'guest' => Auth::check(),
         ]); ?>
     </script>
 </head>
 <body>
-
-    <div class="container">
+    <div id="app" class="container">
         @include('partials.navbar')
 
         @yield('content')
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.3/showdown.js"></script>
+    @yield('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.js"></script>
     <script type="text/javascript">
         $.ajaxSetup({
@@ -40,6 +41,5 @@
         });
     </script>
     @yield('sidebar-script')
-    @yield('script')
 </body>
 </html>
