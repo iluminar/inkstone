@@ -4,13 +4,14 @@
 
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.42/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.42/css/bootstrap-datetimepicker.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css" />
-@endsection
+ -->@endsection
 
 @section('content')
-
-<div class="container">
+<create-form></create-form>
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -104,19 +105,14 @@
         </div>
     </div>
 </div>
-
+ -->
 @endsection
 
 @section('script')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.42/js/bootstrap-datetimepicker.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.min.js"></script>
-<script>
-$('#datetimepicker input').datetimepicker({
-    format:'YYYY/MM/DD HH:mm:ss'
-});
-$('#tags').tokenfield();
-var simplemde = new SimpleMDE({ element: $("#content")[0] });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.js"></script>
+<script type="text/javascript">
+    window.url = "{{ route('post.store') }}";
+    window.errors = <?php echo json_encode($errors->toArray()); ?>
 </script>
-
+<script src="/js/create.js"></script>
 @endsection

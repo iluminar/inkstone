@@ -9,7 +9,7 @@
         "laravel/framework": "5.4.*",
         "graham-campbell/markdown": "^7.0",
         "laravel/socialite": "^3.0",
-        "rinvex/repository": "^2.0",
+        "rinvex/repository": "dev-develop",
         "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {

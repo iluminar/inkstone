@@ -19,9 +19,9 @@
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-            'guest' => Auth::check(),
-        ]); ?>
+    'csrfToken' => csrf_token(),
+    'guest'     => Auth::check(),
+]); ?>
     </script>
 </head>
 <body>
@@ -34,7 +34,6 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.3/showdown.js"></script>
     @yield('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.js"></script>
     <script type="text/javascript">
         $.ajaxSetup({
             headers: { 'X-CSRF-Token' : window.Laravel.csrfToken }

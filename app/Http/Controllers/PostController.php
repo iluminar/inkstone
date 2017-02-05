@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use App\Services\PostService;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SavePostRequest;
-use App\Services\PostService;
 use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller

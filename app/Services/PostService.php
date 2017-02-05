@@ -14,17 +14,18 @@ class PostService
     public function __construct(PostRepository $postRepository, TagRepository $tagRepository)
     {
         $this->postRepository = $postRepository;
-        $this->tagRepository = $tagRepository;
+        $this->tagRepository  = $tagRepository;
     }
 
     public function savePost($data)
     {
+        // dd($data);
         $data['user_id'] = Auth::user()->id;
-        $data['slug'] = strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-', $data['title']));
-        if ($data['publish_time']== "") {
+        $data['slug']    = strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-', $data['title']));
+        if ($data['publish_time'] == "") {
             $data['publish_time'] = date("Y-m-d H:i:s");
         }
-        $tags = $this->tagRepository->createTagsAndReturnIds(collect(explode(',', str_replace(' ', '', $data['tags']))));
+        $tags                = $this->tagRepository->createTagsAndReturnIds(collect(explode(',', str_replace(' ', '', $data['tags']))));
         list($result, $post) = $this->postRepository->create($data);
         $post->tags()->attach($tags);
 
