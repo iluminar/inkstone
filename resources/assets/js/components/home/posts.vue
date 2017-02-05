@@ -10,9 +10,6 @@
         components: {
             post
         },
-        props: ['posts'],
-        ready() {
-            console.log(this.posts);
-        }
+        props: ['posts']
     }
 </script>

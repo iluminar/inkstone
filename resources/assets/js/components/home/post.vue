@@ -1,5 +1,5 @@
 <template>
-    <div class="column is-6 is-offset-3">
+    <div class="column is-8 is-offset-2">
         <div class="card">
             <header class="card-header">
                 <a href="" class="card-header-title">
@@ -11,9 +11,7 @@
                 </div>
             </div>
             <footer class="card-footer">
-                <a class="card-footer-item">Save</a>
-                <a class="card-footer-item">Edit</a>
-                <a class="card-footer-item">Delete</a>
+                <a class="card-footer-item" :href="url">Read More</a>
             </footer>
         </div>
     </div>
@@ -24,9 +22,11 @@
         props: ['post'],
         data: () => ({
             content: '',
+            url: ''
         }),
         mounted() {
-            this.content = converter.makeHtml(this.post.content.substring(0, 250))
+            this.content = converter.makeHtml(this.post.content.substring(0, 400));
+            this.url = 'posts/' + this.post.slug
         }
     }  
 </script>

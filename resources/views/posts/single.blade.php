@@ -3,7 +3,8 @@
 @section('title') {{ $post->title }} @endsection
 
 @section('content')
-
+<post></post>
+{{-- 
 <div class="container">
     <div class="row">
         <div class="col-md-3">
@@ -38,17 +39,24 @@
         </div>
     </div>
 </div>
-
+ --}}
 @endsection
 
 @section('script')
-
 <script type="text/javascript">
+    window.data = @php echo json_encode([
+            'post' => $post,
+        ]);
+        @endphp;
+    window.converter = new showdown.Converter();
+</script>
+
+{{-- <script type="text/javascript">
 $("#write").click(function () {
     $("#comment-form input").focus().animate({
         scrollTop: $("#comment-form").offset().top
     }, 1000);
 });
 </script>
-
+ --}}<script src="/js/post.js"></script>
 @endsection

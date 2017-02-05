@@ -10,9 +10,6 @@ import posts from './posts.vue'
         },
         data: () => ({
             posts: data.posts.data
-        }),
-        ready() {
-            console.log(data)
-        }
+        })
     }
 </script>
