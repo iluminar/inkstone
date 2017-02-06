@@ -2,6 +2,17 @@ body {
     margin-bottom: 25px;
 }
 
-nav {
+nav, .nav {
     margin-bottom: 20px;
+    background-color: $base-color;
+}
+
+.is-base {
+    background-color: $base-color;
+    color: $white;
+}
+
+.is-accent {
+    background-color: $accent-color;
+    color: $white;
 }

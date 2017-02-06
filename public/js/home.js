@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 53);
+/******/ 	return __webpack_require__(__webpack_require__.s = 57);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -37625,7 +37625,7 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(28);
-home = __webpack_require__(47);
+home = __webpack_require__(50);
 
 var app = new Vue({
     el: '#app',
@@ -37636,18 +37636,19 @@ var app = new Vue({
 
 /***/ }),
 /* 34 */,
-/* 35 */
+/* 35 */,
+/* 36 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__posts_vue__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__posts_vue__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__posts_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__posts_vue__);
 // <template>
 //     <posts :posts="posts"></posts>
@@ -37678,7 +37679,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37719,12 +37720,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__post_vue__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__post_vue__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__post_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__post_vue__);
 // <template>
 //     <div class="columns is-multiline">
@@ -37743,38 +37744,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 39 */,
 /* 40 */,
 /* 41 */,
-/* 42 */
+/* 42 */,
+/* 43 */,
+/* 44 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<posts :posts=\"posts\"></posts>\n";
 
 /***/ }),
-/* 43 */
+/* 45 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <a href=\"\" class=\"card-header-title\">\n            {{ post.title }}\n            </a>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\" v-html=\"content\">\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <a class=\"card-footer-item\" :href=\"url\">Read More</a>\n        </footer>\n    </div>\n</div>\n";
 
 /***/ }),
-/* 44 */
+/* 46 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div class=\"columns is-multiline\">\n  <post v-for=\"post in posts\" :post=\"post\"></post>\n</div>\n";
 
 /***/ }),
-/* 45 */,
-/* 46 */,
-/* 47 */
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(36)
+__vue_script__ = __webpack_require__(37)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/home/index.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(42)
+__vue_template__ = __webpack_require__(44)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37799,15 +37802,15 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 48 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(37)
+__vue_script__ = __webpack_require__(38)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/home/post.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(43)
+__vue_template__ = __webpack_require__(45)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37832,15 +37835,15 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(38)
+__vue_script__ = __webpack_require__(39)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/home/posts.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(44)
+__vue_template__ = __webpack_require__(46)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37865,14 +37868,15 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(33);
-module.exports = __webpack_require__(35);
+module.exports = __webpack_require__(36);
 
 
 /***/ })

@@ -3,19 +3,18 @@
 @section('title') {{ Auth::user()->name }} - All Posts @endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-3 col-lg-3">
-            @include('partials.sidebar')
-        </div>
-        <div class="col-md-6 col-lg-6">
-            @include('posts.list')
-        </div>
-    </div>
-</div>
+<list></list>
 @endsection
 
 @section('script')
+<script type="text/javascript">
+    window.data = @php echo json_encode([
+            'posts' => $posts,
+        ]);
+        @endphp;
+    window.converter = new showdown.Converter();
+</script>
+<script src="/js/userPosts.js"></script>
 
 <script type="text/javascript">
 $('.draft').click(function(){

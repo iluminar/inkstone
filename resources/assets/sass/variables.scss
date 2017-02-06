@@ -1,41 +1,20 @@
+// -----------
 // Base color
-$base-color: #52528C;
+// -----------
+$base-color: #66D7EE;
+$accent-color: #ff5252;
+$gray-darker:  hsl(0, 0%, 21%);
+$gray-dark:    hsl(0, 0%, 29%);
+$gray:         hsl(0, 0%, 48%);
+$gray-light:   hsl(0, 0%, 71%);
+$gray-lighter: hsl(0, 0%, 97%);
 
-// Body
-$body-bg: lighten($base-color, 60%);
-
-// Borders
-$laravel-border-color: darken($body-bg, 40%);
-$list-group-border: $laravel-border-color;
-$navbar-default-border: $laravel-border-color;
-$panel-default-border: $laravel-border-color;
-$panel-inner-border: $laravel-border-color;
-
-// Brands
-$brand-primary: #D7263D;
-$brand-info: #02182B;
-$brand-success: #0197F6;
-$brand-warning: #448FA3;
-$brand-danger:  #68C5DB;
-
+// -----------
 // Typography
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 14px;
-$line-height-base: 1.6;
-$text-color: #FF5964;
-$secondary-text-color: #13CE66;
+// -----------
+$font-family-sans-serif: "Railway", sans-serif;
 
-// Navbar
-$navbar-default-bg: $base-color;
-$navbar-default-link-color: #fcf8e3;
-
-// Buttons
-$btn-default-color: $text-color;
-
-// Inputs
-$input-border: lighten($text-color, 25%);
-$input-border-focus: lighten($brand-primary, 25%);
-$input-color-placeholder: lighten($text-color, 30%);
-
-// Panels
-$panel-default-heading-bg: #fff;
+// Override Bulma variables
+$family-primary: $font-family-sans-serif;
+$text-light: #ffffff;
+$body-background: $gray-lighter;

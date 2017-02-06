@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 58);
+/******/ 	return __webpack_require__(__webpack_require__.s = 59);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -37622,48 +37622,64 @@ module.exports = function(module) {
 /***/ }),
 /* 32 */,
 /* 33 */,
-/* 34 */
+/* 34 */,
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// route: user.posts
 __webpack_require__(28);
-post = __webpack_require__(55);
+list = __webpack_require__(54);
 
 var app = new Vue({
     el: '#app',
     components: {
-        post: post
+        list: list
     }
 });
 
 /***/ }),
-/* 35 */,
 /* 36 */,
 /* 37 */,
 /* 38 */,
 /* 39 */,
 /* 40 */,
-/* 41 */,
-/* 42 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // <template>
-//     <div class="column is-8 is-offset-2">
-//         <div class="card">
-//             <header class="card-header">
-//                 <a href="" class="card-header-title">
-//                 {{ post.title }}
-//                 </a>
-//             </header>
-//             <div class="card-content">
-//                 <div class="content" v-html="content">
+//     <div class="columns is-multiline">
+//         <div class="column is-8 is-offset-2" v-for="post in posts">
+//             <div class="card">
+//                 <header class="card-header">
+//                     <a :href="post.url" class="card-header-title title is-3">
+//                     {{ post.title }}
+//                     </a>
+//                 </header>
+//                 <div class="card-content">
+//                     <div class="content" v-html="post.content">
+//                     </div>
 //                 </div>
+//                 <footer class="card-footer">
+//                     <a class="card-footer-item" href="url">
+//                         <span class="icon is-medium">
+//                             <i class="fa fa-toggle-off" v-if="post.draft"></i>
+//                             <i class="fa fa-toggle-on" v-else></i>
+//                         </span>
+//                     </a>
+//                     <a class="card-footer-item" href="url">
+//                         <span class="icon is-medium">
+//                             <i class="fa fa-edit"></i>
+//                         </span>
+//                     </a>
+//                     <a class="card-footer-item" href="url">
+//                         <span class="icon is-medium">
+//                             <i class="fa fa-close"></i>
+//                         </span>
+//                     </a>
+//                 </footer>
 //             </div>
-//             <footer class="card-footer">
-//                 <a class="card-footer-item">Edit</a>
-//                 <a class="card-footer-item">Delete</a>
-//             </footer>
 //         </div>
 //     </div>
 // </template>
@@ -37682,43 +37698,43 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return data;
     }(function () {
         return {
-            post: data.post,
-            content: ''
+            posts: data.posts.data.map(function (item) {
+                item.content = converter.makeHtml(item.content.substring(0, 400));
+                item.url = '/posts/' + item.slug;
+                return item;
+            })
         };
-    }),
-    mounted: function mounted() {
-        this.content = converter.makeHtml(this.post.content);
-    }
+    })
 };
 // </script>
 
 /***/ }),
+/* 42 */,
 /* 43 */,
 /* 44 */,
 /* 45 */,
 /* 46 */,
 /* 47 */,
-/* 48 */,
-/* 49 */
+/* 48 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <a href=\"\" class=\"card-header-title\">\n            {{ post.title }}\n            </a>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\" v-html=\"content\">\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <a class=\"card-footer-item\">Edit</a>\n            <a class=\"card-footer-item\">Delete</a>\n        </footer>\n    </div>\n</div>\n";
+module.exports = "\n<div class=\"columns is-multiline\">\n    <div class=\"column is-8 is-offset-2\" v-for=\"post in posts\">\n        <div class=\"card\">\n            <header class=\"card-header\">\n                <a :href=\"post.url\" class=\"card-header-title title is-3\">\n                {{ post.title }}\n                </a>\n            </header>\n            <div class=\"card-content\">\n                <div class=\"content\" v-html=\"post.content\">\n                </div>\n            </div>\n            <footer class=\"card-footer\">\n                <a class=\"card-footer-item\" href=\"url\">\n                    <span class=\"icon is-medium\">\n                        <i class=\"fa fa-toggle-off\" v-if=\"post.draft\"></i>\n                        <i class=\"fa fa-toggle-on\" v-else></i>\n                    </span>\n                </a>\n                <a class=\"card-footer-item\" href=\"url\">\n                    <span class=\"icon is-medium\">\n                        <i class=\"fa fa-edit\"></i>\n                    </span>\n                </a>\n                <a class=\"card-footer-item\" href=\"url\">\n                    <span class=\"icon is-medium\">\n                        <i class=\"fa fa-close\"></i>\n                    </span>\n                </a>\n            </footer>\n        </div>\n    </div>\n</div>\n";
 
 /***/ }),
+/* 49 */,
 /* 50 */,
 /* 51 */,
 /* 52 */,
 /* 53 */,
-/* 54 */,
-/* 55 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(42)
+__vue_script__ = __webpack_require__(41)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
-  console.warn("[vue-loader] resources/assets/js/components/posts/single.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(49)
+  console.warn("[vue-loader] resources/assets/js/components/posts/list.vue: named exports in *.vue files are ignored.")}
+__vue_template__ = __webpack_require__(48)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37734,7 +37750,7 @@ if (false) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
-  var id = "_v-4d0b1bb8/single.vue"
+  var id = "_v-5d37830e/list.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
@@ -37743,12 +37759,14 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
+/* 55 */,
 /* 56 */,
 /* 57 */,
-/* 58 */
+/* 58 */,
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(34);
+module.exports = __webpack_require__(35);
 
 
 /***/ })
