@@ -37652,6 +37652,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__single_vue__);
 // <template>
 //     <div class="columns is-multiline">
+//         <div class="column is-6 is-offset-3" v-if="!posts.length">
+//             <a href="/posts/create" class="button is-primary is-outlined is-fullwidth">Create New Post</a>
+//         </div>
 //         <post v-for="post in posts" :post="post"></post>
 //     </div>
 // </template>
@@ -37704,12 +37707,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //                         <i v-bind:class="[{ 'fa fa-toggle-off' : draft, 'fa fa-toggle-on' : !draft}]"></i>
 //                     </span>
 //                 </a>
-//                 <a class="card-footer-item" href="url">
+//                 <a class="card-footer-item" :href="'/posts/' + post.slug + '/edit'">
 //                     <span class="icon is-medium">
 //                         <i class="fa fa-edit"></i>
 //                     </span>
 //                 </a>
-//                 <a class="card-footer-item" href="url">
+//                 <a class="card-footer-item" :href="'/posts/' + post.slug + '/delete'">
 //                     <span class="icon is-medium">
 //                         <i class="fa fa-close"></i>
 //                     </span>
@@ -37754,13 +37757,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 48 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"columns is-multiline\">\n    <post v-for=\"post in posts\" :post=\"post\"></post>\n</div>\n";
+module.exports = "\n<div class=\"columns is-multiline\">\n    <div class=\"column is-6 is-offset-3\" v-if=\"!posts.length\">\n        <a href=\"/posts/create\" class=\"button is-primary is-outlined is-fullwidth\">Create New Post</a>\n    </div>\n    <post v-for=\"post in posts\" :post=\"post\"></post>\n</div>\n";
 
 /***/ }),
 /* 49 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <a :href=\"post.url\" class=\"card-header-title title is-3\">\n            {{ post.title }}\n            </a>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\" v-html=\"content\">\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <a class=\"card-footer-item\">\n                <span class=\"icon is-medium\" @click=\"togglePostPublishStatus(post.slug)\">\n                    <i v-bind:class=\"[{ 'fa fa-toggle-off' : draft, 'fa fa-toggle-on' : !draft}]\"></i>\n                </span>\n            </a>\n            <a class=\"card-footer-item\" href=\"url\">\n                <span class=\"icon is-medium\">\n                    <i class=\"fa fa-edit\"></i>\n                </span>\n            </a>\n            <a class=\"card-footer-item\" href=\"url\">\n                <span class=\"icon is-medium\">\n                    <i class=\"fa fa-close\"></i>\n                </span>\n            </a>\n        </footer>\n    </div>\n</div>\n";
+module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <a :href=\"post.url\" class=\"card-header-title title is-3\">\n            {{ post.title }}\n            </a>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\" v-html=\"content\">\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <a class=\"card-footer-item\">\n                <span class=\"icon is-medium\" @click=\"togglePostPublishStatus(post.slug)\">\n                    <i v-bind:class=\"[{ 'fa fa-toggle-off' : draft, 'fa fa-toggle-on' : !draft}]\"></i>\n                </span>\n            </a>\n            <a class=\"card-footer-item\" :href=\"'/posts/' + post.slug + '/edit'\">\n                <span class=\"icon is-medium\">\n                    <i class=\"fa fa-edit\"></i>\n                </span>\n            </a>\n            <a class=\"card-footer-item\" :href=\"'/posts/' + post.slug + '/delete'\">\n                <span class=\"icon is-medium\">\n                    <i class=\"fa fa-close\"></i>\n                </span>\n            </a>\n        </footer>\n    </div>\n</div>\n";
 
 /***/ }),
 /* 50 */,

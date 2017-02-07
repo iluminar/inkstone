@@ -24,7 +24,7 @@ class PostService
         if ($data['publish_time'] == "") {
             $data['publish_time'] = date("Y-m-d H:i:s");
         }
-        list($result, $post) = $this->postRepository->create($data);
+        $post = $this->postRepository->create($data);
         if (isset($data['tags'])) {
             $tags = $this->tagRepository->createTagsAndReturnIds(collect(explode(',', str_replace(' ', '', $data['tags']))));
             $post->tags()->attach($tags);

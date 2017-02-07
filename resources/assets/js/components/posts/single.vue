@@ -16,12 +16,12 @@
                         <i v-bind:class="[{ 'fa fa-toggle-off' : draft, 'fa fa-toggle-on' : !draft}]"></i>
                     </span>
                 </a>
-                <a class="card-footer-item" href="url">
+                <a class="card-footer-item" :href="'/posts/' + post.slug + '/edit'">
                     <span class="icon is-medium">
                         <i class="fa fa-edit"></i>
                     </span>
                 </a>
-                <a class="card-footer-item" href="url">
+                <a class="card-footer-item" :href="'/posts/' + post.slug + '/delete'">
                     <span class="icon is-medium">
                         <i class="fa fa-close"></i>
                     </span>

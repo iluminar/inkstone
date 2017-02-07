@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SavePostRequest;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
+use App\Http\Requests\DeletePostRequest;
 
 class PostController extends Controller
 {
@@ -88,7 +89,7 @@ class PostController extends Controller
         }
     }
 
-    public function delete($slug)
+    public function delete(DeletePostRequest $request, $slug)
     {
         try {
             $this->service->deletePost($slug);
