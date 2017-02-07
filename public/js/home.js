@@ -37697,7 +37697,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //                 </div>
 //             </div>
 //             <footer class="card-footer">
-//                 <a class="card-footer-item" :href="url">Read More</a>
+//                 <slot>
+//                     <a class="card-footer-item" :href="url">Read More</a>
+//                 </slot>
 //             </footer>
 //         </div>
 //     </div>
@@ -37729,7 +37731,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__post_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__post_vue__);
 // <template>
 //     <div class="columns is-multiline">
-//       <post v-for="post in posts" :post="post"></post>
+//         <post v-for="post in posts" :post="post"></post>
 //     </div>
 // </template>
 //
@@ -37757,13 +37759,13 @@ module.exports = "\n<posts :posts=\"posts\"></posts>\n";
 /* 45 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <a href=\"\" class=\"card-header-title\">\n            {{ post.title }}\n            </a>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\" v-html=\"content\">\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <a class=\"card-footer-item\" :href=\"url\">Read More</a>\n        </footer>\n    </div>\n</div>\n";
+module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <a href=\"\" class=\"card-header-title\">\n            {{ post.title }}\n            </a>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\" v-html=\"content\">\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <slot>\n                <a class=\"card-footer-item\" :href=\"url\">Read More</a>\n            </slot>\n        </footer>\n    </div>\n</div>\n";
 
 /***/ }),
 /* 46 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"columns is-multiline\">\n  <post v-for=\"post in posts\" :post=\"post\"></post>\n</div>\n";
+module.exports = "\n<div class=\"columns is-multiline\">\n    <post v-for=\"post in posts\" :post=\"post\"></post>\n</div>\n";
 
 /***/ }),
 /* 47 */,

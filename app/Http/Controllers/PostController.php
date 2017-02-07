@@ -71,14 +71,14 @@ class PostController extends Controller
         }
     }
 
-    public function publish()
+    public function publish($slug)
     {
         try {
             if (Request::ajax()) {
                 if (Session::token() === Request::header('X-CSRF-Token')) {
-                    $this->service->publishPost(Request::get('slug'));
+                    $result = $this->service->publishPost($slug);
 
-                    return response()->json(['status' => 'success']);
+                    return response()->json(['status' => (bool) $result]);
                 }
                 return response()->json(['status' => 'error']);
             }

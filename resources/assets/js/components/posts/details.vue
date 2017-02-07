@@ -11,9 +11,8 @@
                 </div>
             </div>
             <footer class="card-footer">
-                <slot>
-                    <a class="card-footer-item" :href="url">Read More</a>
-                </slot>
+                <a class="card-footer-item">Edit</a>
+                <a class="card-footer-item">Delete</a>
             </footer>
         </div>
     </div>
@@ -21,14 +20,12 @@
 
 <script>
     export default {
-        props: ['post'],
         data: () => ({
-            content: '',
-            url: ''
+            post: data.post,
+            content: ''
         }),
         mounted() {
-            this.content = converter.makeHtml(this.post.content.substring(0, 400));
-            this.url = 'posts/' + this.post.slug
+            this.content = converter.makeHtml(this.post.content)
         }
-    }  
+    }
 </script>

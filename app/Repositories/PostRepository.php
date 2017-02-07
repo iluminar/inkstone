@@ -8,7 +8,7 @@ use Rinvex\Repository\Repositories\EloquentRepository;
 class PostRepository extends EloquentRepository
 {
     protected $repositoryId = 'rinvex.repository.post';
-    protected $model = 'App\Models\Post';
+    protected $model        = 'App\Models\Post';
 
     public function getAllPostByUserIdWithPagination($id)
     {

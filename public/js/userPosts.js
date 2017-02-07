@@ -37648,44 +37648,20 @@ var app = new Vue({
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__single_vue__);
 // <template>
 //     <div class="columns is-multiline">
-//         <div class="column is-8 is-offset-2" v-for="post in posts">
-//             <div class="card">
-//                 <header class="card-header">
-//                     <a :href="post.url" class="card-header-title title is-3">
-//                     {{ post.title }}
-//                     </a>
-//                 </header>
-//                 <div class="card-content">
-//                     <div class="content" v-html="post.content">
-//                     </div>
-//                 </div>
-//                 <footer class="card-footer">
-//                     <a class="card-footer-item" href="url">
-//                         <span class="icon is-medium">
-//                             <i class="fa fa-toggle-off" v-if="post.draft"></i>
-//                             <i class="fa fa-toggle-on" v-else></i>
-//                         </span>
-//                     </a>
-//                     <a class="card-footer-item" href="url">
-//                         <span class="icon is-medium">
-//                             <i class="fa fa-edit"></i>
-//                         </span>
-//                     </a>
-//                     <a class="card-footer-item" href="url">
-//                         <span class="icon is-medium">
-//                             <i class="fa fa-close"></i>
-//                         </span>
-//                     </a>
-//                 </footer>
-//             </div>
-//         </div>
+//         <post v-for="post in posts" :post="post"></post>
 //     </div>
 // </template>
 //
 // <script>
+
 /* harmony default export */ __webpack_exports__["default"] = {
+    components: {
+        post: __WEBPACK_IMPORTED_MODULE_0__single_vue___default.a
+    },
     data: function (_data) {
         function data() {
             return _data.apply(this, arguments);
@@ -37698,18 +37674,78 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return data;
     }(function () {
         return {
-            posts: data.posts.data.map(function (item) {
-                item.content = converter.makeHtml(item.content.substring(0, 400));
-                item.url = '/posts/' + item.slug;
-                return item;
-            })
+            posts: data.posts.data
         };
     })
 };
 // </script>
 
 /***/ }),
-/* 42 */,
+/* 42 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+// <template>
+//     <div class="column is-8 is-offset-2">
+//         <div class="card">
+//             <header class="card-header">
+//                 <a :href="post.url" class="card-header-title title is-3">
+//                 {{ post.title }}
+//                 </a>
+//             </header>
+//             <div class="card-content">
+//                 <div class="content" v-html="content">
+//                 </div>
+//             </div>
+//             <footer class="card-footer">
+//                 <a class="card-footer-item">
+//                     <span class="icon is-medium" @click="togglePostPublishStatus(post.slug)">
+//                         <i v-bind:class="[{ 'fa fa-toggle-off' : draft, 'fa fa-toggle-on' : !draft}]"></i>
+//                     </span>
+//                 </a>
+//                 <a class="card-footer-item" href="url">
+//                     <span class="icon is-medium">
+//                         <i class="fa fa-edit"></i>
+//                     </span>
+//                 </a>
+//                 <a class="card-footer-item" href="url">
+//                     <span class="icon is-medium">
+//                         <i class="fa fa-close"></i>
+//                     </span>
+//                 </a>
+//             </footer>
+//         </div>
+//     </div>
+// </template>
+//
+// <script>
+/* harmony default export */ __webpack_exports__["default"] = {
+    props: ['post'],
+    data: function data() {
+        return {
+            content: '',
+            draft: true
+        };
+    },
+    mounted: function mounted() {
+        this.content = converter.makeHtml(this.post.content.substring(0, 400));
+        this.draft = this.post.draft;
+    },
+
+    methods: {
+        togglePostPublishStatus: function togglePostPublishStatus(slug, e) {
+            var _this = this;
+
+            axios.patch('/posts/' + slug + '/publish').then(function (response) {
+                _this.draft = !_this.draft;
+            });
+        }
+    }
+};
+// </script>
+
+/***/ }),
 /* 43 */,
 /* 44 */,
 /* 45 */,
@@ -37718,10 +37754,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 48 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"columns is-multiline\">\n    <div class=\"column is-8 is-offset-2\" v-for=\"post in posts\">\n        <div class=\"card\">\n            <header class=\"card-header\">\n                <a :href=\"post.url\" class=\"card-header-title title is-3\">\n                {{ post.title }}\n                </a>\n            </header>\n            <div class=\"card-content\">\n                <div class=\"content\" v-html=\"post.content\">\n                </div>\n            </div>\n            <footer class=\"card-footer\">\n                <a class=\"card-footer-item\" href=\"url\">\n                    <span class=\"icon is-medium\">\n                        <i class=\"fa fa-toggle-off\" v-if=\"post.draft\"></i>\n                        <i class=\"fa fa-toggle-on\" v-else></i>\n                    </span>\n                </a>\n                <a class=\"card-footer-item\" href=\"url\">\n                    <span class=\"icon is-medium\">\n                        <i class=\"fa fa-edit\"></i>\n                    </span>\n                </a>\n                <a class=\"card-footer-item\" href=\"url\">\n                    <span class=\"icon is-medium\">\n                        <i class=\"fa fa-close\"></i>\n                    </span>\n                </a>\n            </footer>\n        </div>\n    </div>\n</div>\n";
+module.exports = "\n<div class=\"columns is-multiline\">\n    <post v-for=\"post in posts\" :post=\"post\"></post>\n</div>\n";
 
 /***/ }),
-/* 49 */,
+/* 49 */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <a :href=\"post.url\" class=\"card-header-title title is-3\">\n            {{ post.title }}\n            </a>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\" v-html=\"content\">\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <a class=\"card-footer-item\">\n                <span class=\"icon is-medium\" @click=\"togglePostPublishStatus(post.slug)\">\n                    <i v-bind:class=\"[{ 'fa fa-toggle-off' : draft, 'fa fa-toggle-on' : !draft}]\"></i>\n                </span>\n            </a>\n            <a class=\"card-footer-item\" href=\"url\">\n                <span class=\"icon is-medium\">\n                    <i class=\"fa fa-edit\"></i>\n                </span>\n            </a>\n            <a class=\"card-footer-item\" href=\"url\">\n                <span class=\"icon is-medium\">\n                    <i class=\"fa fa-close\"></i>\n                </span>\n            </a>\n        </footer>\n    </div>\n</div>\n";
+
+/***/ }),
 /* 50 */,
 /* 51 */,
 /* 52 */,
@@ -37759,7 +37800,39 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 55 */,
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_script__, __vue_template__
+var __vue_styles__ = {}
+__vue_script__ = __webpack_require__(42)
+if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
+  console.warn("[vue-loader] resources/assets/js/components/posts/single.vue: named exports in *.vue files are ignored.")}
+__vue_template__ = __webpack_require__(49)
+module.exports = __vue_script__ || {}
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+if (__vue_template__) {
+__vue_options__.template = __vue_template__
+}
+if (!__vue_options__.computed) __vue_options__.computed = {}
+Object.keys(__vue_styles__).forEach(function (key) {
+var module = __vue_styles__[key]
+__vue_options__.computed[key] = function () { return module }
+})
+if (false) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  var id = "_v-4d0b1bb8/single.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, __vue_template__)
+  }
+})()}
+
+/***/ }),
 /* 56 */,
 /* 57 */,
 /* 58 */,

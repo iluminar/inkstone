@@ -1,6 +1,6 @@
 <template>
     <div class="columns is-multiline">
-      <post v-for="post in posts" :post="post"></post>
+        <post v-for="post in posts" :post="post"></post>
     </div>
 </template>
 
