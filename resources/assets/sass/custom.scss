@@ -20,3 +20,9 @@ nav, .nav {
 .card {
     box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
 }
+
+.dashboard .card-content {
+    min-height: 125px;
+    max-height: 125px;
+    overflow-y: hidden;
+}

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="columns is-multiline">
+<div class="columns is-multiline dashboard">
 
     @include('users.dashboard.post')
 
@@ -22,6 +22,7 @@
           </header>
           <div class="card-content">
             <div class="content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
               <a>@bulmaio</a>. <a>#css</a> <a>#responsive</a>
               <br>

@@ -6,6 +6,7 @@ use Exception;
 use App\Services\PostService;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\SavePostRequest;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
@@ -95,7 +96,7 @@ class PostController extends Controller
         try {
             $this->service->deletePost($slug);
 
-            return back();
+            return redirect()->route('user.posts', ['user' => Auth::user()->username]);
         } catch (Exception $e) {
             Log::info($e->getMessage() . " in " . $e->getFile() . " in " . $e->getLine());
         }

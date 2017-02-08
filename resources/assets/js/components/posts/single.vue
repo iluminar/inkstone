@@ -2,7 +2,7 @@
     <div class="column is-8 is-offset-2">
         <div class="card">
             <header class="card-header">
-                <a :href="post.url" class="card-header-title title is-3">
+                <a :href="'/posts/' + post.slug" class="card-header-title title is-3">
                 {{ post.title }}
                 </a>
             </header>
@@ -21,22 +21,28 @@
                         <i class="fa fa-edit"></i>
                     </span>
                 </a>
-                <a class="card-footer-item" :href="'/posts/' + post.slug + '/delete'">
+                <a class="card-footer-item" @click="deletePost">
                     <span class="icon is-medium">
                         <i class="fa fa-close"></i>
                     </span>
                 </a>
             </footer>
+            <confirm-dialog @open-dialog="openDialog" :is-active="isActive" :slug="post.slug"></confirm-dialog>
         </div>
     </div>
 </template>
 
 <script>
+import confirmDialog from './deletePostConfirmDialog'
     export default {
+        components: {
+            confirmDialog
+        },
         props: ['post'],
         data: () => ({
             content: '',
-            draft: true
+            draft: true,
+            isActive: false
         }),
         mounted() {
             this.content = converter.makeHtml(this.post.content.substring(0, 400));
@@ -48,6 +54,13 @@
                      .then((response) => {
                         this.draft = !this.draft;
                      });
+            },
+            deletePost: function (e) {
+                e.preventDefault();
+                this.isActive = true;
+            },
+            openDialog: function (e) {
+                this.isActive = false;
             }
         }
     }

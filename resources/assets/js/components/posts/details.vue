@@ -12,18 +12,34 @@
             </div>
             <footer class="card-footer">
                 <a class="card-footer-item" :href="'/posts/' + post.slug + '/edit'">Edit</a>
-                <a class="card-footer-item" :href="'/posts/' + post.slug + '/delete'">Delete</a>
+                <a class="card-footer-item" @click="deletePost">Delete
+                </a>
             </footer>
+            <confirm-dialog @open-dialog="openDialog" :is-active="isActive" :slug="post.slug"></confirm-dialog>
         </div>
     </div>
 </template>
 
 <script>
+import confirmDialog from './deletePostConfirmDialog'
     export default {
+        components: {
+            confirmDialog
+        },
         data: () => ({
             post: data.post,
-            content: ''
+            content: '',
+            isActive: false
         }),
+        methods: {
+            deletePost: function (e) {
+                e.preventDefault();
+                this.isActive = true;
+            },
+            openDialog: function (e) {
+                this.isActive = false;
+            }
+        },
         mounted() {
             this.content = converter.makeHtml(this.post.content)
         }

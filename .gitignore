@@ -11,3 +11,4 @@ Homestead.json
 *.sqlite
 *.sqlite-journal
 *.log
+*.DS_Store
