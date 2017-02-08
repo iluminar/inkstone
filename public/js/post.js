@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 58);
+/******/ 	return __webpack_require__(__webpack_require__.s = 63);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -37622,11 +37622,16 @@ module.exports = function(module) {
 /***/ }),
 /* 32 */,
 /* 33 */,
-/* 34 */
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(28);
-post = __webpack_require__(65);
+post = __webpack_require__(57);
 
 var app = new Vue({
     el: '#app',
@@ -37636,41 +37641,12 @@ var app = new Vue({
 });
 
 /***/ }),
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
 /* 40 */,
 /* 41 */,
 /* 42 */,
 /* 43 */,
 /* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(34);
-
-
-/***/ }),
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37688,8 +37664,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //                 </div>
 //             </div>
 //             <footer class="card-footer">
-//                 <a class="card-footer-item">Edit</a>
-//                 <a class="card-footer-item">Delete</a>
+//                 <a class="card-footer-item" :href="'/posts/' + post.slug + '/edit'">Edit</a>
+//                 <a class="card-footer-item" :href="'/posts/' + post.slug + '/delete'">Delete</a>
 //             </footer>
 //         </div>
 //     </div>
@@ -37720,21 +37696,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 64 */
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <a href=\"\" class=\"card-header-title\">\n            {{ post.title }}\n            </a>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\" v-html=\"content\">\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <a class=\"card-footer-item\">Edit</a>\n            <a class=\"card-footer-item\">Delete</a>\n        </footer>\n    </div>\n</div>\n";
+module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <a href=\"\" class=\"card-header-title\">\n            {{ post.title }}\n            </a>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\" v-html=\"content\">\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <a class=\"card-footer-item\" :href=\"'/posts/' + post.slug + '/edit'\">Edit</a>\n            <a class=\"card-footer-item\" :href=\"'/posts/' + post.slug + '/delete'\">Delete</a>\n        </footer>\n    </div>\n</div>\n";
 
 /***/ }),
-/* 65 */
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(63)
+__vue_script__ = __webpack_require__(45)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/posts/details.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(64)
+__vue_template__ = __webpack_require__(51)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37757,6 +37743,18 @@ if (false) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, __vue_template__)
   }
 })()}
+
+/***/ }),
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(39);
+
 
 /***/ })
 /******/ ]);

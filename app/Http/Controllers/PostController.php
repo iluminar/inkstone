@@ -10,6 +10,7 @@ use App\Http\Requests\SavePostRequest;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests\DeletePostRequest;
+use App\Http\Requests\UpdatePostRequest;
 
 class PostController extends Controller
 {
@@ -61,12 +62,12 @@ class PostController extends Controller
         }
     }
 
-    public function update(SavePostRequest $request)
+    public function update(UpdatePostRequest $request, $slug)
     {
         try {
-            $result = $this->service->updatePost($request->all());
+            $this->service->updatePost($slug, $request->all());
 
-            return redirect()->route('post.single', ['slug' => $post->slug]);
+            return redirect()->route('post.single', ['slug' => $slug]);
         } catch (Exception $e) {
             Log::info($e->getMessage() . " in " . $e->getFile() . " in " . $e->getLine());
         }

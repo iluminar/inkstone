@@ -41,4 +41,9 @@ class PostRepository extends EloquentRepository
     {
         return Post::where('slug', $slug)->delete();
     }
+
+    public function updatePost($slug, $data)
+    {
+        return Post::where('slug', $slug)->update($data);
+    }
 }

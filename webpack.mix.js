@@ -15,4 +15,5 @@ mix.sass('resources/assets/sass/app.scss', 'public/css');
 mix.js('resources/assets/js/home.js', 'public/js')
    .js('resources/assets/js/post.js', 'public/js')
    .js('resources/assets/js/userPosts.js', 'public/js')
+   .js('resources/assets/js/edit.js', 'public/js')
    .js('resources/assets/js/create.js', 'public/js');

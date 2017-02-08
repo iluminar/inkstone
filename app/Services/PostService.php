@@ -57,4 +57,11 @@ class PostService
     {
         return $this->postRepository->deletePost($slug);
     }
+
+    public function updatePost($slug, $data)
+    {
+        unset($data['_method'], $data['_token']);
+
+        return $this->postRepository->updatePost($slug, $data);
+    }
 }

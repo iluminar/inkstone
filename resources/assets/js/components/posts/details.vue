@@ -11,8 +11,8 @@
                 </div>
             </div>
             <footer class="card-footer">
-                <a class="card-footer-item">Edit</a>
-                <a class="card-footer-item">Delete</a>
+                <a class="card-footer-item" :href="'/posts/' + post.slug + '/edit'">Edit</a>
+                <a class="card-footer-item" :href="'/posts/' + post.slug + '/delete'">Delete</a>
             </footer>
         </div>
     </div>
