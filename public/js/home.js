@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 62);
+/******/ 	return __webpack_require__(__webpack_require__.s = 68);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -37630,7 +37630,7 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(28);
-home = __webpack_require__(54);
+home = __webpack_require__(58);
 
 var app = new Vue({
     el: '#app',
@@ -37653,7 +37653,7 @@ var app = new Vue({
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__posts_vue__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__posts_vue__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__posts_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__posts_vue__);
 // <template>
 //     <posts :posts="posts"></posts>
@@ -37732,7 +37732,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__post_vue__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__post_vue__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__post_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__post_vue__);
 // <template>
 //     <div class="columns is-multiline">
@@ -37754,28 +37754,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 45 */,
 /* 46 */,
 /* 47 */,
-/* 48 */
+/* 48 */,
+/* 49 */,
+/* 50 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<posts :posts=\"posts\"></posts>\n";
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <a href=\"\" class=\"card-header-title\">\n            {{ post.title }}\n            </a>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\" v-html=\"content\">\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <slot>\n                <a class=\"card-footer-item\" :href=\"url\">Read More</a>\n            </slot>\n        </footer>\n    </div>\n</div>\n";
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div class=\"columns is-multiline\">\n    <post v-for=\"post in posts\" :post=\"post\"></post>\n</div>\n";
 
 /***/ }),
-/* 51 */,
-/* 52 */,
 /* 53 */,
-/* 54 */
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
@@ -37783,7 +37787,7 @@ var __vue_styles__ = {}
 __vue_script__ = __webpack_require__(42)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/home/index.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(48)
+__vue_template__ = __webpack_require__(50)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37808,7 +37812,7 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 55 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
@@ -37816,7 +37820,7 @@ var __vue_styles__ = {}
 __vue_script__ = __webpack_require__(43)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/home/post.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(49)
+__vue_template__ = __webpack_require__(51)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37841,7 +37845,7 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 56 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
@@ -37849,7 +37853,7 @@ var __vue_styles__ = {}
 __vue_script__ = __webpack_require__(44)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/home/posts.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(50)
+__vue_template__ = __webpack_require__(52)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37874,12 +37878,14 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
 /* 61 */,
-/* 62 */
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(38);

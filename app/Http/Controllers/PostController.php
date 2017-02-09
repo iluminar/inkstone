@@ -88,6 +88,7 @@ class PostController extends Controller
             return response()->json(['status' => 'error']);
         } catch (Exception $e) {
             Log::info($e->getMessage() . " in " . $e->getFile() . " in " . $e->getLine());
+            return redirect()->route('home');
         }
     }
 

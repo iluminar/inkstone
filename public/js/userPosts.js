@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 64);
+/******/ 	return __webpack_require__(__webpack_require__.s = 70);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -37620,10 +37620,80 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 32 */,
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+// <template>
+//     <div class="modal" :class="{'is-active': isActive}">
+//         <div class="modal-background"></div>
+//         <div class="modal-content">
+//             <div class="box column is-6 is-offset-3 has-text-centered">
+//                 <p class="title is-5">Do you really want to delete this post</p>
+//                 <button class="button is-danger" @click="confirm">Yes</button>
+//                 <button class="button" @click="cancel">Cancel</button>
+//             </div>
+//         </div>
+//         <button class="modal-close" @click="cancel"></button>
+//     </div>
+// </template>
+//
+// <script>
+/* harmony default export */ __webpack_exports__["default"] = {
+    props: ['isActive', 'slug'],
+    methods: {
+        confirm: function confirm(e) {
+            location.href = '/posts/' + this.slug + '/delete';
+        },
+        cancel: function cancel(e) {
+            this.$emit('open-dialog');
+        }
+    }
+};
+// </script>
+
+/***/ }),
 /* 33 */,
-/* 34 */,
-/* 35 */,
+/* 34 */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"modal\" :class=\"{'is-active': isActive}\">\n    <div class=\"modal-background\"></div>\n    <div class=\"modal-content\">\n        <div class=\"box column is-6 is-offset-3 has-text-centered\">\n            <p class=\"title is-5\">Do you really want to delete this post</p>\n            <button class=\"button is-danger\" @click=\"confirm\">Yes</button>\n            <button class=\"button\" @click=\"cancel\">Cancel</button>\n        </div>\n    </div>\n    <button class=\"modal-close\" @click=\"cancel\"></button>\n</div>\n";
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_script__, __vue_template__
+var __vue_styles__ = {}
+__vue_script__ = __webpack_require__(32)
+if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
+  console.warn("[vue-loader] resources/assets/js/components/posts/deletePostConfirmDialog.vue: named exports in *.vue files are ignored.")}
+__vue_template__ = __webpack_require__(34)
+module.exports = __vue_script__ || {}
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+if (__vue_template__) {
+__vue_options__.template = __vue_template__
+}
+if (!__vue_options__.computed) __vue_options__.computed = {}
+Object.keys(__vue_styles__).forEach(function (key) {
+var module = __vue_styles__[key]
+__vue_options__.computed[key] = function () { return module }
+})
+if (false) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  var id = "_v-33ee2f3d/deletePostConfirmDialog.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, __vue_template__)
+  }
+})()}
+
+/***/ }),
 /* 36 */,
 /* 37 */,
 /* 38 */,
@@ -37633,7 +37703,7 @@ module.exports = function(module) {
 
 // route: user.posts
 __webpack_require__(28);
-list = __webpack_require__(58);
+list = __webpack_require__(64);
 
 var app = new Vue({
     el: '#app',
@@ -37648,12 +37718,14 @@ var app = new Vue({
 /* 43 */,
 /* 44 */,
 /* 45 */,
-/* 46 */
+/* 46 */,
+/* 47 */,
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__single_vue__);
 // <template>
 //     <div class="columns is-multiline">
@@ -37689,12 +37761,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog__);
 // <template>
 //     <div class="column is-8 is-offset-2">
@@ -37770,35 +37842,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 48 */,
-/* 49 */,
 /* 50 */,
 /* 51 */,
-/* 52 */
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div class=\"columns is-multiline\">\n    <div class=\"column is-6 is-offset-3\" v-if=\"!posts.length\">\n        <a href=\"/posts/create\" class=\"button is-primary is-outlined is-fullwidth\">Create New Post</a>\n    </div>\n    <post v-for=\"post in posts\" :post=\"post\"></post>\n</div>\n";
 
 /***/ }),
-/* 53 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <a :href=\"'/posts/' + post.slug\" class=\"card-header-title title is-3\">\n            {{ post.title }}\n            </a>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\" v-html=\"content\">\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <a class=\"card-footer-item\">\n                <span class=\"icon is-medium\" @click=\"togglePostPublishStatus(post.slug)\">\n                    <i v-bind:class=\"[{ 'fa fa-toggle-off' : draft, 'fa fa-toggle-on' : !draft}]\"></i>\n                </span>\n            </a>\n            <a class=\"card-footer-item\" :href=\"'/posts/' + post.slug + '/edit'\">\n                <span class=\"icon is-medium\">\n                    <i class=\"fa fa-edit\"></i>\n                </span>\n            </a>\n            <a class=\"card-footer-item\" @click=\"deletePost\">\n                <span class=\"icon is-medium\">\n                    <i class=\"fa fa-close\"></i>\n                </span>\n            </a>\n        </footer>\n        <confirm-dialog @open-dialog=\"openDialog\" :is-active=\"isActive\" :slug=\"post.slug\"></confirm-dialog>\n    </div>\n</div>\n";
 
 /***/ }),
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(46)
+__vue_script__ = __webpack_require__(48)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/posts/list.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(52)
+__vue_template__ = __webpack_require__(56)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37823,15 +37899,15 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 59 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(47)
+__vue_script__ = __webpack_require__(49)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/posts/single.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(53)
+__vue_template__ = __webpack_require__(57)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37856,94 +37932,15 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(40);
-
-
-/***/ }),
-/* 65 */,
 /* 66 */,
 /* 67 */,
 /* 68 */,
 /* 69 */,
-/* 70 */,
-/* 71 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-// <template>
-//     <div class="modal" :class="{'is-active': isActive}">
-//         <div class="modal-background"></div>
-//         <div class="modal-content">
-//             <div class="box column is-6 is-offset-3 has-text-centered">
-//                 <p class="title is-5">Do you really want to delete this post</p>
-//                 <button class="button is-danger" @click="confirm">Yes</button>
-//                 <button class="button" @click="cancel">Cancel</button>
-//             </div>
-//         </div>
-//         <button class="modal-close" @click="cancel"></button>
-//     </div>
-// </template>
-//
-// <script>
-/* harmony default export */ __webpack_exports__["default"] = {
-    props: ['isActive', 'slug'],
-    methods: {
-        confirm: function confirm(e) {
-            location.href = '/posts/' + this.slug + '/delete';
-        },
-        cancel: function cancel(e) {
-            this.$emit('open-dialog');
-        }
-    }
-};
-// </script>
-
-/***/ }),
-/* 72 */
-/***/ (function(module, exports) {
-
-module.exports = "\n<div class=\"modal\" :class=\"{'is-active': isActive}\">\n    <div class=\"modal-background\"></div>\n    <div class=\"modal-content\">\n        <div class=\"box column is-6 is-offset-3 has-text-centered\">\n            <p class=\"title is-5\">Do you really want to delete this post</p>\n            <button class=\"button is-danger\" @click=\"confirm\">Yes</button>\n            <button class=\"button\" @click=\"cancel\">Cancel</button>\n        </div>\n    </div>\n    <button class=\"modal-close\" @click=\"cancel\"></button>\n</div>\n";
-
-/***/ }),
-/* 73 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __vue_script__, __vue_template__
-var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(71)
-if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
-  console.warn("[vue-loader] resources/assets/js/components/posts/deletePostConfirmDialog.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(72)
-module.exports = __vue_script__ || {}
-if (module.exports.__esModule) module.exports = module.exports.default
-var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
-if (__vue_template__) {
-__vue_options__.template = __vue_template__
-}
-if (!__vue_options__.computed) __vue_options__.computed = {}
-Object.keys(__vue_styles__).forEach(function (key) {
-var module = __vue_styles__[key]
-__vue_options__.computed[key] = function () { return module }
-})
-if (false) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  var id = "_v-33ee2f3d/deletePostConfirmDialog.vue"
-  if (!module.hot.data) {
-    hotAPI.createRecord(id, module.exports)
-  } else {
-    hotAPI.update(id, module.exports, __vue_template__)
-  }
-})()}
+module.exports = __webpack_require__(40);
+
 
 /***/ })
 /******/ ]);

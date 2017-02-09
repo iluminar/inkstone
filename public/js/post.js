@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 63);
+/******/ 	return __webpack_require__(__webpack_require__.s = 69);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -37620,10 +37620,80 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 32 */,
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+// <template>
+//     <div class="modal" :class="{'is-active': isActive}">
+//         <div class="modal-background"></div>
+//         <div class="modal-content">
+//             <div class="box column is-6 is-offset-3 has-text-centered">
+//                 <p class="title is-5">Do you really want to delete this post</p>
+//                 <button class="button is-danger" @click="confirm">Yes</button>
+//                 <button class="button" @click="cancel">Cancel</button>
+//             </div>
+//         </div>
+//         <button class="modal-close" @click="cancel"></button>
+//     </div>
+// </template>
+//
+// <script>
+/* harmony default export */ __webpack_exports__["default"] = {
+    props: ['isActive', 'slug'],
+    methods: {
+        confirm: function confirm(e) {
+            location.href = '/posts/' + this.slug + '/delete';
+        },
+        cancel: function cancel(e) {
+            this.$emit('open-dialog');
+        }
+    }
+};
+// </script>
+
+/***/ }),
 /* 33 */,
-/* 34 */,
-/* 35 */,
+/* 34 */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"modal\" :class=\"{'is-active': isActive}\">\n    <div class=\"modal-background\"></div>\n    <div class=\"modal-content\">\n        <div class=\"box column is-6 is-offset-3 has-text-centered\">\n            <p class=\"title is-5\">Do you really want to delete this post</p>\n            <button class=\"button is-danger\" @click=\"confirm\">Yes</button>\n            <button class=\"button\" @click=\"cancel\">Cancel</button>\n        </div>\n    </div>\n    <button class=\"modal-close\" @click=\"cancel\"></button>\n</div>\n";
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_script__, __vue_template__
+var __vue_styles__ = {}
+__vue_script__ = __webpack_require__(32)
+if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
+  console.warn("[vue-loader] resources/assets/js/components/posts/deletePostConfirmDialog.vue: named exports in *.vue files are ignored.")}
+__vue_template__ = __webpack_require__(34)
+module.exports = __vue_script__ || {}
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+if (__vue_template__) {
+__vue_options__.template = __vue_template__
+}
+if (!__vue_options__.computed) __vue_options__.computed = {}
+Object.keys(__vue_styles__).forEach(function (key) {
+var module = __vue_styles__[key]
+__vue_options__.computed[key] = function () { return module }
+})
+if (false) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  var id = "_v-33ee2f3d/deletePostConfirmDialog.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, __vue_template__)
+  }
+})()}
+
+/***/ }),
 /* 36 */,
 /* 37 */,
 /* 38 */,
@@ -37631,7 +37701,7 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(28);
-post = __webpack_require__(57);
+post = __webpack_require__(62);
 
 var app = new Vue({
     el: '#app',
@@ -37646,40 +37716,50 @@ var app = new Vue({
 /* 42 */,
 /* 43 */,
 /* 44 */,
-/* 45 */
+/* 45 */,
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__comments_create__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__comments_create___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__comments_create__);
 // <template>
-//     <div class="column is-8 is-offset-2">
-//         <div class="card">
-//             <header class="card-header">
-//                 <a href="" class="card-header-title">
-//                 {{ post.title }}
-//                 </a>
-//             </header>
-//             <div class="card-content">
-//                 <div class="content" v-html="content">
+//     <div>
+//         <div class="column is-8 is-offset-2">
+//             <div class="card">
+//                 <header class="card-header">
+//                     <a href="" class="card-header-title">
+//                     {{ post.title }}
+//                     </a>
+//                 </header>
+//                 <div class="card-content">
+//                     <div class="content" v-html="content">
+//                     </div>
 //                 </div>
+//                 <footer class="card-footer">
+//                     <a class="card-footer-item" :href="'/posts/' + post.slug + '/edit'">Edit</a>
+//                     <a class="card-footer-item" @click="deletePost">Delete
+//                     </a>
+//                 </footer>
+//                 <confirm-dialog @open-dialog="openDialog" :is-active="isActive" :slug="post.slug"></confirm-dialog>
 //             </div>
-//             <footer class="card-footer">
-//                 <a class="card-footer-item" :href="'/posts/' + post.slug + '/edit'">Edit</a>
-//                 <a class="card-footer-item" @click="deletePost">Delete
-//                 </a>
-//             </footer>
-//             <confirm-dialog @open-dialog="openDialog" :is-active="isActive" :slug="post.slug"></confirm-dialog>
+//         </div>
+//         <div class="column is-8 is-offset-2">
+//             <create-comments :slug="post.slug"></create-comments>
 //         </div>
 //     </div>
 // </template>
 //
 // <script>
 
+
 /* harmony default export */ __webpack_exports__["default"] = {
     components: {
-        confirmDialog: __WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog___default.a
+        confirmDialog: __WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog___default.a,
+        createComments: __WEBPACK_IMPORTED_MODULE_1__comments_create___default.a
     },
     data: function (_data) {
         function data() {
@@ -37714,31 +37794,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 46 */,
 /* 47 */,
 /* 48 */,
 /* 49 */,
 /* 50 */,
-/* 51 */
-/***/ (function(module, exports) {
-
-module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <a href=\"\" class=\"card-header-title\">\n            {{ post.title }}\n            </a>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\" v-html=\"content\">\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <a class=\"card-footer-item\" :href=\"'/posts/' + post.slug + '/edit'\">Edit</a>\n            <a class=\"card-footer-item\" @click=\"deletePost\">Delete\n            </a>\n        </footer>\n        <confirm-dialog @open-dialog=\"openDialog\" :is-active=\"isActive\" :slug=\"post.slug\"></confirm-dialog>\n    </div>\n</div>\n";
-
-/***/ }),
+/* 51 */,
 /* 52 */,
 /* 53 */,
-/* 54 */,
+/* 54 */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div>\n    <div class=\"column is-8 is-offset-2\">\n        <div class=\"card\">\n            <header class=\"card-header\">\n                <a href=\"\" class=\"card-header-title\">\n                {{ post.title }}\n                </a>\n            </header>\n            <div class=\"card-content\">\n                <div class=\"content\" v-html=\"content\">\n                </div>\n            </div>\n            <footer class=\"card-footer\">\n                <a class=\"card-footer-item\" :href=\"'/posts/' + post.slug + '/edit'\">Edit</a>\n                <a class=\"card-footer-item\" @click=\"deletePost\">Delete\n                </a>\n            </footer>\n            <confirm-dialog @open-dialog=\"openDialog\" :is-active=\"isActive\" :slug=\"post.slug\"></confirm-dialog>\n        </div>\n    </div>\n    <div class=\"column is-8 is-offset-2\">\n        <create-comments :slug=\"post.slug\"></create-comments>\n    </div>\n</div>\n";
+
+/***/ }),
 /* 55 */,
 /* 56 */,
-/* 57 */
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(45)
+__vue_script__ = __webpack_require__(46)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/posts/details.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(51)
+__vue_template__ = __webpack_require__(54)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37763,74 +37847,88 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(39);
 
 
 /***/ }),
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
 /* 70 */,
-/* 71 */
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // <template>
-//     <div class="modal" :class="{'is-active': isActive}">
-//         <div class="modal-background"></div>
-//         <div class="modal-content">
-//             <div class="box column is-6 is-offset-3 has-text-centered">
-//                 <p class="title is-5">Do you really want to delete this post</p>
-//                 <button class="button is-danger" @click="confirm">Yes</button>
-//                 <button class="button" @click="cancel">Cancel</button>
+//     <form role="form" method="POST" :action="url">
+//         <input type="hidden" name="_token" :value="token">
+//         <button class="button is-primary is-fullwidth" @click="openCommentForm">Create New Comment</button>
+//         <div class="card" :class="{'is-hidden-tablet': hideForm}">
+//             <div class="card-content">
+//                 <div class="content">
+//                     <p class="control">
+//                         <textarea id="content" class="textarea" name="content" placeholder="write your comment here"></textarea>
+//                     </p>
+//                 </div>
 //             </div>
+//             <footer class="card-footer">
+//                 <div class="card-footer-item">
+//                     <button type="submit" class="button is-primary">Save</button>
+//                 </div>
+//             </footer>
 //         </div>
-//         <button class="modal-close" @click="cancel"></button>
-//     </div>
+//     </form>
 // </template>
 //
 // <script>
 /* harmony default export */ __webpack_exports__["default"] = {
-    props: ['isActive', 'slug'],
+    props: ['slug'],
+    data: function data() {
+        return {
+            token: Laravel.csrfToken,
+            hideForm: true,
+            url: ''
+        };
+    },
     methods: {
-        confirm: function confirm(e) {
-            location.href = '/posts/' + this.slug + '/delete';
-        },
-        cancel: function cancel(e) {
-            this.$emit('open-dialog');
+        openCommentForm: function openCommentForm(e) {
+            e.preventDefault();
+            this.hideForm = !this.hideForm;
         }
+    },
+    mounted: function mounted() {
+        new SimpleMDE({ element: document.getElementById("content") });
+        this.url = '/posts/' + this.slug + '/comments';
     }
 };
 // </script>
 
 /***/ }),
-/* 72 */
+/* 75 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"modal\" :class=\"{'is-active': isActive}\">\n    <div class=\"modal-background\"></div>\n    <div class=\"modal-content\">\n        <div class=\"box column is-6 is-offset-3 has-text-centered\">\n            <p class=\"title is-5\">Do you really want to delete this post</p>\n            <button class=\"button is-danger\" @click=\"confirm\">Yes</button>\n            <button class=\"button\" @click=\"cancel\">Cancel</button>\n        </div>\n    </div>\n    <button class=\"modal-close\" @click=\"cancel\"></button>\n</div>\n";
+module.exports = "\n<form role=\"form\" method=\"POST\" :action=\"url\">\n    <input type=\"hidden\" name=\"_token\" :value=\"token\">\n    <button class=\"button is-primary is-fullwidth\" @click=\"openCommentForm\">Create New Comment</button>\n    <div class=\"card\" :class=\"{'is-hidden-tablet': hideForm}\">\n        <div class=\"card-content\">\n            <div class=\"content\">\n                <p class=\"control\">\n                    <textarea id=\"content\" class=\"textarea\" name=\"content\" placeholder=\"write your comment here\"></textarea>\n                </p>\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <div class=\"card-footer-item\">\n                <button type=\"submit\" class=\"button is-primary\">Save</button>\n            </div>\n        </footer>\n    </div>\n</form>\n";
 
 /***/ }),
-/* 73 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(71)
+__vue_script__ = __webpack_require__(74)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
-  console.warn("[vue-loader] resources/assets/js/components/posts/deletePostConfirmDialog.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(72)
+  console.warn("[vue-loader] resources/assets/js/components/comments/create.vue: named exports in *.vue files are ignored.")}
+__vue_template__ = __webpack_require__(75)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37846,7 +37944,7 @@ if (false) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
-  var id = "_v-33ee2f3d/deletePostConfirmDialog.vue"
+  var id = "_v-e080041a/create.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {

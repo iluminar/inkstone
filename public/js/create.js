@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 60);
+/******/ 	return __webpack_require__(__webpack_require__.s = 66);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -37620,74 +37620,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 32 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flatpickr__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flatpickr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_flatpickr__);
-// <template>
-//     <form role="form" method="POST" :action="url">
-//         <input type="hidden" name="_token" :value="token">
-//         <div class="card">
-//             <header class="card-header">
-//                 <p class="card-header-title">
-//                 Create New Post
-//                 </p>
-//             </header>
-//             <div class="card-content">
-//                 <div class="content">
-//                     <p class="control">
-//                         <input id="title" class="input" type="text" name="title" placeholder="Title of the Post">
-//                         <span class="help is-danger" v-if="errors">{{ errors.title }}</span>
-//                     </p>
-//                     <p class="control">
-//                         <input id="publish_time" class="input flatpickr" type="text" name="publish_time" placeholder="Publish Time">
-//                         <span class="help is-danger" v-if="errors">{{ errors.publish_time }}</span>
-//                     </p>
-//                     <p class="control">
-//                         <textarea id="content" class="textarea" name="content" placeholder="Your new blog post"></textarea>
-//                         <span class="help is-danger" v-if="errors">{{ errors.content }}</span>
-//                     </p>
-//                     <p class="control">
-//                         <input type="checkbox" name="draft">
-//                         save as draft
-//                     </p>
-//                 </div>
-//             </div>
-//             <footer class="card-footer">
-//                 <div class="card-footer-item">
-//                     <button type="submit" class="button is-primary">Save</button>
-//                 </div>
-//             </footer>
-//         </div>
-//     </form>
-// </template>
-//
-// <script>
-
-/* harmony default export */ __webpack_exports__["default"] = {
-    data: function data() {
-        return {
-            token: Laravel.csrfToken,
-            errors: errors,
-            url: url
-        };
-    },
-    mounted: function mounted() {
-        new SimpleMDE({ element: document.getElementById("content") }), new __WEBPACK_IMPORTED_MODULE_0_flatpickr___default.a(document.getElementById("publish_time"), {
-            enableTime: true,
-            altInput: true,
-            altFormat: "Y-m-d H:i:s",
-            enableSeconds: true,
-            utc: true
-        });
-    }
-};
-// </script>
-
-/***/ }),
+/* 32 */,
 /* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39479,21 +39412,127 @@ if (true) module.exports = Flatpickr;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 34 */
+/* 34 */,
+/* 35 */,
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(28);
+createForm = __webpack_require__(61);
+
+var app = new Vue({
+    el: '#app',
+    components: {
+        createForm: createForm
+    }
+});
+
+/***/ }),
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flatpickr__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flatpickr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_flatpickr__);
+// <template>
+//     <form role="form" method="POST" :action="url">
+//         <input type="hidden" name="_token" :value="token">
+//         <div class="card">
+//             <header class="card-header">
+//                 <p class="card-header-title">
+//                 Create New Post
+//                 </p>
+//             </header>
+//             <div class="card-content">
+//                 <div class="content">
+//                     <p class="control">
+//                         <input id="title" class="input" type="text" name="title" placeholder="Title of the Post">
+//                         <span class="help is-danger" v-if="errors">{{ errors.title }}</span>
+//                     </p>
+//                     <p class="control">
+//                         <input id="publish_time" class="input flatpickr" type="text" name="publish_time" placeholder="Publish Time">
+//                         <span class="help is-danger" v-if="errors">{{ errors.publish_time }}</span>
+//                     </p>
+//                     <p class="control">
+//                         <textarea id="content" class="textarea" name="content" placeholder="Your new blog post"></textarea>
+//                         <span class="help is-danger" v-if="errors">{{ errors.content }}</span>
+//                     </p>
+//                     <p class="control">
+//                         <input type="checkbox" name="draft">
+//                         save as draft
+//                     </p>
+//                 </div>
+//             </div>
+//             <footer class="card-footer">
+//                 <div class="card-footer-item">
+//                     <button type="submit" class="button is-primary">Save</button>
+//                 </div>
+//             </footer>
+//         </div>
+//     </form>
+// </template>
+//
+// <script>
+
+/* harmony default export */ __webpack_exports__["default"] = {
+    data: function data() {
+        return {
+            token: Laravel.csrfToken,
+            errors: errors,
+            url: url
+        };
+    },
+    mounted: function mounted() {
+        new SimpleMDE({ element: document.getElementById("content") }), new __WEBPACK_IMPORTED_MODULE_0_flatpickr___default.a(document.getElementById("publish_time"), {
+            enableTime: true,
+            altInput: true,
+            altFormat: "Y-m-d H:i:s",
+            enableSeconds: true,
+            utc: true
+        });
+    }
+};
+// </script>
+
+/***/ }),
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<form role=\"form\" method=\"POST\" :action=\"url\">\n    <input type=\"hidden\" name=\"_token\" :value=\"token\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <p class=\"card-header-title\">\n            Create New Post\n            </p>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\">\n                <p class=\"control\">\n                    <input id=\"title\" class=\"input\" type=\"text\" name=\"title\" placeholder=\"Title of the Post\">\n                    <span class=\"help is-danger\" v-if=\"errors\">{{ errors.title }}</span>\n                </p>\n                <p class=\"control\">\n                    <input id=\"publish_time\" class=\"input flatpickr\" type=\"text\" name=\"publish_time\" placeholder=\"Publish Time\">\n                    <span class=\"help is-danger\" v-if=\"errors\">{{ errors.publish_time }}</span>\n                </p>\n                <p class=\"control\">\n                    <textarea id=\"content\" class=\"textarea\" name=\"content\" placeholder=\"Your new blog post\"></textarea>\n                    <span class=\"help is-danger\" v-if=\"errors\">{{ errors.content }}</span>\n                </p>\n                <p class=\"control\">\n                    <input type=\"checkbox\" name=\"draft\">\n                    save as draft\n                </p>\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <div class=\"card-footer-item\">\n                <button type=\"submit\" class=\"button is-primary\">Save</button>\n            </div>\n        </footer>\n    </div>\n</form>\n";
 
 /***/ }),
-/* 35 */
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(32)
+__vue_script__ = __webpack_require__(45)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/posts/create.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(34)
+__vue_template__ = __webpack_require__(53)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -39518,44 +39557,11 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(28);
-createForm = __webpack_require__(35);
-
-var app = new Vue({
-    el: '#app',
-    components: {
-        createForm: createForm
-    }
-});
-
-/***/ }),
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(36);

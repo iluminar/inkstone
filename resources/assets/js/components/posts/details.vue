@@ -1,30 +1,37 @@
 <template>
-    <div class="column is-8 is-offset-2">
-        <div class="card">
-            <header class="card-header">
-                <a href="" class="card-header-title">
-                {{ post.title }}
-                </a>
-            </header>
-            <div class="card-content">
-                <div class="content" v-html="content">
+    <div>
+        <div class="column is-8 is-offset-2">
+            <div class="card">
+                <header class="card-header">
+                    <a href="" class="card-header-title">
+                    {{ post.title }}
+                    </a>
+                </header>
+                <div class="card-content">
+                    <div class="content" v-html="content">
+                    </div>
                 </div>
+                <footer class="card-footer">
+                    <a class="card-footer-item" :href="'/posts/' + post.slug + '/edit'">Edit</a>
+                    <a class="card-footer-item" @click="deletePost">Delete
+                    </a>
+                </footer>
+                <confirm-dialog @open-dialog="openDialog" :is-active="isActive" :slug="post.slug"></confirm-dialog>
             </div>
-            <footer class="card-footer">
-                <a class="card-footer-item" :href="'/posts/' + post.slug + '/edit'">Edit</a>
-                <a class="card-footer-item" @click="deletePost">Delete
-                </a>
-            </footer>
-            <confirm-dialog @open-dialog="openDialog" :is-active="isActive" :slug="post.slug"></confirm-dialog>
+        </div>
+        <div class="column is-8 is-offset-2">
+            <create-comments :slug="post.slug"></create-comments>
         </div>
     </div>
 </template>
 
 <script>
 import confirmDialog from './deletePostConfirmDialog'
+import createComments from './../comments/create'
     export default {
         components: {
-            confirmDialog
+            confirmDialog,
+            createComments
         },
         data: () => ({
             post: data.post,
