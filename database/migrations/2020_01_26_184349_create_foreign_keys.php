@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateForeignKeys extends Migration
 {
@@ -42,24 +42,24 @@ class CreateForeignKeys extends Migration
      */
     public function down()
     {
-        Schema::table('socials', function($table) {
+        Schema::table('socials', function ($table) {
             $table->dropForeign('socials_user_id_foreign');
         });
-        Schema::table('posts', function($table) {
+        Schema::table('posts', function ($table) {
             $table->dropForeign('posts_user_id_foreign');
         });
-        Schema::table('repo_pages', function($table) {
+        Schema::table('repo_pages', function ($table) {
             $table->dropForeign('repo_pages_repo_id_foreign');
             $table->dropForeign('repo_pages_user_id_foreign');
         });
-        Schema::table('repos', function($table) {
+        Schema::table('repos', function ($table) {
             $table->dropForeign('repos_user_id_foreign');
         });
-        Schema::table('post_tag', function($table) {
+        Schema::table('post_tag', function ($table) {
             $table->dropForeign('post_tag_post_id_foreign');
             $table->dropForeign('post_tag_tag_id_foreign');
         });
-        Schema::table('comments', function($table) {
+        Schema::table('comments', function ($table) {
             $table->dropForeign('comments_post_id_foreign');
             $table->dropForeign('comments_user_id_foreign');
         });

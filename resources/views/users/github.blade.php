@@ -3,11 +3,9 @@
 @section('title') {{ Auth::user()->name }} - Github @endsection
 
 @section('content')
-<div class="container">
+<repo-list></repo-list>
+{{-- <div class="container">
     <div class="row">
-        <div class="col-md-3 col-lg-3">
-            @include('partials.sidebar')
-        </div>
         <div class="col-md-6 col-lg-9">
             <div class="card">
                 <div class="card-action">
@@ -25,9 +23,16 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection
 
 @section('script')
-
+<script type="text/javascript">
+    window.data = @php echo json_encode([
+            'repos' => $repos,
+            'username' => Auth::user()->username
+        ]);
+        @endphp;
+</script>
+<script src="/js/userGithub.js"></script>
 @endsection

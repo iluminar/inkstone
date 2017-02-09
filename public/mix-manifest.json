@@ -1,8 +1,9 @@
 {
+  "/js/post.js": "/js/post.js",
   "/js/home.js": "/js/home.js",
   "/css/app.css": "/css/app.css",
   "/js/userPosts.js": "/js/userPosts.js",
-  "/js/post.js": "/js/post.js",
   "/js/edit.js": "/js/edit.js",
-  "/js/create.js": "/js/create.js"
+  "/js/create.js": "/js/create.js",
+  "/js/userGithub.js": "/js/userGithub.js"
 }

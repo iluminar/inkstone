@@ -26,3 +26,11 @@ nav, .nav {
     max-height: 125px;
     overflow-y: hidden;
 }
+
+.card .card-content-item {
+    @extend .card-content;
+}
+
+.card .card-content-item:not(:last-child) {
+    border-bottom: 1px solid #dbdbdb;
+}

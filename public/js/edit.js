@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 67);
+/******/ 	return __webpack_require__(__webpack_require__.s = 79);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -39419,7 +39419,7 @@ if (true) module.exports = Flatpickr;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(28);
-editForm = __webpack_require__(63);
+editForm = __webpack_require__(74);
 
 var app = new Vue({
     el: '#app',
@@ -39438,7 +39438,11 @@ var app = new Vue({
 /* 44 */,
 /* 45 */,
 /* 46 */,
-/* 47 */
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39509,35 +39513,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
 /* 52 */,
 /* 53 */,
 /* 54 */,
-/* 55 */
-/***/ (function(module, exports) {
-
-module.exports = "\n{{post}}\n    <form role=\"form\" method=\"POST\" :action=\"url\">\n        <input type=\"hidden\" name=\"_method\" value=\"PATCH\">\n        <input type=\"hidden\" name=\"_token\" :value=\"token\">\n        <div class=\"card\">\n            <header class=\"card-header\">\n                <p class=\"card-header-title\">\n                Edit New Post\n                </p>\n            </header>\n            <div class=\"card-content\">\n                <div class=\"content\">\n                    <p class=\"control\">\n                        <input id=\"title\" class=\"input\" type=\"text\" name=\"title\" placeholder=\"Title of the Post\" :value=\"post.title\">\n                        <span class=\"help is-danger\" v-if=\"errors\">{{ errors.title }}</span>\n                    </p>\n                    <p class=\"control\">\n                        <input id=\"publish_time\" class=\"input flatpickr\" type=\"text\" name=\"publish_time\" placeholder=\"Publish Time\" :value=\"post.publish_time\">\n                        <span class=\"help is-danger\" v-if=\"errors\">{{ errors.publish_time }}</span>\n                    </p>\n                    <p class=\"control\">\n                        <textarea id=\"content\" class=\"textarea\" name=\"content\" placeholder=\"Your new blog post\">{{ post.content }}</textarea>\n                        <span class=\"help is-danger\" v-if=\"errors\">{{ errors.content }}</span>\n                    </p>\n                    <p class=\"control\">\n                        <input type=\"checkbox\" name=\"draft\" v-model=\"post.draft\">\n                        save as draft\n                    </p>\n                </div>\n            </div>\n            <footer class=\"card-footer\">\n                <div class=\"card-footer-item\">\n                    <button type=\"submit\" class=\"button is-primary\">Save</button>\n                </div>\n            </footer>\n        </div>\n    </form>\n";
-
-/***/ }),
+/* 55 */,
 /* 56 */,
 /* 57 */,
 /* 58 */,
 /* 59 */,
 /* 60 */,
 /* 61 */,
-/* 62 */,
-/* 63 */
+/* 62 */
+/***/ (function(module, exports) {
+
+module.exports = "\n{{post}}\n    <form role=\"form\" method=\"POST\" :action=\"url\">\n        <input type=\"hidden\" name=\"_method\" value=\"PATCH\">\n        <input type=\"hidden\" name=\"_token\" :value=\"token\">\n        <div class=\"card\">\n            <header class=\"card-header\">\n                <p class=\"card-header-title\">\n                Edit New Post\n                </p>\n            </header>\n            <div class=\"card-content\">\n                <div class=\"content\">\n                    <p class=\"control\">\n                        <input id=\"title\" class=\"input\" type=\"text\" name=\"title\" placeholder=\"Title of the Post\" :value=\"post.title\">\n                        <span class=\"help is-danger\" v-if=\"errors\">{{ errors.title }}</span>\n                    </p>\n                    <p class=\"control\">\n                        <input id=\"publish_time\" class=\"input flatpickr\" type=\"text\" name=\"publish_time\" placeholder=\"Publish Time\" :value=\"post.publish_time\">\n                        <span class=\"help is-danger\" v-if=\"errors\">{{ errors.publish_time }}</span>\n                    </p>\n                    <p class=\"control\">\n                        <textarea id=\"content\" class=\"textarea\" name=\"content\" placeholder=\"Your new blog post\">{{ post.content }}</textarea>\n                        <span class=\"help is-danger\" v-if=\"errors\">{{ errors.content }}</span>\n                    </p>\n                    <p class=\"control\">\n                        <input type=\"checkbox\" name=\"draft\" v-model=\"post.draft\">\n                        save as draft\n                    </p>\n                </div>\n            </div>\n            <footer class=\"card-footer\">\n                <div class=\"card-footer-item\">\n                    <button type=\"submit\" class=\"button is-primary\">Save</button>\n                </div>\n            </footer>\n        </div>\n    </form>\n";
+
+/***/ }),
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(47)
+__vue_script__ = __webpack_require__(51)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/posts/edit.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(55)
+__vue_template__ = __webpack_require__(62)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -39562,10 +39573,11 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(37);

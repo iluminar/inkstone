@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Services\PostService;
-use App\Services\RepoPageService;
 use App\Services\RepoService;
 use App\Services\UserService;
-use Illuminate\Http\Request;
+use App\Services\RepoPageService;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -29,8 +28,8 @@ class UserController extends Controller
      */
     public function __construct(UserService $userService, PostService
          $postService, RepoPageService $repoPageService) {
-        $this->userService = $userService;
-        $this->postService = $postService;
+        $this->userService     = $userService;
+        $this->postService     = $postService;
         $this->repoPageService = $repoPageService;
     }
 
@@ -63,10 +62,11 @@ class UserController extends Controller
     public function getUserGithubData(RepoService $repoService, $user)
     {
         // check db for user github data if not give button to refresh
+        $githubUser     = Auth::user()->github();
+        $githubUserName = ($githubUser) ? $githubUser->nickname : '';
+        $repos          = $repoService->getUserRepos($user);
 
-        $repos = $repoService->getUserRepos($user);
-
-        return view('users.github', compact('repos'));
+        return view('users.github', compact('repos', 'githubUserName'));
     }
 
     /**

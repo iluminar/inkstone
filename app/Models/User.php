@@ -34,6 +34,16 @@ class User extends Authenticatable
         return $this->hasMany(Social::class);
     }
 
+    public function github()
+    {
+        return $this->hasMany(Social::class)->where('provider', '=', 'github')->first();
+    }
+
+    public function twitter()
+    {
+        return $this->hasMany(Social::class)->where('provider', '=', 'twitter')->first();
+    }
+
     public function posts()
     {
         return $this->hasMany(Post::class, 'user_id');
