@@ -37726,6 +37726,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__comments_create__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__comments_create___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__comments_create__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comments_list__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comments_list___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__comments_list__);
 // <template>
 //     <div>
 //         <div class="column is-8 is-offset-2">
@@ -37750,16 +37752,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //         <div class="column is-8 is-offset-2">
 //             <create-comments :slug="post.slug"></create-comments>
 //         </div>
+//         <div class="column is-8 is-offset-2">
+//             <comment-list :comments="post.comments"></comment-list>
+//         </div>
 //     </div>
 // </template>
 //
 // <script>
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = {
     components: {
         confirmDialog: __WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog___default.a,
-        createComments: __WEBPACK_IMPORTED_MODULE_1__comments_create___default.a
+        createComments: __WEBPACK_IMPORTED_MODULE_1__comments_create___default.a,
+        commentList: __WEBPACK_IMPORTED_MODULE_2__comments_list___default.a
     },
     data: function (_data) {
         function data() {
@@ -37804,7 +37811,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 54 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div>\n    <div class=\"column is-8 is-offset-2\">\n        <div class=\"card\">\n            <header class=\"card-header\">\n                <a href=\"\" class=\"card-header-title\">\n                {{ post.title }}\n                </a>\n            </header>\n            <div class=\"card-content\">\n                <div class=\"content\" v-html=\"content\">\n                </div>\n            </div>\n            <footer class=\"card-footer\">\n                <a class=\"card-footer-item\" :href=\"'/posts/' + post.slug + '/edit'\">Edit</a>\n                <a class=\"card-footer-item\" @click=\"deletePost\">Delete\n                </a>\n            </footer>\n            <confirm-dialog @open-dialog=\"openDialog\" :is-active=\"isActive\" :slug=\"post.slug\"></confirm-dialog>\n        </div>\n    </div>\n    <div class=\"column is-8 is-offset-2\">\n        <create-comments :slug=\"post.slug\"></create-comments>\n    </div>\n</div>\n";
+module.exports = "\n<div>\n    <div class=\"column is-8 is-offset-2\">\n        <div class=\"card\">\n            <header class=\"card-header\">\n                <a href=\"\" class=\"card-header-title\">\n                {{ post.title }}\n                </a>\n            </header>\n            <div class=\"card-content\">\n                <div class=\"content\" v-html=\"content\">\n                </div>\n            </div>\n            <footer class=\"card-footer\">\n                <a class=\"card-footer-item\" :href=\"'/posts/' + post.slug + '/edit'\">Edit</a>\n                <a class=\"card-footer-item\" @click=\"deletePost\">Delete\n                </a>\n            </footer>\n            <confirm-dialog @open-dialog=\"openDialog\" :is-active=\"isActive\" :slug=\"post.slug\"></confirm-dialog>\n        </div>\n    </div>\n    <div class=\"column is-8 is-offset-2\">\n        <create-comments :slug=\"post.slug\"></create-comments>\n    </div>\n    <div class=\"column is-8 is-offset-2\">\n        <comment-list :comments=\"post.comments\"></comment-list>\n    </div>\n</div>\n";
 
 /***/ }),
 /* 55 */,
@@ -37872,7 +37879,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // <template>
 //     <form role="form" method="POST" :action="url">
 //         <input type="hidden" name="_token" :value="token">
-//         <button class="button is-primary is-fullwidth" @click="openCommentForm">Create New Comment</button>
+//         <div class="card">
+//             <div class="card-content">
+//                 <a class="button is-fullwidth is-primary" @click="openCommentForm">Create New Comment</a>
+//             </div>
+//         </div>
 //         <div class="card" :class="{'is-hidden-tablet': hideForm}">
 //             <div class="card-content">
 //                 <div class="content">
@@ -37917,7 +37928,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 75 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<form role=\"form\" method=\"POST\" :action=\"url\">\n    <input type=\"hidden\" name=\"_token\" :value=\"token\">\n    <button class=\"button is-primary is-fullwidth\" @click=\"openCommentForm\">Create New Comment</button>\n    <div class=\"card\" :class=\"{'is-hidden-tablet': hideForm}\">\n        <div class=\"card-content\">\n            <div class=\"content\">\n                <p class=\"control\">\n                    <textarea id=\"content\" class=\"textarea\" name=\"content\" placeholder=\"write your comment here\"></textarea>\n                </p>\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <div class=\"card-footer-item\">\n                <button type=\"submit\" class=\"button is-primary\">Save</button>\n            </div>\n        </footer>\n    </div>\n</form>\n";
+module.exports = "\n<form role=\"form\" method=\"POST\" :action=\"url\">\n    <input type=\"hidden\" name=\"_token\" :value=\"token\">\n    <div class=\"card\">\n        <div class=\"card-content\">\n            <a class=\"button is-fullwidth is-primary\" @click=\"openCommentForm\">Create New Comment</a>\n        </div>\n    </div>\n    <div class=\"card\" :class=\"{'is-hidden-tablet': hideForm}\">\n        <div class=\"card-content\">\n            <div class=\"content\">\n                <p class=\"control\">\n                    <textarea id=\"content\" class=\"textarea\" name=\"content\" placeholder=\"write your comment here\"></textarea>\n                </p>\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <div class=\"card-footer-item\">\n                <button type=\"submit\" class=\"button is-primary\">Save</button>\n            </div>\n        </footer>\n    </div>\n</form>\n";
 
 /***/ }),
 /* 76 */
@@ -37945,6 +37956,148 @@ if (false) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
   var id = "_v-e080041a/create.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, __vue_template__)
+  }
+})()}
+
+/***/ }),
+/* 77 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__single_vue__);
+// <template>
+//     <div>
+//         <comment v-for="comment in comments" :comment="comment"></comment>
+//     </div>
+// </template>
+//
+// <script>
+
+/* harmony default export */ __webpack_exports__["default"] = {
+    components: {
+        comment: __WEBPACK_IMPORTED_MODULE_0__single_vue___default.a
+    },
+    props: ['comments']
+};
+// </script>
+
+/***/ }),
+/* 78 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+// <template>
+//     <div class="card">
+//         <div class="card-content">
+//             <div class="media">
+//                 <div class="media-left">
+//                     <figure class="image">
+//                         <img :src="comment.author.socials[0].avatar">
+//                     </figure>
+//                 </div>
+//                 <div class="media-content">
+//                     <p class="title is-4">{{ comment.author.name }}</p>
+//                     <p class="subtitle is-6">{{ comment.created_at }} ago</p>
+//                     <div class="content" v-html="content">
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+// </template>
+//
+// <script>
+/* harmony default export */ __webpack_exports__["default"] = {
+    props: ['comment'],
+    data: function data() {
+        return {
+            content: ''
+        };
+    },
+    mounted: function mounted() {
+        this.content = converter.makeHtml(this.comment.content);
+    }
+};
+// </script>
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div>\n    <comment v-for=\"comment in comments\" :comment=\"comment\"></comment>\n</div>\n";
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"card\">\n    <div class=\"card-content\">\n        <div class=\"media\">\n            <div class=\"media-left\">\n                <figure class=\"image\">\n                    <img :src=\"comment.author.socials[0].avatar\">\n                </figure>\n            </div>\n            <div class=\"media-content\">\n                <p class=\"title is-4\">{{ comment.author.name }}</p>\n                <p class=\"subtitle is-6\">{{ comment.created_at }} ago</p>\n                <div class=\"content\" v-html=\"content\">\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_script__, __vue_template__
+var __vue_styles__ = {}
+__vue_script__ = __webpack_require__(77)
+if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
+  console.warn("[vue-loader] resources/assets/js/components/comments/list.vue: named exports in *.vue files are ignored.")}
+__vue_template__ = __webpack_require__(79)
+module.exports = __vue_script__ || {}
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+if (__vue_template__) {
+__vue_options__.template = __vue_template__
+}
+if (!__vue_options__.computed) __vue_options__.computed = {}
+Object.keys(__vue_styles__).forEach(function (key) {
+var module = __vue_styles__[key]
+__vue_options__.computed[key] = function () { return module }
+})
+if (false) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  var id = "_v-17660f56/list.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, __vue_template__)
+  }
+})()}
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_script__, __vue_template__
+var __vue_styles__ = {}
+__vue_script__ = __webpack_require__(78)
+if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
+  console.warn("[vue-loader] resources/assets/js/components/comments/single.vue: named exports in *.vue files are ignored.")}
+__vue_template__ = __webpack_require__(80)
+module.exports = __vue_script__ || {}
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+if (__vue_template__) {
+__vue_options__.template = __vue_template__
+}
+if (!__vue_options__.computed) __vue_options__.computed = {}
+Object.keys(__vue_styles__).forEach(function (key) {
+var module = __vue_styles__[key]
+__vue_options__.computed[key] = function () { return module }
+})
+if (false) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  var id = "_v-74985b3f/single.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {

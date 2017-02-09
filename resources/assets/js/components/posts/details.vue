@@ -22,16 +22,21 @@
         <div class="column is-8 is-offset-2">
             <create-comments :slug="post.slug"></create-comments>
         </div>
+        <div class="column is-8 is-offset-2">
+            <comment-list :comments="post.comments"></comment-list>
+        </div>
     </div>
 </template>
 
 <script>
 import confirmDialog from './deletePostConfirmDialog'
 import createComments from './../comments/create'
+import commentList from './../comments/list'
     export default {
         components: {
             confirmDialog,
-            createComments
+            createComments,
+            commentList
         },
         data: () => ({
             post: data.post,

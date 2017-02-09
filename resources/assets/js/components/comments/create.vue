@@ -1,7 +1,11 @@
 <template>
     <form role="form" method="POST" :action="url">
         <input type="hidden" name="_token" :value="token">
-        <button class="button is-primary is-fullwidth" @click="openCommentForm">Create New Comment</button>
+        <div class="card">
+            <div class="card-content">
+                <a class="button is-fullwidth is-primary" @click="openCommentForm">Create New Comment</a>
+            </div>
+        </div>
         <div class="card" :class="{'is-hidden-tablet': hideForm}">
             <div class="card-content">
                 <div class="content">
