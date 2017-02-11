@@ -1,9 +1,13 @@
 {
-  "/js/post.js": "/js/post.js",
+  "/js/posts/post.js": "/js/posts/post.js",
   "/js/home.js": "/js/home.js",
   "/css/app.css": "/css/app.css",
-  "/js/userPosts.js": "/js/userPosts.js",
-  "/js/edit.js": "/js/edit.js",
-  "/js/create.js": "/js/create.js",
-  "/js/userGithub.js": "/js/userGithub.js"
+  "/js/users/posts.js": "/js/users/posts.js",
+  "/js/posts/edit.js": "/js/posts/edit.js",
+  "/js/posts/create.js": "/js/posts/create.js",
+  "/js/users/github.js": "/js/users/github.js",
+  "/js/auth/reset.js": "/js/auth/reset.js",
+  "/js/auth/register.js": "/js/auth/register.js",
+  "/js/auth/login.js": "/js/auth/login.js",
+  "/js/auth/email.js": "/js/auth/email.js"
 }

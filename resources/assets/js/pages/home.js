@@ -1,5 +1,5 @@
-require('./bootstrap');
-home = require('./components/home/index.vue');
+require('./../bootstrap');
+home = require('./../components/home/index.vue');
 
 const app = new Vue({
     el: '#app',

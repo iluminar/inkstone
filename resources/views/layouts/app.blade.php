@@ -32,7 +32,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.3/showdown.js"></script>
     @yield('script')
     <script type="text/javascript">
         $.ajaxSetup({

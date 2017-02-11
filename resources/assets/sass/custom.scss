@@ -5,6 +5,10 @@ body {
 nav, .nav {
     margin-bottom: 20px;
     background-color: $base-color;
+    a {
+        font-weight: 700;
+        font-size: $size-5;
+    }
 }
 
 .is-base {

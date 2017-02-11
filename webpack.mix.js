@@ -12,9 +12,13 @@ const { mix } = require('laravel-mix');
  */
 
 mix.sass('resources/assets/sass/app.scss', 'public/css');
-mix.js('resources/assets/js/home.js', 'public/js')
-   .js('resources/assets/js/post.js', 'public/js')
-   .js('resources/assets/js/userPosts.js', 'public/js')
-   .js('resources/assets/js/edit.js', 'public/js')
-   .js('resources/assets/js/userGithub.js', 'public/js')
-   .js('resources/assets/js/create.js', 'public/js');
+mix.js('resources/assets/js/pages/home.js', 'public/js')
+   .js('resources/assets/js/pages/auth/login.js', 'public/js/auth')
+   .js('resources/assets/js/pages/auth/register.js', 'public/js/auth')
+   .js('resources/assets/js/pages/auth/email.js', 'public/js/auth')
+   .js('resources/assets/js/pages/auth/reset.js', 'public/js/auth')
+   .js('resources/assets/js/pages/posts/post.js', 'public/js/posts')
+   .js('resources/assets/js/pages/posts/create.js', 'public/js/posts')
+   .js('resources/assets/js/pages/posts/edit.js', 'public/js/posts')
+   .js('resources/assets/js/pages/users/posts.js', 'public/js/users')
+   .js('resources/assets/js/pages/users/github.js', 'public/js/users');
