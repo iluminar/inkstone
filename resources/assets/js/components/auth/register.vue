@@ -1,7 +1,7 @@
 <template>
 <div class="columns">
 <div class="column is-4 is-offset-4">
-    <form role="form" method="POST" action="auth/register">
+    <form role="form" method="POST" :action="url">
         <input type="hidden" name="_token" :value="token">
         <div class="card">
             <header class="card-header">
@@ -43,7 +43,8 @@
     export default {
         data: () => ({
             token: Laravel.csrfToken,
-            errors: errors
+            errors: errors,
+            url
         })
     }
 </script>

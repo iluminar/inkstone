@@ -18,5 +18,5 @@
     window.post = <?php echo json_encode($post->toArray()); ?>;
     window.errors = <?php echo json_encode($errors->toArray()); ?>
 </script>
-<script src="/js/edit.js"></script>
+<script src="/js/posts/edit.js"></script>
 @endsection

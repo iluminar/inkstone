@@ -51,19 +51,35 @@ class RepoRepository extends EloquentRepository
         $existingRepos = Repo::where('user_id', Auth::user()->id)
             ->whereIn('name', $repos->pluck('name'))->pluck('name');
         $newRepos = $repos->reject(function ($value, $key) use ($existingRepos) {
-                return in_array($value['name'], $existingRepos->toArray());
-            });
+            return in_array($value['name'], $existingRepos->toArray());
+        });
         Repo::insert($newRepos->toArray());
 
         return Repo::where('user_id', Auth::user()->id)->get();
     }
 
+    /**
+     * @param $userId
+     * @param $repo
+     */
     public function getRepoIdFromName($userId, $repo)
     {
         $repo = Repo::where(['user_id' => $userId, 'name' => $repo])->first(['id']);
         return ($repo) ? $repo->id : null;
     }
 
+    /**
+     * @param $userId
+     * @param $repo
+     */
+    public function getRepoFromName($userId, $repo)
+    {
+        return Repo::where(['user_id' => $userId, 'name' => $repo])->first();
+    }
+
+    /**
+     * @param $repoId
+     */
     public function enableRepoHasPageAttribute($repoId)
     {
         Repo::where('id', $repoId)->update(['has_page' => true]);

@@ -20,6 +20,9 @@ class UserController extends Controller
      * @var mixed
      */
     protected $userService;
+    /**
+     * @var mixed
+     */
     protected $repoPageService;
 
     /**
@@ -39,7 +42,7 @@ class UserController extends Controller
     public function dashboard($user)
     {
         $info = (object) ['post' => $this->userService
-                ->getUserDashboardInformation()];
+                                             ->getUserDashboardInformation()];
 
         return view('users.dashboard', compact('info'));
     }
@@ -73,9 +76,9 @@ class UserController extends Controller
      * @param $user
      * @param $repo
      */
-    public function getUserGithubRepoPage($user, $repo)
+    public function getUserGithubRepoPage($user, $repo, $page = 'readme')
     {
-        $page = $this->repoPageService->getGithubRepoPage($repo);
+        $page = $this->repoPageService->getGithubRepoPage($user, $repo, $page);
 
         return view('github.page', compact('page'));
     }

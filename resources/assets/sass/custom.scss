@@ -16,6 +16,14 @@ nav, .nav {
     color: $white;
 }
 
+.is-base-darker {
+    background-color: $base-color-darker;
+}
+
+.is-base-lighter {
+    background-color: $base-color-lighter;
+}
+
 .is-accent {
     background-color: $accent-color;
     color: $white;

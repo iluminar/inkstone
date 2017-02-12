@@ -17,5 +17,5 @@
     window.url = "{{ route('post.store') }}";
     window.errors = <?php echo json_encode($errors->toArray()); ?>
 </script>
-<script src="/js/create.js"></script>
+<script src="/js/posts/create.js"></script>
 @endsection

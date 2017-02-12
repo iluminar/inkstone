@@ -34,5 +34,5 @@
         ]);
         @endphp;
 </script>
-<script src="/js/userGithub.js"></script>
+<script src="/js/users/github.js"></script>
 @endsection

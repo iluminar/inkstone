@@ -31,7 +31,7 @@
             </div>
             <footer class="card-footer">
                 <div class="card-footer-item">
-                    <a href="" class="">
+                    <a href="auth/github" class="">
                         <span class="">Sign in with</span>
                         <span class="icon">
                             <i class="fa fa-github"></i>
@@ -39,7 +39,7 @@
                     </a>
                 </div>
                 <div class="card-footer-item">
-                    <a href="">
+                    <a href="auth/twitter">
                         <span class="">Sign in with</span>
                         <span class="icon">
                             <i class="fa fa-twitter"></i>

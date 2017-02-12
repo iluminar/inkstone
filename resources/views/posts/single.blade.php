@@ -20,5 +20,5 @@
         @endphp;
     window.converter = new showdown.Converter();
 </script>
- <script src="/js/post.js"></script>
+ <script src="/js/posts/post.js"></script>
 @endsection

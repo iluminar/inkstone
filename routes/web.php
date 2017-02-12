@@ -38,15 +38,18 @@ Route::group(['prefix' => 'posts'], function () {
 
 Route::group(['prefix' => '{user}'], function () {
 
-    Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'UserController@dashboard'])->middleware('auth');
+    Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('posts', ['as' => 'user.posts', 'uses' => 'UserController@getUserAllPost']);
-    
-    Route::get('github', ['as' => 'user.github', 'uses' => 'UserController@getUserGithubData']);
+        Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'UserController@dashboard'])->middleware('auth');
 
-    Route::get('github/refresh', ['as' => 'user.github.refresh', 'uses' => 'UserController@refreshUserLatestGithubData']);
+        Route::get('posts', ['as' => 'user.posts', 'uses' => 'UserController@getUserAllPost']);
 
-    Route::get('{repo}', ['as' => 'show.github.page', 'uses' => 'UserController@getUserGithubRepoPage']);
+        Route::get('github', ['as' => 'user.github', 'uses' => 'UserController@getUserGithubData']);
 
-    Route::get('{repo}/{page}', ['as' => 'user.github.page', 'uses' => 'UserController@getUserGithubRepoPage']);
+        Route::get('github/refresh', ['as' => 'user.github.refresh', 'uses' => 'UserController@refreshUserLatestGithubData']);
+
+        Route::get('{repo}', ['as' => 'user.github.repo', 'uses' => 'UserController@getUserGithubRepoPage']);
+
+        Route::get('{repo}/{page}', ['as' => 'github.repo.page', 'uses' => 'UserController@getUserGithubRepoPage']);
+    });
 });
