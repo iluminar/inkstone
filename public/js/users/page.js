@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 99);
+/******/ 	return __webpack_require__(__webpack_require__.s = 108);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -37624,20 +37624,7 @@ module.exports = function(module) {
 /* 33 */,
 /* 34 */,
 /* 35 */,
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(28);
-email = __webpack_require__(82);
-
-var app = new Vue({
-    el: '#app',
-    components: {
-        email: email
-    }
-});
-
-/***/ }),
+/* 36 */,
 /* 37 */,
 /* 38 */,
 /* 39 */,
@@ -37646,57 +37633,24 @@ var app = new Vue({
 /* 42 */,
 /* 43 */,
 /* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-// <template>
-// <div class="column is-4 is-offset-4">
-//     <form role="form" method="POST" action="password/email">
-//         <input type="hidden" name="_token" :value="token">
-//         <div class="card">
-//             <header class="card-header">
-//                 <p class="card-header-title title has-text-centered">
-//                 Reset Password
-//                 </p>
-//             </header>
-//             <div class="card-content">
-//                 <div class="notification is-primary"  v-if="status">{{ status }}</div>
-//                 <div class="content">
-//                     <p class="control">
-//                         <input id="email" class="input" type="text" name="email" placeholder="E-mail">
-//                         <span class="help is-danger" v-if="errors">{{ errors.email }}</span>
-//                     </p>
-//                     <p class="control">
-//                         <button type="submit" class="button is-primary is-fullwidth">Send Password Reset Link</button>
-//                     </p>
-//                 </div>
-//             </div>
-//         </div>
-//     </form>
-// </div>
-// </template>
-//
-// <script>
-/* harmony default export */ __webpack_exports__["default"] = {
-    data: function data() {
-        return {
-            token: Laravel.csrfToken,
-            errors: errors,
-            status: false
-        };
-    },
-    mounted: function mounted() {
-        this.status = status != 'null' ? status : false;
+// route: github.repo.page
+__webpack_require__(28);
+page = __webpack_require__(98);
+
+var app = new Vue({
+    el: '#app',
+    components: {
+        page: page
     }
-};
-// </script>
+});
 
 /***/ }),
+/* 46 */,
+/* 47 */,
+/* 48 */,
 /* 49 */,
 /* 50 */,
 /* 51 */,
@@ -37712,13 +37666,57 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 61 */,
 /* 62 */,
 /* 63 */,
-/* 64 */,
-/* 65 */
-/***/ (function(module, exports) {
+/* 64 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n<div class=\"column is-4 is-offset-4\">\n    <form role=\"form\" method=\"POST\" action=\"password/email\">\n        <input type=\"hidden\" name=\"_token\" :value=\"token\">\n        <div class=\"card\">\n            <header class=\"card-header\">\n                <p class=\"card-header-title title has-text-centered\">\n                Reset Password\n                </p>\n            </header>\n            <div class=\"card-content\">\n                <div class=\"notification is-primary\"  v-if=\"status\">{{ status }}</div>\n                <div class=\"content\">\n                    <p class=\"control\">\n                        <input id=\"email\" class=\"input\" type=\"text\" name=\"email\" placeholder=\"E-mail\">\n                        <span class=\"help is-danger\" v-if=\"errors\">{{ errors.email }}</span>\n                    </p>\n                    <p class=\"control\">\n                        <button type=\"submit\" class=\"button is-primary is-fullwidth\">Send Password Reset Link</button>\n                    </p>\n                </div>\n            </div>\n        </div>\n    </form>\n</div>\n";
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+// <template>
+//     <div>
+//         <div class="column is-6 is-offset-3">
+//             <div class="card">
+//                 <header class="card-header">
+//                     <a href="" class="card-header-title">
+//                     {{ page.name }}
+//                     </a>
+//                 </header>
+//                 <div class="card-content">
+//                     <div class="content" v-html="content">
+//                     </div>
+//                 </div>
+//                 <footer class="card-footer">
+//                 </footer>
+//             </div>
+//         </div>
+//     </div>
+// </template>
+//
+// <script>
+/* harmony default export */ __webpack_exports__["default"] = {
+    data: function (_data) {
+        function data() {
+            return _data.apply(this, arguments);
+        }
+
+        data.toString = function () {
+            return _data.toString();
+        };
+
+        return data;
+    }(function () {
+        return {
+            page: data.page,
+            content: ''
+        };
+    }),
+    mounted: function mounted() {
+        this.content = converter.makeHtml(this.page.content);
+    }
+};
+// </script>
 
 /***/ }),
+/* 65 */,
 /* 66 */,
 /* 67 */,
 /* 68 */,
@@ -37734,40 +37732,13 @@ module.exports = "\n<div class=\"column is-4 is-offset-4\">\n    <form role=\"fo
 /* 78 */,
 /* 79 */,
 /* 80 */,
-/* 81 */,
-/* 82 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 81 */
+/***/ (function(module, exports) {
 
-var __vue_script__, __vue_template__
-var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(48)
-if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
-  console.warn("[vue-loader] resources/assets/js/components/auth/email.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(65)
-module.exports = __vue_script__ || {}
-if (module.exports.__esModule) module.exports = module.exports.default
-var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
-if (__vue_template__) {
-__vue_options__.template = __vue_template__
-}
-if (!__vue_options__.computed) __vue_options__.computed = {}
-Object.keys(__vue_styles__).forEach(function (key) {
-var module = __vue_styles__[key]
-__vue_options__.computed[key] = function () { return module }
-})
-if (false) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  var id = "_v-5140c6ae/email.vue"
-  if (!module.hot.data) {
-    hotAPI.createRecord(id, module.exports)
-  } else {
-    hotAPI.update(id, module.exports, __vue_template__)
-  }
-})()}
+module.exports = "\n<div>\n    <div class=\"column is-6 is-offset-3\">\n        <div class=\"card\">\n            <header class=\"card-header\">\n                <a href=\"\" class=\"card-header-title\">\n                {{ page.name }}\n                </a>\n            </header>\n            <div class=\"card-content\">\n                <div class=\"content\" v-html=\"content\">\n                </div>\n            </div>\n            <footer class=\"card-footer\">\n            </footer>\n        </div>\n    </div>\n</div>\n";
 
 /***/ }),
+/* 82 */,
 /* 83 */,
 /* 84 */,
 /* 85 */,
@@ -37783,11 +37754,52 @@ if (false) {(function () {  module.hot.accept()
 /* 95 */,
 /* 96 */,
 /* 97 */,
-/* 98 */,
-/* 99 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(36);
+var __vue_script__, __vue_template__
+var __vue_styles__ = {}
+__vue_script__ = __webpack_require__(64)
+if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
+  console.warn("[vue-loader] resources/assets/js/components/users/page.vue: named exports in *.vue files are ignored.")}
+__vue_template__ = __webpack_require__(81)
+module.exports = __vue_script__ || {}
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+if (__vue_template__) {
+__vue_options__.template = __vue_template__
+}
+if (!__vue_options__.computed) __vue_options__.computed = {}
+Object.keys(__vue_styles__).forEach(function (key) {
+var module = __vue_styles__[key]
+__vue_options__.computed[key] = function () { return module }
+})
+if (false) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  var id = "_v-63c5242c/page.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, __vue_template__)
+  }
+})()}
+
+/***/ }),
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(45);
 
 
 /***/ })

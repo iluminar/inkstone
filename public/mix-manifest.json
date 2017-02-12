@@ -5,6 +5,7 @@
   "/js/users/posts.js": "/js/users/posts.js",
   "/js/posts/edit.js": "/js/posts/edit.js",
   "/js/posts/create.js": "/js/posts/create.js",
+  "/js/users/page.js": "/js/users/page.js",
   "/js/users/github.js": "/js/users/github.js",
   "/js/auth/reset.js": "/js/auth/reset.js",
   "/js/auth/register.js": "/js/auth/register.js",

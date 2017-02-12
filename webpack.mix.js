@@ -21,4 +21,5 @@ mix.js('resources/assets/js/pages/home.js', 'public/js')
    .js('resources/assets/js/pages/posts/create.js', 'public/js/posts')
    .js('resources/assets/js/pages/posts/edit.js', 'public/js/posts')
    .js('resources/assets/js/pages/users/posts.js', 'public/js/users')
+   .js('resources/assets/js/pages/users/page.js', 'public/js/users')
    .js('resources/assets/js/pages/users/github.js', 'public/js/users');

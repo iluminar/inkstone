@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 102);
+/******/ 	return __webpack_require__(__webpack_require__.s = 106);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -37705,7 +37705,7 @@ if (false) {(function () {  module.hot.accept()
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(28);
-post = __webpack_require__(90);
+post = __webpack_require__(93);
 
 var app = new Vue({
     el: '#app',
@@ -37722,7 +37722,8 @@ var app = new Vue({
 /* 48 */,
 /* 49 */,
 /* 50 */,
-/* 51 */
+/* 51 */,
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37776,12 +37777,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__single_vue__);
 // <template>
 //     <div>
@@ -37800,7 +37801,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37840,20 +37841,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 54 */,
 /* 55 */,
 /* 56 */,
 /* 57 */,
-/* 58 */
+/* 58 */,
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__deletePostConfirmDialog__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__comments_create__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__comments_create__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__comments_create___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__comments_create__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comments_list__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comments_list__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comments_list___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__comments_list__);
 // <template>
 //     <div>
@@ -37928,7 +37929,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 59 */,
 /* 60 */,
 /* 61 */,
 /* 62 */,
@@ -37936,51 +37936,54 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 64 */,
 /* 65 */,
 /* 66 */,
-/* 67 */
+/* 67 */,
+/* 68 */,
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<form role=\"form\" method=\"POST\" :action=\"url\">\n    <input type=\"hidden\" name=\"_token\" :value=\"token\">\n    <div class=\"card\">\n        <div class=\"card-content\">\n            <a class=\"button is-fullwidth is-primary\" @click=\"openCommentForm\">Create New Comment</a>\n        </div>\n    </div>\n    <div class=\"card\" :class=\"{'is-hidden-tablet': hideForm}\">\n        <div class=\"card-content\">\n            <div class=\"content\">\n                <p class=\"control\">\n                    <textarea id=\"content\" class=\"textarea\" name=\"content\" placeholder=\"write your comment here\"></textarea>\n                </p>\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <div class=\"card-footer-item\">\n                <button type=\"submit\" class=\"button is-primary\">Save</button>\n            </div>\n        </footer>\n    </div>\n</form>\n";
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div>\n    <comment v-for=\"comment in comments\" :comment=\"comment\"></comment>\n</div>\n";
 
 /***/ }),
-/* 69 */
+/* 71 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div class=\"card\">\n    <div class=\"card-content\">\n        <div class=\"media\">\n            <div class=\"media-left\">\n                <figure class=\"image\">\n                    <img :src=\"comment.author.socials[0].avatar\">\n                </figure>\n            </div>\n            <div class=\"media-content\">\n                <p class=\"title is-4\">{{ comment.author.name }}</p>\n                <p class=\"subtitle is-6\">{{ comment.created_at }} ago</p>\n                <div class=\"content\" v-html=\"content\">\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
 
 /***/ }),
-/* 70 */,
-/* 71 */,
 /* 72 */,
 /* 73 */,
-/* 74 */
+/* 74 */,
+/* 75 */,
+/* 76 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div>\n    <div class=\"column is-8 is-offset-2\">\n        <div class=\"card\">\n            <header class=\"card-header\">\n                <a href=\"\" class=\"card-header-title\">\n                {{ post.title }}\n                </a>\n            </header>\n            <div class=\"card-content\">\n                <div class=\"content\" v-html=\"content\">\n                </div>\n            </div>\n            <footer class=\"card-footer\">\n                <a class=\"card-footer-item\" :href=\"'/posts/' + post.slug + '/edit'\">Edit</a>\n                <a class=\"card-footer-item\" @click=\"deletePost\">Delete\n                </a>\n            </footer>\n            <confirm-dialog @open-dialog=\"openDialog\" :is-active=\"isActive\" :slug=\"post.slug\"></confirm-dialog>\n        </div>\n    </div>\n    <div class=\"column is-8 is-offset-2\">\n        <create-comments :slug=\"post.slug\"></create-comments>\n    </div>\n    <div class=\"column is-8 is-offset-2\">\n        <comment-list :comments=\"post.comments\"></comment-list>\n    </div>\n</div>\n";
 
 /***/ }),
-/* 75 */,
-/* 76 */,
 /* 77 */,
 /* 78 */,
 /* 79 */,
 /* 80 */,
 /* 81 */,
 /* 82 */,
-/* 83 */
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(51)
+__vue_script__ = __webpack_require__(52)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/comments/create.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(67)
+__vue_template__ = __webpack_require__(69)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -38005,15 +38008,15 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 84 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(52)
+__vue_script__ = __webpack_require__(53)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/comments/list.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(68)
+__vue_template__ = __webpack_require__(70)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -38038,15 +38041,15 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 85 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(53)
+__vue_script__ = __webpack_require__(54)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/comments/single.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(69)
+__vue_template__ = __webpack_require__(71)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -38071,19 +38074,19 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 86 */,
-/* 87 */,
-/* 88 */,
 /* 89 */,
-/* 90 */
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(58)
+__vue_script__ = __webpack_require__(59)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/posts/details.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(74)
+__vue_template__ = __webpack_require__(76)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -38108,9 +38111,6 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 91 */,
-/* 92 */,
-/* 93 */,
 /* 94 */,
 /* 95 */,
 /* 96 */,
@@ -38119,7 +38119,11 @@ if (false) {(function () {  module.hot.accept()
 /* 99 */,
 /* 100 */,
 /* 101 */,
-/* 102 */
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(43);

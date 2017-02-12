@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 96);
+/******/ 	return __webpack_require__(__webpack_require__.s = 100);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -37629,7 +37629,7 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(28);
-login = __webpack_require__(80);
+login = __webpack_require__(83);
 
 var app = new Vue({
     el: '#app',
@@ -37649,7 +37649,8 @@ var app = new Vue({
 /* 45 */,
 /* 46 */,
 /* 47 */,
-/* 48 */
+/* 48 */,
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37721,7 +37722,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 49 */,
 /* 50 */,
 /* 51 */,
 /* 52 */,
@@ -37736,14 +37736,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 61 */,
 /* 62 */,
 /* 63 */,
-/* 64 */
+/* 64 */,
+/* 65 */,
+/* 66 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div class=\"columns\">\n<div class=\"column is-4 is-offset-4\">\n    <form role=\"form\" method=\"POST\" action=\"auth/login\">\n        <input type=\"hidden\" name=\"_token\" :value=\"token\">\n        <div class=\"card\">\n            <header class=\"card-header\">\n                <p class=\"card-header-title title has-text-centered\">\n                Login\n                </p>\n            </header>\n            <div class=\"card-content\">\n                <div class=\"content\">\n                    <p class=\"control\">\n                        <input id=\"email\" class=\"input\" type=\"text\" name=\"email\" placeholder=\"E-mail\">\n                        <span class=\"help is-danger\" v-if=\"errors\">{{ errors.email }}</span>\n                    </p>\n                    <p class=\"control\">\n                        <input id=\"password\" class=\"input\" type=\"password\" name=\"password\" placeholder=\"Password\">\n                        <span class=\"help is-danger\" v-if=\"errors\">{{ errors.password }}</span>\n                    </p>\n                    <p class=\"control\">\n                        <input type=\"checkbox\" name=\"remember\">\n                        Remember Me\n                        <a href=\"password/reset\" class=\"is-pulled-right\">Forgot Your Password?</a>\n                    </p>\n                    <p class=\"control\">\n                        <button type=\"submit\" class=\"button is-primary is-fullwidth\">Login</button>\n                    </p>\n                </div>\n            </div>\n            <footer class=\"card-footer\">\n                <div class=\"card-footer-item\">\n                    <a href=\"auth/github\" class=\"\">\n                        <span class=\"\">Sign in with</span>\n                        <span class=\"icon\">\n                            <i class=\"fa fa-github\"></i>\n                        </span>\n                    </a>\n                </div>\n                <div class=\"card-footer-item\">\n                    <a href=\"auth/twitter\">\n                        <span class=\"\">Sign in with</span>\n                        <span class=\"icon\">\n                            <i class=\"fa fa-twitter\"></i>\n                        </span>\n                    </a>\n                </div>\n            </footer>\n        </div>\n    </form>\n</div>\n</div>\n";
 
 /***/ }),
-/* 65 */,
-/* 66 */,
 /* 67 */,
 /* 68 */,
 /* 69 */,
@@ -37757,15 +37757,18 @@ module.exports = "\n<div class=\"columns\">\n<div class=\"column is-4 is-offset-
 /* 77 */,
 /* 78 */,
 /* 79 */,
-/* 80 */
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(48)
+__vue_script__ = __webpack_require__(49)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/auth/login.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(64)
+__vue_template__ = __webpack_require__(66)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37790,9 +37793,6 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 81 */,
-/* 82 */,
-/* 83 */,
 /* 84 */,
 /* 85 */,
 /* 86 */,
@@ -37805,7 +37805,11 @@ if (false) {(function () {  module.hot.accept()
 /* 93 */,
 /* 94 */,
 /* 95 */,
-/* 96 */
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(37);
