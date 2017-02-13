@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 107);
+/******/ 	return __webpack_require__(__webpack_require__.s = 111);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10491,7 +10491,7 @@ if (false) {(function () {  module.hot.accept()
 
 // route: user.posts
 __webpack_require__(26);
-list = __webpack_require__(93);
+list = __webpack_require__(96);
 
 var app = new Vue({
     el: '#app',
@@ -10515,12 +10515,13 @@ var app = new Vue({
 /* 56 */,
 /* 57 */,
 /* 58 */,
-/* 59 */
+/* 59 */,
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__single_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__single_vue__);
 // <template>
 //     <div class="columns is-multiline">
@@ -10556,7 +10557,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10637,7 +10638,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 61 */,
 /* 62 */,
 /* 63 */,
 /* 64 */,
@@ -10652,20 +10652,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 73 */,
 /* 74 */,
 /* 75 */,
-/* 76 */
+/* 76 */,
+/* 77 */,
+/* 78 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div class=\"columns is-multiline\">\n    <div class=\"column is-6 is-offset-3\" v-if=\"!posts.length\">\n        <a href=\"/posts/create\" class=\"button is-primary is-outlined is-fullwidth\">Create New Post</a>\n    </div>\n    <post v-for=\"post in posts\" :post=\"post\"></post>\n</div>\n";
 
 /***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <a :href=\"'/posts/' + post.slug\" class=\"card-header-title title is-3\">\n            {{ post.title }}\n            </a>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\" v-html=\"content\">\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <a class=\"card-footer-item\">\n                <span class=\"icon is-medium\" @click=\"togglePostPublishStatus(post.slug)\">\n                    <i v-bind:class=\"[{ 'fa fa-toggle-off' : draft, 'fa fa-toggle-on' : !draft}]\"></i>\n                </span>\n            </a>\n            <a class=\"card-footer-item\" :href=\"'/posts/' + post.slug + '/edit'\">\n                <span class=\"icon is-medium\">\n                    <i class=\"fa fa-edit\"></i>\n                </span>\n            </a>\n            <a class=\"card-footer-item\" @click=\"deletePost\">\n                <span class=\"icon is-medium\">\n                    <i class=\"fa fa-close\"></i>\n                </span>\n            </a>\n        </footer>\n        <confirm-dialog @open-dialog=\"openDialog\" :is-active=\"isActive\" :slug=\"post.slug\"></confirm-dialog>\n    </div>\n</div>\n";
 
 /***/ }),
-/* 78 */,
-/* 79 */,
 /* 80 */,
 /* 81 */,
 /* 82 */,
@@ -10679,15 +10679,18 @@ module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"ca
 /* 90 */,
 /* 91 */,
 /* 92 */,
-/* 93 */
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(59)
+__vue_script__ = __webpack_require__(60)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/posts/list.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(76)
+__vue_template__ = __webpack_require__(78)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -10712,15 +10715,15 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 94 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(60)
+__vue_script__ = __webpack_require__(61)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/posts/single.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(77)
+__vue_template__ = __webpack_require__(79)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -10745,9 +10748,6 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 95 */,
-/* 96 */,
-/* 97 */,
 /* 98 */,
 /* 99 */,
 /* 100 */,
@@ -10757,7 +10757,11 @@ if (false) {(function () {  module.hot.accept()
 /* 104 */,
 /* 105 */,
 /* 106 */,
-/* 107 */
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(44);

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="column is-6 is-offset-3">
-            <div class="card">
+            <div class="card" v-if="page">
                 <header class="card-header">
                     <a href="" class="card-header-title">
                     {{ page.name }}
@@ -25,7 +25,9 @@
             content: ''
         }),
         mounted() {
-            this.content = converter.makeHtml(this.page.content)
+            if (this.page) {
+                this.content = converter.makeHtml(this.page.content);
+            }
         }
     }
 </script>

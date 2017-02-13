@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 110);
+/******/ 	return __webpack_require__(__webpack_require__.s = 112);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10415,23 +10415,23 @@ module.exports = g;
 /* 40 */,
 /* 41 */,
 /* 42 */,
-/* 43 */
+/* 43 */,
+/* 44 */,
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// route: github.repo.page
+// route: github.repo
 __webpack_require__(26);
-page = __webpack_require__(99);
+repo = __webpack_require__(100);
 
 var app = new Vue({
     el: '#app',
     components: {
-        page: page
+        repo: repo
     }
 });
 
 /***/ }),
-/* 44 */,
-/* 45 */,
 /* 46 */,
 /* 47 */,
 /* 48 */,
@@ -10449,7 +10449,8 @@ var app = new Vue({
 /* 60 */,
 /* 61 */,
 /* 62 */,
-/* 63 */
+/* 63 */,
+/* 64 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10457,19 +10458,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // <template>
 //     <div>
 //         <div class="column is-6 is-offset-3">
-//             <div class="card" v-if="page">
-//                 <header class="card-header">
-//                     <a href="" class="card-header-title">
-//                     {{ page.name }}
-//                     </a>
-//                 </header>
-//                 <div class="card-content">
-//                     <div class="content" v-html="content">
+//             <form role="form" method="POST" :action="url">
+//                 <input type="hidden" name="_token" :value="token">
+//                 <div class="card">
+//                     <header class="card-header">
+//                         <a href="" class="card-header-title title">
+//                         {{ repo.name }}
+//                         </a>
+//                     </header>
+//                     <div class="card-content">
+//                         <div class="content">
+//                             <label class="label">Document Root</label>
+//                             <p class="control">
+//                                 <input id="document_path" class="input" type="text" name="document_path" placeholder="path/to/docs/folder">
+//                                 <span class="help is-danger" v-if="errors">{{ errors.document_path }}</span>
+//                             </p>
+//                             <p class="control">
+//                                 <label class="checkbox">
+//                                     <input type="checkbox" name="readme" checked>
+//                                     Keep Readme as Main Page
+//                                 </label>
+//                             </p>
+//                             <p class="control">
+//                                 <label class="checkbox">
+//                                     <input type="checkbox" name="menu">
+//                                     Add Sidebar Menu
+//                                 </label>
+//                             </p>
+//                         </div>
 //                     </div>
+//                     <footer class="card-footer">
+//                         <div class="card-footer-item">
+//                             <button type="submit" class="button is-primary">Save</button>
+//                         </div>
+//                     </footer>
 //                 </div>
-//                 <footer class="card-footer">
-//                 </footer>
-//             </div>
+//             </form>
 //         </div>
 //     </div>
 // </template>
@@ -10488,20 +10512,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return data;
     }(function () {
         return {
-            page: data.page,
-            content: ''
+            repo: data.repo,
+            errors: data.errors,
+            token: Laravel.csrfToken,
+            url: '/' + data.username + '/' + data.repo.name
         };
-    }),
-    mounted: function mounted() {
-        if (this.page) {
-            this.content = converter.makeHtml(this.page.content);
-        }
-    }
+    })
 };
 // </script>
 
 /***/ }),
-/* 64 */,
 /* 65 */,
 /* 66 */,
 /* 67 */,
@@ -10518,13 +10538,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 78 */,
 /* 79 */,
 /* 80 */,
-/* 81 */
+/* 81 */,
+/* 82 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div>\n    <div class=\"column is-6 is-offset-3\">\n        <div class=\"card\" v-if=\"page\">\n            <header class=\"card-header\">\n                <a href=\"\" class=\"card-header-title\">\n                {{ page.name }}\n                </a>\n            </header>\n            <div class=\"card-content\">\n                <div class=\"content\" v-html=\"content\">\n                </div>\n            </div>\n            <footer class=\"card-footer\">\n            </footer>\n        </div>\n    </div>\n</div>\n";
+module.exports = "\n<div>\n    <div class=\"column is-6 is-offset-3\">\n        <form role=\"form\" method=\"POST\" :action=\"url\">\n            <input type=\"hidden\" name=\"_token\" :value=\"token\">\n            <div class=\"card\">\n                <header class=\"card-header\">\n                    <a href=\"\" class=\"card-header-title title\">\n                    {{ repo.name }}\n                    </a>\n                </header>\n                <div class=\"card-content\">\n                    <div class=\"content\">\n                        <label class=\"label\">Document Root</label>\n                        <p class=\"control\">\n                            <input id=\"document_path\" class=\"input\" type=\"text\" name=\"document_path\" placeholder=\"path/to/docs/folder\">\n                            <span class=\"help is-danger\" v-if=\"errors\">{{ errors.document_path }}</span>\n                        </p>\n                        <p class=\"control\">\n                            <label class=\"checkbox\">\n                                <input type=\"checkbox\" name=\"readme\" checked>\n                                Keep Readme as Main Page\n                            </label>\n                        </p>\n                        <p class=\"control\">\n                            <label class=\"checkbox\">\n                                <input type=\"checkbox\" name=\"menu\">\n                                Add Sidebar Menu\n                            </label>\n                        </p>\n                    </div>\n                </div>\n                <footer class=\"card-footer\">\n                    <div class=\"card-footer-item\">\n                        <button type=\"submit\" class=\"button is-primary\">Save</button>\n                    </div>\n                </footer>\n            </div>\n        </form>\n    </div>\n</div>\n";
 
 /***/ }),
-/* 82 */,
 /* 83 */,
 /* 84 */,
 /* 85 */,
@@ -10541,15 +10561,16 @@ module.exports = "\n<div>\n    <div class=\"column is-6 is-offset-3\">\n        
 /* 96 */,
 /* 97 */,
 /* 98 */,
-/* 99 */
+/* 99 */,
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(63)
+__vue_script__ = __webpack_require__(64)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
-  console.warn("[vue-loader] resources/assets/js/components/users/page.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(81)
+  console.warn("[vue-loader] resources/assets/js/components/users/repo.vue: named exports in *.vue files are ignored.")}
+__vue_template__ = __webpack_require__(82)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -10565,7 +10586,7 @@ if (false) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
-  var id = "_v-63c5242c/page.vue"
+  var id = "_v-fd3d8566/repo.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
@@ -10574,7 +10595,6 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 100 */,
 /* 101 */,
 /* 102 */,
 /* 103 */,
@@ -10584,10 +10604,12 @@ if (false) {(function () {  module.hot.accept()
 /* 107 */,
 /* 108 */,
 /* 109 */,
-/* 110 */
+/* 110 */,
+/* 111 */,
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(43);
+module.exports = __webpack_require__(45);
 
 
 /***/ })

@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 99);
+/******/ 	return __webpack_require__(__webpack_require__.s = 103);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10412,7 +10412,7 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(26);
-register = __webpack_require__(82);
+register = __webpack_require__(85);
 
 var app = new Vue({
     el: '#app',
@@ -10433,7 +10433,8 @@ var app = new Vue({
 /* 45 */,
 /* 46 */,
 /* 47 */,
-/* 48 */
+/* 48 */,
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10492,7 +10493,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 49 */,
 /* 50 */,
 /* 51 */,
 /* 52 */,
@@ -10508,14 +10508,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 62 */,
 /* 63 */,
 /* 64 */,
-/* 65 */
+/* 65 */,
+/* 66 */,
+/* 67 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div class=\"columns\">\n<div class=\"column is-4 is-offset-4\">\n    <form role=\"form\" method=\"POST\" :action=\"url\">\n        <input type=\"hidden\" name=\"_token\" :value=\"token\">\n        <div class=\"card\">\n            <header class=\"card-header\">\n                <p class=\"card-header-title title has-text-centered\">\n                Register\n                </p>\n            </header>\n            <div class=\"card-content\">\n                <div class=\"content\">\n                    <p class=\"control\">\n                        <input id=\"username\" class=\"input\" type=\"text\" name=\"username\" placeholder=\"Username\">\n                        <span class=\"help is-danger\" v-if=\"errors\">{{ errors.username }}</span>\n                    </p>\n                        <input id=\"email\" class=\"input\" type=\"text\" name=\"email\" placeholder=\"E-mail\">\n                        <span class=\"help is-danger\" v-if=\"errors\">{{ errors.email }}</span>\n                    </p>\n                    <p class=\"control\">\n                        <input id=\"password\" class=\"input\" type=\"password\" name=\"password\" placeholder=\"Password\">\n                        <span class=\"help is-danger\" v-if=\"errors\">{{ errors.password }}</span>\n                    </p>\n                    <p class=\"control\">\n                        <input id=\"password_confirmation\" class=\"input\" type=\"password\" name=\"password_confirmation\" placeholder=\"Confirm Your Password\">\n                        <span class=\"help is-danger\" v-if=\"errors\">{{ errors.password_confirmation }}</span>\n                    </p>\n                    <p class=\"control\">\n                        <button type=\"submit\" class=\"button is-primary is-fullwidth\">Register</button>\n                    </p>\n                </div>\n            </div>\n            <footer class=\"card-footer\">\n            </footer>\n        </div>\n    </form>\n</div>\n</div>\n";
 
 /***/ }),
-/* 66 */,
-/* 67 */,
 /* 68 */,
 /* 69 */,
 /* 70 */,
@@ -10530,15 +10530,18 @@ module.exports = "\n<div class=\"columns\">\n<div class=\"column is-4 is-offset-
 /* 79 */,
 /* 80 */,
 /* 81 */,
-/* 82 */
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(48)
+__vue_script__ = __webpack_require__(49)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/auth/register.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(65)
+__vue_template__ = __webpack_require__(67)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -10563,9 +10566,6 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 83 */,
-/* 84 */,
-/* 85 */,
 /* 86 */,
 /* 87 */,
 /* 88 */,
@@ -10579,7 +10579,11 @@ if (false) {(function () {  module.hot.accept()
 /* 96 */,
 /* 97 */,
 /* 98 */,
-/* 99 */
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(36);

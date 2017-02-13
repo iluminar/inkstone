@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 102);
+/******/ 	return __webpack_require__(__webpack_require__.s = 106);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -22285,7 +22285,7 @@ return jQuery;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(26);
-createForm = __webpack_require__(90);
+createForm = __webpack_require__(93);
 
 var app = new Vue({
     el: '#app',
@@ -22311,7 +22311,8 @@ var app = new Vue({
 /* 53 */,
 /* 54 */,
 /* 55 */,
-/* 56 */
+/* 56 */,
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22379,7 +22380,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 57 */,
 /* 58 */,
 /* 59 */,
 /* 60 */,
@@ -22395,14 +22395,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 70 */,
 /* 71 */,
 /* 72 */,
-/* 73 */
+/* 73 */,
+/* 74 */,
+/* 75 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<form role=\"form\" method=\"POST\" :action=\"url\">\n    <input type=\"hidden\" name=\"_token\" :value=\"token\">\n    <div class=\"card\">\n        <header class=\"card-header\">\n            <p class=\"card-header-title\">\n            Create New Post\n            </p>\n        </header>\n        <div class=\"card-content\">\n            <div class=\"content\">\n                <p class=\"control\">\n                    <input id=\"title\" class=\"input\" type=\"text\" name=\"title\" placeholder=\"Title of the Post\">\n                    <span class=\"help is-danger\" v-if=\"errors\">{{ errors.title }}</span>\n                </p>\n                <p class=\"control\">\n                    <input id=\"publish_time\" class=\"input flatpickr\" type=\"text\" name=\"publish_time\" placeholder=\"Publish Time\">\n                    <span class=\"help is-danger\" v-if=\"errors\">{{ errors.publish_time }}</span>\n                </p>\n                <p class=\"control\">\n                    <textarea id=\"content\" class=\"textarea\" name=\"content\" placeholder=\"Your new blog post\"></textarea>\n                    <span class=\"help is-danger\" v-if=\"errors\">{{ errors.content }}</span>\n                </p>\n                <p class=\"control\">\n                    <input type=\"checkbox\" name=\"draft\">\n                    save as draft\n                </p>\n            </div>\n        </div>\n        <footer class=\"card-footer\">\n            <div class=\"card-footer-item\">\n                <button type=\"submit\" class=\"button is-primary\">Save</button>\n            </div>\n        </footer>\n    </div>\n</form>\n";
 
 /***/ }),
-/* 74 */,
-/* 75 */,
 /* 76 */,
 /* 77 */,
 /* 78 */,
@@ -22417,15 +22417,18 @@ module.exports = "\n<form role=\"form\" method=\"POST\" :action=\"url\">\n    <i
 /* 87 */,
 /* 88 */,
 /* 89 */,
-/* 90 */
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(56)
+__vue_script__ = __webpack_require__(57)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/posts/create.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(73)
+__vue_template__ = __webpack_require__(75)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -22450,9 +22453,6 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 91 */,
-/* 92 */,
-/* 93 */,
 /* 94 */,
 /* 95 */,
 /* 96 */,
@@ -22461,7 +22461,11 @@ if (false) {(function () {  module.hot.accept()
 /* 99 */,
 /* 100 */,
 /* 101 */,
-/* 102 */
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(39);

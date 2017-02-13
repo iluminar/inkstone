@@ -84,4 +84,13 @@ class RepoRepository extends EloquentRepository
     {
         Repo::where('id', $repoId)->update(['has_page' => true]);
     }
+
+    /**
+     * @param $user
+     * @param $repo
+     */
+    public function getUserGithubRepo($userId, $repo)
+    {
+        return Repo::where(['user_id' => $userId, 'name' => $repo])->first();
+    }
 }

@@ -48,7 +48,9 @@ Route::group(['prefix' => '{user}'], function () {
 
         Route::get('github/refresh', ['as' => 'user.github.refresh', 'uses' => 'UserController@refreshUserLatestGithubData']);
 
-        Route::get('{repo}', ['as' => 'user.github.repo', 'uses' => 'UserController@getUserGithubRepoPage']);
+        Route::get('{repo}', ['as' => 'user.github.repo', 'uses' => 'UserController@getUserGithubRepo']);
+
+        Route::post('{repo}', ['as' => 'save.github.repo', 'uses' => 'UserController@saveUserGithubRepoPages']);
 
         Route::get('{repo}/{page}', ['as' => 'github.repo.page', 'uses' => 'UserController@getUserGithubRepoPage']);
     });

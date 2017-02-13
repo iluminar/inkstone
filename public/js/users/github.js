@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 105);
+/******/ 	return __webpack_require__(__webpack_require__.s = 109);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10419,7 +10419,7 @@ module.exports = g;
 
 // route: user.github
 __webpack_require__(26);
-repoList = __webpack_require__(95);
+repoList = __webpack_require__(98);
 
 var app = new Vue({
     el: '#app',
@@ -10447,7 +10447,8 @@ var app = new Vue({
 /* 58 */,
 /* 59 */,
 /* 60 */,
-/* 61 */
+/* 61 */,
+/* 62 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10491,7 +10492,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // </script>
 
 /***/ }),
-/* 62 */,
 /* 63 */,
 /* 64 */,
 /* 65 */,
@@ -10507,14 +10507,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 75 */,
 /* 76 */,
 /* 77 */,
-/* 78 */
+/* 78 */,
+/* 79 */,
+/* 80 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"card\">\n        <div class=\"card-content-item\">\n            <p class=\"title is-3 has-text-centered\">\n            Your Github Repository\n            <a :href=\"url\" class=\"button is-base is-pulled-right\">Refresh Data</a>\n            </p>\n        </div>\n        <div class=\"card-content-item\" v-for=\"repo in repos\">\n            <a :href=\"repo.name + '/readme'\" class=\"\" >{{ repo.name }}</a>\n            <span class=\"tag is-warning is-pulled-right\" v-if=\"repo.language\">{{ repo.language }}</span>\n        </div>\n    </div>\n</div>\n";
 
 /***/ }),
-/* 79 */,
-/* 80 */,
 /* 81 */,
 /* 82 */,
 /* 83 */,
@@ -10529,15 +10529,18 @@ module.exports = "\n<div class=\"column is-8 is-offset-2\">\n    <div class=\"ca
 /* 92 */,
 /* 93 */,
 /* 94 */,
-/* 95 */
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__vue_script__ = __webpack_require__(61)
+__vue_script__ = __webpack_require__(62)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] resources/assets/js/components/users/github.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(78)
+__vue_template__ = __webpack_require__(80)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -10562,16 +10565,17 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 96 */,
-/* 97 */,
-/* 98 */,
 /* 99 */,
 /* 100 */,
 /* 101 */,
 /* 102 */,
 /* 103 */,
 /* 104 */,
-/* 105 */
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(42);

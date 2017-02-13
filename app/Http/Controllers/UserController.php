@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Services\PostService;
 use App\Services\RepoService;
 use App\Services\UserService;
 use App\Services\RepoPageService;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use GuzzleHttp\Exception\ClientException;
 
 class UserController extends Controller
 {
@@ -30,10 +32,11 @@ class UserController extends Controller
      * @param PostService $postService
      */
     public function __construct(UserService $userService, PostService
-         $postService, RepoPageService $repoPageService) {
+         $postService, RepoPageService $repoPageService, RepoService $repoService) {
         $this->userService     = $userService;
         $this->postService     = $postService;
         $this->repoPageService = $repoPageService;
+        $this->repoService     = $repoService;
     }
 
     /**
@@ -64,7 +67,6 @@ class UserController extends Controller
      */
     public function getUserGithubData(RepoService $repoService, $user)
     {
-        // check db for user github data if not give button to refresh
         $githubUser     = Auth::user()->github();
         $githubUserName = ($githubUser) ? $githubUser->nickname : '';
         $repos          = $repoService->getUserRepos($user);
@@ -78,9 +80,32 @@ class UserController extends Controller
      */
     public function getUserGithubRepoPage($user, $repo, $page = 'readme')
     {
-        $page = $this->repoPageService->getGithubRepoPage($user, $repo, $page);
+        try {
+            $page = $this->repoPageService->getGithubRepoPage($user, $repo, $page);
 
-        return view('github.page', compact('page'));
+            return view('github.page', compact('page'));
+        } catch (ClientException $e) {
+            if ($e->getResponse()->getStatusCode() == 404) {
+                $page = null;
+
+                return view('github.page', compact('page'));
+            }
+        }
+    }
+
+    /**
+     * @param $user
+     * @param $repo
+     */
+    public function getUserGithubRepo($user, $repo)
+    {
+        try {
+            $repo = $this->repoService->getUserGithubRepo($user, $repo);
+
+            return view('users.repo', compact('repo'));
+        } catch (Exception $e) {
+            Log::info($e->getMessage() . " in " . $e->getFile() . " in " . $e->getLine());
+        }
     }
 
     /**
@@ -97,5 +122,13 @@ class UserController extends Controller
         } catch (Exception $e) {
             return $e->getMessage();
         }
+    }
+
+    /**
+     * @param Request $request
+     */
+    public function saveUserGithubRepoPages(Request $request)
+    {
+        # code...
     }
 }
