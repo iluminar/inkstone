@@ -13,7 +13,6 @@
     <!-- Styles -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
     <link href="/css/app.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
     @yield('css')
     <!-- Scripts -->
@@ -33,11 +32,5 @@
 
     <!-- Scripts -->
     @yield('script')
-    <script type="text/javascript">
-        $.ajaxSetup({
-            headers: { 'X-CSRF-Token' : window.Laravel.csrfToken }
-        });
-    </script>
-    @yield('sidebar-script')
 </body>
 </html>
