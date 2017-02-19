@@ -10594,7 +10594,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //         <div class="card-content">
 //             <div class="media">
 //                 <div class="media-left">
-//                     <figure class="image">
+//                     <figure class="image is-32x32">
 //                         <img :src="comment.author.socials[0].avatar">
 //                     </figure>
 //                 </div>
@@ -10737,7 +10737,7 @@ module.exports = "\n<div>\n    <comment v-for=\"comment in comments\" :comment=\
 /* 71 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"card\">\n    <div class=\"card-content\">\n        <div class=\"media\">\n            <div class=\"media-left\">\n                <figure class=\"image\">\n                    <img :src=\"comment.author.socials[0].avatar\">\n                </figure>\n            </div>\n            <div class=\"media-content\">\n                <p class=\"title is-4\">{{ comment.author.name }}</p>\n                <p class=\"subtitle is-6\">{{ comment.created_at }} ago</p>\n                <div class=\"content\" v-html=\"content\">\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
+module.exports = "\n<div class=\"card\">\n    <div class=\"card-content\">\n        <div class=\"media\">\n            <div class=\"media-left\">\n                <figure class=\"image is-32x32\">\n                    <img :src=\"comment.author.socials[0].avatar\">\n                </figure>\n            </div>\n            <div class=\"media-content\">\n                <p class=\"title is-4\">{{ comment.author.name }}</p>\n                <p class=\"subtitle is-6\">{{ comment.created_at }} ago</p>\n                <div class=\"content\" v-html=\"content\">\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
 
 /***/ }),
 /* 72 */,

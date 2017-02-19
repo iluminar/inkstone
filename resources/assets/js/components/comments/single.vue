@@ -3,7 +3,7 @@
         <div class="card-content">
             <div class="media">
                 <div class="media-left">
-                    <figure class="image">
+                    <figure class="image is-32x32">
                         <img :src="comment.author.socials[0].avatar">
                     </figure>
                 </div>
