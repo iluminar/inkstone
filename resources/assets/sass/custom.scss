@@ -46,3 +46,11 @@ nav, .nav {
 .card .card-content-item:not(:last-child) {
     border-bottom: 1px solid #dbdbdb;
 }
+
+.media-left {
+    padding: 4px;
+}
+
+.CodeMirror, .CodeMirror-scroll {
+    min-height: 60px !important;
+}
